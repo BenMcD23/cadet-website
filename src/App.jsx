@@ -1,4 +1,4 @@
-import Navbar from './components/navbar/Navbar'
+import BasicExample from './components/navbar/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 
@@ -8,7 +8,7 @@ import './App.css'
 function App() {
   return (
     <>
-    <Navbar/>
+    <BasicExample/>
     <div className="container">
       <Routes>
         <Route path="/" element={<Home/>}/>
