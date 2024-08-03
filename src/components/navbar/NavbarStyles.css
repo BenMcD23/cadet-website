@@ -1,3 +1,24 @@
 .active {
-  background-color: rgba(0, 0, 0, 0.75) !important;
+  background-color: #81A2B1 !important;
 }
+
+/* center nav */
+.Navbar .navbar-nav {
+  margin: 0 auto;
+}
+.Navbar .container {
+  justify-content: center;
+}
+
+
+.Navbar a {
+  border-radius: 10px;
+  color: #000000;
+  font-weight: 600;
+  
+}
+
+.Navbar a:hover {
+  color: #000000b9;
+}
+

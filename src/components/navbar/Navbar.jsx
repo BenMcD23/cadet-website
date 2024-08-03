@@ -7,10 +7,10 @@ import "./NavbarStyles.css"
 
 function BasicExample() {
 	return (
-	<Navbar expand="lg" className="">
-		<Container className="justify-content-center navbar">
+	<Navbar expand="lg" className="Navbar">
+		<Container className="test">
 			<LinkContainer to="/" activeClassName="">
-				<Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+				<Navbar.Brand>317</Navbar.Brand>
 			</LinkContainer>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">
