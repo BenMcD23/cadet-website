@@ -6,7 +6,8 @@ function Header() {
     return (
         <>
         <div className="background-container">
-            <img src={sqn_photo} alt="Background Image" className="background-image"/>
+        
+            <img src={sqn_photo} alt="Background Image" className="background-image img-fluid w-100"/>
             <div className="overlay-image-container">
                 <img src={rafac} alt="Logo" className="overlay-image"/>
             </div>
