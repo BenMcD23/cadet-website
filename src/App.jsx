@@ -1,4 +1,4 @@
-import BasicExample from './components/navbar/Navbar'
+import My_navbar from './components/navbar/Navbar'
 import Home from './pages/Home'
 import About from './pages/About'
 
@@ -9,7 +9,7 @@ function App() {
   return (
     
     <>
-    <BasicExample/>
+    <My_navbar/>
     <div className="container">
       <Routes>
         <Route path="/" element={<Home/>}/>

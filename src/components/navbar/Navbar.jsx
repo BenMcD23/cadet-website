@@ -5,10 +5,11 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { LinkContainer } from 'react-router-bootstrap'
 import "./NavbarStyles.css"
 
-function BasicExample() {
+function My_navbar() {
 	return (
+		
 	<Navbar expand="lg" className="Navbar">
-		<Container className="test">
+		<Container className="">
 			<LinkContainer to="/" activeClassName="">
 				<Navbar.Brand>317</Navbar.Brand>
 			</LinkContainer>
@@ -40,4 +41,4 @@ function BasicExample() {
 	);
 	}
 
-export default BasicExample;
+export default My_navbar;
