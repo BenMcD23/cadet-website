@@ -1,7 +1,7 @@
 .background-container {
     position: relative;
     width: 100%;
-    height: 100vh; /* Or any desired height */
+    height: 70vh; /* Or any desired height */
     overflow: hidden; /* Ensures no overflow */
 }
 
@@ -13,7 +13,9 @@
     width: 100%;
     opacity: 0.5;
     height: 70vh;
-    width: 100vh !important;
+    width: 100vh;
+    object-fit: cover; /* Ensure the image covers the container */
+    display: block; /* Remove the gap below the image */
 }
 
 
