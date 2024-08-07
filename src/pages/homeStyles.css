@@ -1,3 +1,15 @@
-.card1 {
+.top-card {
     margin: auto;
+}
+
+.left-long-card {
+    float:left;
+    margin-left: 10%;
+}
+
+.right {
+    float:right;
+    margin-right: 10%;
+    margin-bottom: 15px;
+    
 }

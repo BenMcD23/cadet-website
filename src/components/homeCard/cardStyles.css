@@ -3,11 +3,10 @@
     border-radius: 20px;
     background-color: #000000;
     color: #ffff;
-    float: left;
 }
 
 .card-container:hover {
-    transform: scale(1.1);
+    transform: scale(0.95);
   }
 .card-container {
     transition: transform 0.5s;

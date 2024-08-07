@@ -6,17 +6,11 @@ function Home() {
     return (
         <>
             <Header/>
-            <div className="card1">
-                <Card title="Card1" mainText="test23" height={231} width={80}/>
-            </div>
-            <div className="cardTop">
-                <Card title="Card2" mainText="test23" height={231} width={80}/>
-            </div>
-            <div className="cardTop">
-                <Card title="Card3" mainText="test23" height={231} width={80}/>
-            </div>
-            <div className="cardTop">
-                <Card title="Card4" mainText="test23" height={231} width={80}/>
+            <div>
+                <Card secondClass="top-card" title="Card1" mainText="test23" height={230} width={80}/>
+                <Card secondClass="left-long-card" title="Card1" mainText="test23" height={600} width={30}/>
+                <Card secondClass="right" title="Card1" mainText="test23" height={250} width={48}/>
+                <Card secondClass="right" title="Card2" mainText="test23" height={250} width={48}/>
             </div>
         </>
     );
