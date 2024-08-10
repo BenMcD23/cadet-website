@@ -5,13 +5,15 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { LinkContainer } from 'react-router-bootstrap'
 import "./NavbarStyles.css"
 
+import logo from "../../assets/317_logo.png"
+
 function My_navbar() {
 	return (
 		
 	<Navbar expand="lg" className="Navbar">
 		<Container className="">
-			<LinkContainer to="/" activeClassName="">
-				<Navbar.Brand>317</Navbar.Brand>
+			<LinkContainer to="/" activeClassName="" className="logo-link">
+				<Navbar.Brand><img src={logo} className="logo-img"/></Navbar.Brand>
 			</LinkContainer>
 			<Navbar.Toggle aria-controls="basic-navbar-nav" />
 			<Navbar.Collapse id="basic-navbar-nav">

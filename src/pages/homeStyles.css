@@ -1,15 +1,22 @@
+.cards {
+    margin-top: 25px;
+}
+
 .top-card {
     margin: auto;
+    background-image: url("../assets/parade.jpeg");
 }
 
 .left-long-card {
     float:left;
     margin-left: 10%;
+    margin-top: 15px;
+
 }
 
 .right {
     float:right;
     margin-right: 10%;
-    margin-bottom: 15px;
+    margin-top: 15px;
     
 }

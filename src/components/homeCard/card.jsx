@@ -6,7 +6,6 @@ function Card(props) {
 
     return (
         <>
-        <br></br>
         <div className={`card-container ${props.secondClass}`}  style={{paddingBottom: `${props.height}px`,
                                                 width: `${props.width}%`,
         }}>
