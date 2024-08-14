@@ -4,6 +4,10 @@ import ClickCard from "../components/clickCards/clickCard"
 
 import "./homeStyles.css"
 
+import Parade from "../assets/parade.jpeg"
+import Drill from "../assets/317_drill.png"
+import sqn from "../assets/sqn_photo.JPG"
+
 function Home() {
     return (
         <>
@@ -15,7 +19,7 @@ function Home() {
                 <Card secondClass="right" title="Volunteers" mainText="Adult volunteers are vital to the Air Cadets. Our volunteers serve as role models, instructors, and leaders, guiding cadets in developing their skills and achieving their potential." height={250} width={48}/>
             </div> */}
             
-            <ClickCard/>
+            <ClickCard title1="test" images={[Parade, Drill, sqn]}/>
         </>
     );
 }
