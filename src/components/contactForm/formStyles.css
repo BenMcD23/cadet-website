@@ -1,0 +1,16 @@
+.submit_button {
+    background-color: #76d0f2;
+    color: #000000;
+    font-weight: 600;
+    border: None;
+}
+
+.submit_button:hover {
+    color: #000000b9;
+	background-color: #76d0f2;
+}
+
+.form-control-feedback-invalid {
+    font-weight: 600;
+    color: #ff0000 !important; 
+}
