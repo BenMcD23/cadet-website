@@ -3,6 +3,7 @@ import Card from "../components/homeCard/card"
 import ClickCard from "../components/clickCards/clickCard"
 import Footer from "../components/footer/footer"
 import Form from "../components/contactForm/contactForm"
+import Divider from "../components/largeDivider/divider"
 
 import "./homeStyles.css"
 
@@ -27,6 +28,7 @@ function Home() {
             title3="Volunteers" mainText3="We rely on our adult volunteers for the running of the squadron. They organise activities, educate the cadets and ensure each parade night it runs smoothly. They are vital to our work in the Air Cadets."
             images={[Parade, Drill, sqn]}/>
 
+            <Divider/>
             <Footer/>
         </>
     );

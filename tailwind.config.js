@@ -5,6 +5,9 @@ export default {
     extend: {
       colors: {
         'dark-blue': '#002856'
+      },
+      maxWidth : {
+        '7.5xl': '100rem',
       }
     },
   },
