@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 .cards {
     margin-top: 25px;
 }
@@ -20,3 +25,4 @@
     margin-top: 15px;
     
 }
+

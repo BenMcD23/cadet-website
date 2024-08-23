@@ -8,6 +8,9 @@ export default {
       },
       maxWidth : {
         '7.5xl': '100rem',
+      },
+      screens: {
+        'middle': '1500px',
       }
     },
   },

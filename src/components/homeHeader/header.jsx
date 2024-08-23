@@ -12,7 +12,6 @@ function Header() {
             </div>
             <div className="text-container">
                 <h1 className="test">317 Newton Heath & <br/>Failsworth Squadron</h1>
-                <button>Join Us</button>
             </div>
         </div>
 

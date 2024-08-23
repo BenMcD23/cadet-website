@@ -1,0 +1,23 @@
+.card-container {
+  margin-top: 10px;
+  background-color: #4d74c2;
+  padding-bottom: 60px;
+  padding-top: 10px;
+  clip-path: polygon(0% 4%,100% 0%,100% 96%,0% 100%);
+
+}
+
+
+
+.card-container .slick-dots li button:before {
+  font-size: 10px; /* Adjust size of dots */
+  color:orange !important;
+}
+
+
+.slick-slide > div {
+  margin: 0 10px;
+}
+
+
+

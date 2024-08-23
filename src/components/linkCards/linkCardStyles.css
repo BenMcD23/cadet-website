@@ -1,0 +1,20 @@
+.link-card-container {
+    padding-top: 20px;
+}
+
+
+.link-card {
+    overflow: hidden;
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+
+}
+
+.link-card:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.link-card img {
+    filter: brightness(45%);
+}
+
