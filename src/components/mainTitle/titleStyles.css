@@ -1,0 +1,22 @@
+.title-text {
+    display: block; /* Takes up full width of the parent container */
+    text-align: center; /* Centers the text horizontally */
+    position: relative;
+    margin: 0 auto; /* Center the block within the container */
+}
+
+.title-text:after {
+    position: absolute;
+    bottom: -33px; /* Positioning the underline just below the text */
+    left: 50%; /* Start from the center */
+    width: 0%; /* Initial width of the underline */
+    content: '';
+    background: #aaa; /* Underline color */
+    height: 4px; /* Thickness of the underline */
+    transition: all 0.5s ease-out; /* Smooth transition effect */
+    transform: translateX(-50%); /* Centering the underline */
+}
+
+.title-hover:hover .title-text:after {
+    width: 72%;
+}

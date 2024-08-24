@@ -1,11 +1,20 @@
 .link-card-container {
-    padding-top: 20px;
+    margin-top: 10px;
+
+    padding-top: 10px;
+    background-color: #4d74c2;
+    padding-bottom: 60px;
+
+    clip-path: polygon(0% 0%,100% 4%,100% 100%,0% 96%);
+
 }
 
 
 .link-card {
+
     overflow: hidden;
     transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+    border-radius: 20px;
 
 }
 

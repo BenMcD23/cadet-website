@@ -2,6 +2,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
+import Title from "../mainTitle/title";
 import "./cardStyles.css";
 
 
@@ -32,7 +33,8 @@ function Card() {
     };
 
     return (
-        <div className="card-container">
+        <div className="card-container title-hover">
+            <Title title="What We Do"></Title>
             <div className='w-3/4 m-auto'>
                 <div className="mt-20">
                     <Slider {...settings}>
