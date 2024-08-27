@@ -1,0 +1,30 @@
+.app-container {
+    padding-top: 60px;
+}
+
+
+/* sm */
+@media (min-width: 640px) {
+    .app-container {
+        padding-top: 0px;
+        padding-bottom: 60px;
+
+    }
+}
+
+/* md */
+@media (min-width: 768px) {
+    .app-container {
+        padding-top: 0px;
+        padding-bottom: 60px;
+
+    }
+}
+
+@media (min-width: 1024px) {
+    .app-container {
+        padding-top: 80px;
+        padding-bottom: 0px;
+
+    }
+}
