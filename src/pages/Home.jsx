@@ -5,6 +5,7 @@ import Footer from "../components/footer/footer"
 import Form from "../components/contactForm/contactForm"
 import Divider from "../components/largeDivider/divider"
 import Cards from "../components/sliderCards/cards"
+import Join from "../components/joinHome/join"
 
 import "./homeStyles.css"
 
@@ -32,6 +33,7 @@ function Home() {
             images={[Parade, Drill, sqn]}/> */}
 
             <Cards/>
+            <Join/>
             {/* <Divider/> */}
             <LinkCards/>
             <Footer/>

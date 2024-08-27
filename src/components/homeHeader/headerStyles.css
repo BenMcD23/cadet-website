@@ -9,7 +9,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    opacity: 0.5;
+    /* opacity: 0.5; */
+    filter: brightness(65%);
+    /* filter: grayscale(65%); */
+
     height: 70vh;
     width: 100vh;
     object-fit: cover;
@@ -41,14 +44,14 @@
 @media screen and (max-width: 900px) {
     .overlay-image-container {
         position: absolute;
-        top: 25%;
+        top: 15%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
 
     .text-container {
         position: absolute;
-        top: 55%;
+        top: 80%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
