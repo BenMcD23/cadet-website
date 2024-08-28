@@ -15,8 +15,6 @@
 	color: #000000;
 	text-decoration: none;
     transition: color 0.3s ease;
-
-
 }
 
 /* hover effect for only not active links */
@@ -35,7 +33,45 @@
 	margin: auto;
 }
 
+.active {
+    color: #ff0000;
+}
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    min-width: 160px;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 4px solid #dcdcdc; /* Light grey border for dropdown items */
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none; /* Remove border from the last dropdown item */
+}
+
+.dropdown-content a:not(.active):hover {
+    color: #0000001c;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 /* md  */
 @media (max-width: 1024px) {
@@ -44,7 +80,25 @@
 		top: auto;
         bottom: 0; 
         left: 0;
+
         width: 100%;
         z-index: 1000;
     }
+
+    .dropdown-content {
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dropdown-content a{
+        padding: 14px 18px;
+        border-top: 5px solid #dcdcdc; /* Light grey border for dropdown items */
+        border-bottom: none;
+        
+    }
+    .dropdown-content a:first-child {
+        border-top: none; /* Remove border from the last dropdown item */
+    }
+
 }
