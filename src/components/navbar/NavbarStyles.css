@@ -5,27 +5,35 @@
 	width: 100%;
 	z-index: 1000;
 	top: 0;
+}
 
+.navbar-container a.active{
+    color: #ff0000;
 }
 
 .navbar-container a {
 	color: #000000;
 	text-decoration: none;
+    transition: color 0.3s ease;
+
+
 }
 
-.navbar-container a:hover {
-	color: #0000001c;
-	
+/* hover effect for only not active links */
+.navbar-container a:not(.active):hover {
+    color: #0000001c;
 }
 
-
+.navbar-container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .navbar-link {
 	display: block;
 	margin: auto;
-	/* text-align: center */
 }
-
 
 
 
@@ -37,7 +45,6 @@
         bottom: 0; 
         left: 0;
         width: 100%;
-        background-color: #ffffff;
         z-index: 1000;
     }
 }
