@@ -7,7 +7,6 @@ import Divider from "../components/largeDivider/divider"
 import Cards from "../components/sliderCards/cards"
 import Join from "../components/joinHome/join"
 
-import "./homeStyles.css"
 
 import Parade from "../assets/parade.jpeg"
 import Drill from "../assets/317_drill.png"
@@ -18,6 +17,7 @@ function Home() {
 
     return (
         <>
+        <div className="m-0">
             <Header/>
             {/* <div className="cards">
                 <Card secondClass="top-card" title="About Us" mainText="Here at 317 atc, we develop people for their future, we do this by providing them with hard and soft skills. Some of these skills apply to everything in life like teamwork and leadership, We also team things that are more specific such as flying or shooting." height={230} width={80}/>
@@ -37,6 +37,7 @@ function Home() {
             {/* <Divider/> */}
             <LinkCards/>
             <Footer/>
+        </div>
         </>
     );
 }

@@ -1,5 +1,7 @@
-import My_navbar from './components/navbar/Navbar'
+import Navbar from './components/navbar/Navbar'
 import Home from './pages/Home'
+import Programme from './pages/Programme'
+
 import About from './pages/About'
 
 import { Route, Routes } from "react-router-dom"
@@ -10,9 +12,10 @@ function App() {
     
     <>
     <div className="app-container">
-      <My_navbar/>
+      <Navbar/>
         <Routes>
           <Route path="/" element={<Home/>}/>
+          <Route path="/programme" element={<Programme/>}/>
           <Route path="/about" element={<About/>}/>
 
         </Routes>

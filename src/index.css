@@ -1,0 +1,4 @@
+/* force scroll bar to always show */
+html {
+    overflow-y: scroll;
+}
