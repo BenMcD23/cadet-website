@@ -15,7 +15,7 @@ function LinkCards() {
                         <img className="link-card-img w-full" src={d.img} alt={d.title} />
                         
                         <div className="absolute top-2 left-1/2 transform -translate-x-1/2 text-white text-xl font-bold">
-                            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-5xl dark:text-white">{d.title}</h1>
+                            <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-5xl dark:text-white">{d.title}</h1>
                         </div>
 
                         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-4">
