@@ -3,7 +3,7 @@ import Title from "../mainTitle/title";
 
 function LinkCards() {
     return (
-        <div className="link-card-container title-hover">
+        <div className="link-card-container title-hover clip-path-sm-l-r md:clip-path-md-l-r lg:clip-path-lg-l-r">
             <Title title="Quick Links"></Title>
 
             <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-4 middle:grid-cols-3 w-3/4 mx-auto content-center text-center mt-20">

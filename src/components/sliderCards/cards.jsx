@@ -33,7 +33,7 @@ function Card() {
     };
 
     return (
-        <div id="scroll-into-view" className="card-container title-hover">
+        <div id="scroll-into-view" className="card-container title-hover clip-path-sm-r-l md:clip-path-md-r-l lg:clip-path-lg-r-l">
             <Title title="What We Do"></Title>
             <div className='w-3/4 m-auto'>
                 <div className="mt-20">

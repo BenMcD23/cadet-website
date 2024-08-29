@@ -2,6 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+
+    /* l-r meaning largest on the left smallest on right */
+    .clip-path-lg-l-r {
+        clip-path: polygon(0% 0%,100% 4%,100% 100%,0% 96%);
+    }
+    .clip-path-md-l-r {
+        clip-path: polygon(0% 0%,100% 2%,100% 100%,0% 98%);
+    }
+    .clip-path-sm-l-r {
+        clip-path: polygon(0% 0%,100% 1%,100% 100%,0% 99%);
+    }
+    
+    /* r-l largest on right */
+    .clip-path-lg-r-l {
+        clip-path: polygon(0% 4%,100% 0%,100% 96%,0% 100%);
+    }
+    .clip-path-md-r-l {
+        clip-path: polygon(0% 2%,100% 0%,100% 98%,0% 100%);
+    }
+    .clip-path-sm-r-l {
+        clip-path: polygon(0% 1%,100% 0%,100% 99%,0% 100%);
+    }
+ }
 
 
 /* sm */
