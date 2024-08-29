@@ -1,0 +1,71 @@
+import Flt_Lt_Doherty from "../../assets/staff_pics/Flt_Lt_Doherty.PNG"
+import CI_Catterall from "../../assets/staff_pics/CI_Catterall.PNG"
+import WO_Barker from "../../assets/staff_pics/WO_Barker.PNG"
+import FS_Gill from "../../assets/staff_pics/FS_Gill.PNG"
+import CI_McDonld from "../../assets/staff_pics/CI_McDonald.PNG"
+import CI_Gill from "../../assets/staff_pics/CI_Gill.png"
+import Placeholder from "../../assets/staff_pics/Placeholder.png"
+
+
+import "./staffPicsStyles.css"
+
+
+function StaffPics() {
+
+  
+
+    return (
+		<div className="grid grid-cols-1 xl:grid-cols-3">
+            <div className="image-text-container row-start-1 xl:col-start-2 m-auto">
+                <img src={Flt_Lt_Doherty} className="staff-img"/>
+                <p>Flt Lt Simon Doherty</p>
+            </div>
+            <div className="image-text-container row-start-2 xl:col-start-2 m-auto">
+                <img src={CI_Catterall} className="staff-img"/>
+                <p>CI Roy Catterall (Wg Cdr Ret'd)</p>
+            </div>
+            <div className="grid grid-cols-1 xl:grid-cols-2 row-start-3 col-span-3">
+                <div className="image-text-container m-auto">
+                    <img src={WO_Barker} className="staff-img"/>
+                    <p>WO Jonathon Barker</p>
+                </div>
+                <div className="image-text-container m-auto">
+                    <img src={FS_Gill} className="staff-img"/>
+                    <p>FS Joseph Gill</p>
+                </div>
+            </div>
+
+            <div className="grid grid-cols-1 xl:grid-cols-3 row-start-4 xl:col-span-3">
+                <div className="image-text-container m-auto">
+                    <img src={CI_McDonld} className="staff-img"/>
+                    <p>CI Ben McDonald</p>
+                </div>
+                <div className="image-text-container m-auto">
+                    <img src={CI_Gill} className="staff-img"/>
+                    <p>CI Jacob Gill</p>
+                </div>
+                <div className="image-text-container m-auto">
+                    <img src={Placeholder} className="staff-img"/>
+                    <p>CI Sophie Stone</p>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default StaffPics;
+
+
+
+
+
+.image-text-container {
+  text-align: center;
+  
+}
+
+.staff-img {
+  max-height: 100%;
+  width: auto;
+}
+

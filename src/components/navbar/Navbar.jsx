@@ -15,7 +15,7 @@ function Navbar() {
 	return (
 		<>
 		
-		<nav className="grid grid-cols-5 md:grid-cols-5 lg:grid-cols-11 navbar-container pt-1 pb-1.5">
+		<nav className="grid grid-cols-5 lg:grid-cols-11 navbar-container pt-1 pb-1.5">
 		<NavLink to="/" className="hidden lg:block m-auto lg:col-start-2"><img src={nav_logo} style={{height: "64px", width:"auto"}}/></NavLink>
 					
 				<NavLink to="/" className="lg:col-start-4">

@@ -4,8 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'dark-blue': '#002856'
+        'dark-blue-footer': '#002856',
+        'dark-blue-main': '#384357'
       },
+
       maxWidth : {
         '7.5xl': '100rem',
       },

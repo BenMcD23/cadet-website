@@ -1,8 +1,10 @@
+import StaffPics from "../components/staffPics/staffPics"
+
 function Staff() {
 
 
     return (
-        <h1>Staff</h1>
+        <StaffPics></StaffPics>
     );
 }
 
