@@ -1,10 +1,10 @@
 
 .navbar-container {
     color: #ffffff;
-	background-color: #4d74c2;
 	width: 100%;
 	z-index: 1000;
 	top: 0;
+    position: absolute;
 }
 
 .navbar-container a.active{
@@ -12,6 +12,7 @@
 }
 
 .navbar-container a {
+    background-color: #4d74c2;
 	color: #ffffff;
 	text-decoration: none;
     transition: color 0.3s ease;
@@ -38,6 +39,7 @@
 }
 
 .dropdown {
+    background-color: #4d74c2;
     position: relative;
     display: inline-block;
 
@@ -53,6 +55,7 @@
     transform: translateX(-50%);
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
+    overflow: hidden;
 }
 
 .dropdown-content a {
@@ -80,9 +83,9 @@
     .navbar-container {
         position: fixed;
 		top: auto;
-        bottom: 0; 
+        bottom: 0;
         left: 0;
-
+        background-color: #4d74c2;
         width: 100%;
         z-index: 1000;
     }
@@ -96,6 +99,7 @@
         border-bottom-right-radius: 0;
         border-top-left-radius: 15px;
         border-top-right-radius: 15px;
+
     }
 
     .dropdown-content a{

@@ -10,7 +10,7 @@ function Header() {
                 <img src={sqn_photo} alt="Background Image" className="background-image w-100"/>
 
                 <div className="header-content grid grid-rows-4 gap-8 md:grid-cols-1 lg:grid-cols-8">
-                    <div className="overlay-image-container lg:col-start-2 lg:col-span-2 pt-4">
+                    <div className="overlay-image-container lg:col-start-1 lg:col-span-2 pt-4">
                         <img src={rafac} alt="Logo" className="overlay-image"/>
                     </div>
                     <div className="text-container">
