@@ -6,21 +6,11 @@ import CI_McDonld from "../../assets/staff_pics/CI_McDonald.PNG";
 import CI_Gill from "../../assets/staff_pics/CI_Gill.png";
 import Placeholder from "../../assets/staff_pics/Placeholder.png";
 
-import Title from "../mainTitle/title";
-
 import "./staffPicsStyles.css";
 
 function StaffPics() {
     return (
         <>
-            <div className="bg-dark-blue-main title-hover text-center pb-3 lg:pt-10">
-                <Title title="Adult Staff"></Title>
-                <p className="text-xl leading-7 tracking-tight lg:text-2xl text-white pb-1 pt-4 px-8">Our squadron is managed by a dedicated group of volunteer staff and civilian committee members.
-                    <br/><br/>The team has years of experience and is committed to providing cadets with the Air Cadet experience.
-                </p>
-                <button className="shift-button">Interested In becoming a staff member?</button>
-
-            </div>
             <div className="grid grid-cols-1 md:grid-cols-12 grid-rows-4 gap-1 staff-container pt-4">
                 
                 <div className="flex items-center justify-center md:col-start-5 md:col-end-9 md:row-start-1 md:row-end-2">

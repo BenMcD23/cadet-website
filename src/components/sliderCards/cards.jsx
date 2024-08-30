@@ -11,7 +11,7 @@ function Card() {
     const settings = {
         dots: true,
         infinite: true,
-        speed: 500,
+        speed: 800,
         slidesToShow: 3, // Default to show 3 slides
         slidesToScroll: 1,
         responsive: [
