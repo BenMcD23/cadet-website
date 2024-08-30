@@ -1,0 +1,9 @@
+.documents-container {
+    margin-left: 160px;
+}
+
+.documents-main {
+    display: flex;
+    justify-content: center;
+}
+

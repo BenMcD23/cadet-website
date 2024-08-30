@@ -1,120 +1,126 @@
-import CWO_Lloyd_Morris from "../../assets/nco_pics/CWO_Lloyd_Morris.PNG";
-import Sgt_Bardsley from "../../assets/nco_pics/Sgt_Bardsley.PNG";
-import Sgt_Murray from "../../assets/nco_pics/Sgt_Murray.PNG";
-import Sgt_Evans from "../../assets/nco_pics/Sgt_Evans.PNG";
-import Sgt_Hall from "../../assets/nco_pics/Sgt_Hall.PNG";
-import Sgt_Wimbury from "../../assets/nco_pics/Sgt_Wimbury.PNG";
-import Sgt_Tyrell from "../../assets/nco_pics/Sgt_Tyrell.PNG";
-import Cpl_Milligan from "../../assets/nco_pics/Cpl_Milligan.PNG";
-import Cpl_Davies from "../../assets/nco_pics/Cpl_Davies.PNG";
-import Cpl_Lear from "../../assets/nco_pics/Cpl_Lear.PNG";
-import Cpl_Evans from "../../assets/nco_pics/Cpl_Evans.PNG";
-import Cpl_Drury from "../../assets/nco_pics/Cpl_Drury.PNG";
-import Cpl_Beverley from "../../assets/nco_pics/Cpl_Beverley.PNG";
-import Cpl_Mullery_McCourt from "../../assets/nco_pics/Cpl_Mullery_McCourt.PNG";
+import SideMenu from "../components/sideMenu/sideMenu";
+import Title from "../components/mainTitle/title";
 
-import "./ncoPicsStyles.css";
-
-import Title from "../mainTitle/title";
-
-
-function NCOPics() {
+import "./documentsStyles.css"
+function Documents() {
     return (
-        <>
-            <div className="bg-dark-blue-main title-hover text-center pb-3 lg:pt-10">
-                <Title title="Adult Staff"></Title>
-                <p className="text-xl leading-7 tracking-tight lg:text-2xl text-white pb-1 pt-4">Our squadron is managed by a dedicated group of volunteer staff and civilian committee members.
-                    <br/><br/>The team has years of experience and is committed to providing cadets with the Air Cadet experience.
-                </p>
-                <button className="shift-button">Interested In becoming a staff member?</button>
-
+    <>
+        <div className="documents-container">
+            <div className="bg-dark-blue-main title-hover text-center pb-3 lg:pt-14">
+                <Title title="Documents"></Title>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-42 grid-rows-3 gap-1 staff-container pt-4">
-                <div className="flex items-center justify-center md:col-start-3 md:col-end-9 md:row-start-2 md:row-end-3">
-                    <div className="image-text-container m-auto">
-                        <img src={Cpl_Milligan} className="nco-img"/>
-                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
-                    </div>
-                </div>
-                <div className="flex items-center justify-center md:col-start-9 md:col-end-15 md:row-start-2 md:row-end-3">
-                    <div className="image-text-container m-auto">
-                        <img src={Cpl_Milligan} className="nco-img"/>
-                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
-                    </div>
-                </div>
-                <div className="flex items-center justify-center md:col-start-15 md:col-end-21 md:row-start-2 md:row-end-3">
-                    <div className="image-text-container m-auto">
-                        <img src={Cpl_Milligan} className="nco-img"/>
-                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
-                    </div>
-                </div>
-                <div className="flex items-center justify-center md:col-start-21 md:col-end-27 md:row-start-2 md:row-end-3">
-                    <div className="image-text-container m-auto">
-                        <img src={Cpl_Milligan} className="nco-img"/>
-                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
-                    </div>
-                </div>
-                <div className="flex items-center justify-center md:col-start-27 md:col-end-33 md:row-start-2 md:row-end-3">
-                    <div className="image-text-container m-auto">
-                        <img src={Cpl_Milligan} className="nco-img"/>
-                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
-                    </div>
-                </div>
-                <div className="flex items-center justify-center md:col-start-33 md:col-end-39 md:row-start-2 md:row-end-3">
-                    <div className="image-text-container m-auto">
-                        <img src={Cpl_Milligan} className="nco-img"/>
-                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
-                    </div>
-                </div>
+            <div className="documents-main">
+                <h1>Forms</h1>
+                <table className="styled-table">
+                <thead>
 
-
-                {/* bottom row */}
-                <div className="flex items-center justify-center md:col-start-1 md:col-end-6 md:row-start-3 md:row-end-4">
-                    <div className="image-text-container m-auto">
-                        <img src={Cpl_Milligan} className="nco-img"/>
-                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
-                    </div>
-                </div>
-                <div className="flex items-center justify-center md:col-start-6 md:col-end-12 md:row-start-3 md:row-end-4">
-                    <div className="image-text-container m-auto">
-                        <img src={Cpl_Milligan} className="nco-img"/>
-                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
-                    </div>
-                </div>
-                <div className="flex items-center justify-center md:col-start-12 md:col-end-18 md:row-start-3 md:row-end-4">
-                    <div className="image-text-container m-auto">
-                        <img src={Cpl_Milligan} className="nco-img"/>
-                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
-                    </div>
-                </div>
-                <div className="flex items-center justify-center md:col-start-18 md:col-end-24 md:row-start-3 md:row-end-4">
-                    <div className="image-text-container m-auto">
-                        <img src={Cpl_Milligan} className="nco-img"/>
-                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
-                    </div>
-                </div>
-                <div className="flex items-center justify-center md:col-start-24 md:col-end-30 md:row-start-3 md:row-end-4">
-                    <div className="image-text-container m-auto">
-                        <img src={Cpl_Milligan} className="nco-img"/>
-                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
-                    </div>
-                </div>
-                <div className="flex items-center justify-center md:col-start-30 md:col-end-36 md:row-start-3 md:row-end-4">
-                    <div className="image-text-container m-auto">
-                        <img src={Cpl_Milligan} className="nco-img"/>
-                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
-                    </div>
-                </div>
-                <div className="flex items-center justify-center md:col-start-36 md:col-end-42 md:row-start-3 md:row-end-4">
-                    <div className="image-text-container m-auto">
-                        <img src={Cpl_Milligan} className="nco-img"/>
-                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
-                    </div>
-                </div>
-
+                    <tr>
+                        <th>Form</th>
+                        <th>Purpose</th>
+                        <th>When to use</th>
+                        <th>Download</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Aviation Medical Form</td>
+                        <td>For you to declare any medical conditions you have so that a decision can be made on your medical suitability for flying and gliding</td>
+                        <td>Anytime your going flying or gliding</td>
+                        <td>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>TG 21 - Consent Form</td>
+                        <td>To give consent for stated activity</td>
+                        <td>Anytime going on any out of Squadron activity</td>
+                        <td>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                            </svg>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>TG 23 - Medical Form</td>
+                        <td>Declares cadets medical conditions and how they might effect them</td>
+                        <td>Anytime you need a TG 21 and if you have medical condition</td>
+                        <td>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                            </svg>
+                        </td>
+                    </tr>
+                </tbody>
+                </table>
             </div>
-        </>
+            <SideMenu></SideMenu>
+
+        </div>
+    </>
     );
 }
 
-export default NCOPics;
+export default Documents;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.documents-container {
+    margin-left: 160px;
+}
+
+.documents-main {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; /* Arrange items vertically */
+    align-items: center; /* Center items horizontally */
+}
+
+.styled-table {
+    margin: auto; 
+    width: 80%;
+    border-collapse: collapse;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+
+.styled-table thead tr {
+    background-color: #4d74c2;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #4d74c2;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f3f3f3;
+}
