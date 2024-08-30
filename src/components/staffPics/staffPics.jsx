@@ -13,7 +13,7 @@ import "./staffPicsStyles.css";
 function StaffPics() {
     return (
         <>
-            <div className="bg-dark-blue-main title-hover text-center px-10 pb-3">
+            <div className="bg-dark-blue-main title-hover text-center pb-3">
                 <Title title="Adult Staff"></Title>
                 <p className="text-xl leading-7 tracking-tight lg:text-2xl text-white pb-1 pt-4">Our squadron is managed by a dedicated group of volunteer staff and civilian committee members.
                     <br/><br/>The team has years of experience and is committed to providing cadets with the Air Cadet experience.

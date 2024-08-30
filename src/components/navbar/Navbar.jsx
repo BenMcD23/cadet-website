@@ -30,19 +30,16 @@ function Navbar() {
 					</svg>
 					<p className="text-center text-sm font-semibold leading-none tracking-tight lg:text-base">Programme</p>
 				</NavLink>
-				{/* this div needs to be active */}
 				<div className={`relative dropdown ${aboutActive ? 'active' : ''}`}>
 
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-8 md:size-10 m-auto">
 					<path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
 					</svg>
 					<p className="text-center text-sm font-semibold leading-none tracking-tight lg:text-base">About</p>
-					{/* {isDropdownOpen && ( */}
 					<div className="dropdown-content">
 						<NavLink to="/adult-staff" className="text-center text-base font-semibold leading-none tracking-tight lg:text-base">Adult Staff</NavLink>
 						<NavLink to="/cadet-ncos" className="text-center text-base font-semibold leading-none tracking-tight lg:text-base">Cadet NCO's</NavLink>
 					</div>
-                    {/* )} */}
 				</div>
 				<div className={`relative dropdown ${resourcesActive ? 'active' : ''}`}>
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-8 md:size-10 m-auto">
