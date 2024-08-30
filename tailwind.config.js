@@ -13,6 +13,10 @@ export default {
       },
       screens: {
         'middle': '1500px',
+      },
+      gridTemplateColumns: {
+        '14': 'repeat(14, minmax(0, 1fr))',
+
       }
     },
   },

@@ -1,71 +1,120 @@
-import Flt_Lt_Doherty from "../../assets/staff_pics/Flt_Lt_Doherty.PNG"
-import CI_Catterall from "../../assets/staff_pics/CI_Catterall.PNG"
-import WO_Barker from "../../assets/staff_pics/WO_Barker.PNG"
-import FS_Gill from "../../assets/staff_pics/FS_Gill.PNG"
-import CI_McDonld from "../../assets/staff_pics/CI_McDonald.PNG"
-import CI_Gill from "../../assets/staff_pics/CI_Gill.png"
-import Placeholder from "../../assets/staff_pics/Placeholder.png"
+import CWO_Lloyd_Morris from "../../assets/nco_pics/CWO_Lloyd_Morris.PNG";
+import Sgt_Bardsley from "../../assets/nco_pics/Sgt_Bardsley.PNG";
+import Sgt_Murray from "../../assets/nco_pics/Sgt_Murray.PNG";
+import Sgt_Evans from "../../assets/nco_pics/Sgt_Evans.PNG";
+import Sgt_Hall from "../../assets/nco_pics/Sgt_Hall.PNG";
+import Sgt_Wimbury from "../../assets/nco_pics/Sgt_Wimbury.PNG";
+import Sgt_Tyrell from "../../assets/nco_pics/Sgt_Tyrell.PNG";
+import Cpl_Milligan from "../../assets/nco_pics/Cpl_Milligan.PNG";
+import Cpl_Davies from "../../assets/nco_pics/Cpl_Davies.PNG";
+import Cpl_Lear from "../../assets/nco_pics/Cpl_Lear.PNG";
+import Cpl_Evans from "../../assets/nco_pics/Cpl_Evans.PNG";
+import Cpl_Drury from "../../assets/nco_pics/Cpl_Drury.PNG";
+import Cpl_Beverley from "../../assets/nco_pics/Cpl_Beverley.PNG";
+import Cpl_Mullery_McCourt from "../../assets/nco_pics/Cpl_Mullery_McCourt.PNG";
+
+import "./ncoPicsStyles.css";
+
+import Title from "../mainTitle/title";
 
 
-import "./staffPicsStyles.css"
-
-
-function StaffPics() {
-
-  
-
+function NCOPics() {
     return (
-		<div className="grid grid-cols-1 xl:grid-cols-3">
-            <div className="image-text-container row-start-1 xl:col-start-2 m-auto">
-                <img src={Flt_Lt_Doherty} className="staff-img"/>
-                <p>Flt Lt Simon Doherty</p>
-            </div>
-            <div className="image-text-container row-start-2 xl:col-start-2 m-auto">
-                <img src={CI_Catterall} className="staff-img"/>
-                <p>CI Roy Catterall (Wg Cdr Ret'd)</p>
-            </div>
-            <div className="grid grid-cols-1 xl:grid-cols-2 row-start-3 col-span-3">
-                <div className="image-text-container m-auto">
-                    <img src={WO_Barker} className="staff-img"/>
-                    <p>WO Jonathon Barker</p>
-                </div>
-                <div className="image-text-container m-auto">
-                    <img src={FS_Gill} className="staff-img"/>
-                    <p>FS Joseph Gill</p>
-                </div>
-            </div>
+        <>
+            <div className="bg-dark-blue-main title-hover text-center pb-3 lg:pt-10">
+                <Title title="Adult Staff"></Title>
+                <p className="text-xl leading-7 tracking-tight lg:text-2xl text-white pb-1 pt-4">Our squadron is managed by a dedicated group of volunteer staff and civilian committee members.
+                    <br/><br/>The team has years of experience and is committed to providing cadets with the Air Cadet experience.
+                </p>
+                <button className="shift-button">Interested In becoming a staff member?</button>
 
-            <div className="grid grid-cols-1 xl:grid-cols-3 row-start-4 xl:col-span-3">
-                <div className="image-text-container m-auto">
-                    <img src={CI_McDonld} className="staff-img"/>
-                    <p>CI Ben McDonald</p>
-                </div>
-                <div className="image-text-container m-auto">
-                    <img src={CI_Gill} className="staff-img"/>
-                    <p>CI Jacob Gill</p>
-                </div>
-                <div className="image-text-container m-auto">
-                    <img src={Placeholder} className="staff-img"/>
-                    <p>CI Sophie Stone</p>
-                </div>
             </div>
-        </div>
+            <div className="grid grid-cols-1 md:grid-cols-42 grid-rows-3 gap-1 staff-container pt-4">
+                <div className="flex items-center justify-center md:col-start-3 md:col-end-9 md:row-start-2 md:row-end-3">
+                    <div className="image-text-container m-auto">
+                        <img src={Cpl_Milligan} className="nco-img"/>
+                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
+                    </div>
+                </div>
+                <div className="flex items-center justify-center md:col-start-9 md:col-end-15 md:row-start-2 md:row-end-3">
+                    <div className="image-text-container m-auto">
+                        <img src={Cpl_Milligan} className="nco-img"/>
+                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
+                    </div>
+                </div>
+                <div className="flex items-center justify-center md:col-start-15 md:col-end-21 md:row-start-2 md:row-end-3">
+                    <div className="image-text-container m-auto">
+                        <img src={Cpl_Milligan} className="nco-img"/>
+                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
+                    </div>
+                </div>
+                <div className="flex items-center justify-center md:col-start-21 md:col-end-27 md:row-start-2 md:row-end-3">
+                    <div className="image-text-container m-auto">
+                        <img src={Cpl_Milligan} className="nco-img"/>
+                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
+                    </div>
+                </div>
+                <div className="flex items-center justify-center md:col-start-27 md:col-end-33 md:row-start-2 md:row-end-3">
+                    <div className="image-text-container m-auto">
+                        <img src={Cpl_Milligan} className="nco-img"/>
+                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
+                    </div>
+                </div>
+                <div className="flex items-center justify-center md:col-start-33 md:col-end-39 md:row-start-2 md:row-end-3">
+                    <div className="image-text-container m-auto">
+                        <img src={Cpl_Milligan} className="nco-img"/>
+                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
+                    </div>
+                </div>
+
+
+                {/* bottom row */}
+                <div className="flex items-center justify-center md:col-start-1 md:col-end-6 md:row-start-3 md:row-end-4">
+                    <div className="image-text-container m-auto">
+                        <img src={Cpl_Milligan} className="nco-img"/>
+                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
+                    </div>
+                </div>
+                <div className="flex items-center justify-center md:col-start-6 md:col-end-12 md:row-start-3 md:row-end-4">
+                    <div className="image-text-container m-auto">
+                        <img src={Cpl_Milligan} className="nco-img"/>
+                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
+                    </div>
+                </div>
+                <div className="flex items-center justify-center md:col-start-12 md:col-end-18 md:row-start-3 md:row-end-4">
+                    <div className="image-text-container m-auto">
+                        <img src={Cpl_Milligan} className="nco-img"/>
+                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
+                    </div>
+                </div>
+                <div className="flex items-center justify-center md:col-start-18 md:col-end-24 md:row-start-3 md:row-end-4">
+                    <div className="image-text-container m-auto">
+                        <img src={Cpl_Milligan} className="nco-img"/>
+                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
+                    </div>
+                </div>
+                <div className="flex items-center justify-center md:col-start-24 md:col-end-30 md:row-start-3 md:row-end-4">
+                    <div className="image-text-container m-auto">
+                        <img src={Cpl_Milligan} className="nco-img"/>
+                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
+                    </div>
+                </div>
+                <div className="flex items-center justify-center md:col-start-30 md:col-end-36 md:row-start-3 md:row-end-4">
+                    <div className="image-text-container m-auto">
+                        <img src={Cpl_Milligan} className="nco-img"/>
+                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
+                    </div>
+                </div>
+                <div className="flex items-center justify-center md:col-start-36 md:col-end-42 md:row-start-3 md:row-end-4">
+                    <div className="image-text-container m-auto">
+                        <img src={Cpl_Milligan} className="nco-img"/>
+                        <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
+                    </div>
+                </div>
+
+            </div>
+        </>
     );
 }
 
-export default StaffPics;
-
-
-
-
-
-.image-text-container {
-  text-align: center;
-  
-}
-
-.staff-img {
-  max-height: 100%;
-  width: auto;
-}
-
+export default NCOPics;

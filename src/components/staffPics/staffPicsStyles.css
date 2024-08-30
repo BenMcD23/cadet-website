@@ -1,8 +1,8 @@
 .staff-container {
-  position: relative; /* Ensure the body can position its pseudo-elements */
+  position: relative;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Optional: prevent scrollbars from appearing */
+  overflow: hidden;
 }
 
 .staff-header {
