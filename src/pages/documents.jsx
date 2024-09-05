@@ -5,12 +5,13 @@ import "./documentsStyles.css"
 function Documents() {
     return (
     <>
-        <div className="documents-container">
-            <div className="bg-dark-blue-main title-hover text-center pb-3 lg:pt-14">
+        <div className="bg-dark-blue-main title-hover text-center pb-3 lg:pt-14">
                 <Title title="Documents"></Title>
             </div>
+        <div className="documents-container">
 
-            <h1>Forms</h1>
+
+            <h1 className="text-center">Forms</h1>
             <table class="docs-table collapsed-table" >
                     <thead>
                             <tr>

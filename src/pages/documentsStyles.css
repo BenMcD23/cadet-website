@@ -1,5 +1,5 @@
 .documents-container {
-    margin-left: 160px;
+    margin-left: 240px;
 }
 
 .documents-main {
@@ -55,4 +55,11 @@ p{margin:0 0 1em}
 		float:left;width:100%;
     margin-bottom:10px;
 	}
+}
+
+@media (max-width:1024px) {
+	.documents-container {
+		margin-left: 0;
+	}
+
 }
