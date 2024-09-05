@@ -1,7 +1,6 @@
 import Header from "../components/homeHeader/header"
 import LinkCards from "../components/linkCards/linkCards"
 import ClickCard from "../components/clickCards/clickCard"
-import Footer from "../components/footer/footer"
 import Form from "../components/contactForm/contactForm"
 import Divider from "../components/largeDivider/divider"
 import Cards from "../components/sliderCards/cards"
@@ -36,7 +35,6 @@ function Home() {
             <Join/>
             {/* <Divider/> */}
             <LinkCards/>
-            <Footer/>
         </div>
         </>
     );
