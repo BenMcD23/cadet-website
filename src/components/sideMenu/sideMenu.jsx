@@ -22,9 +22,9 @@ function SideMenu() {
             </div>
                 <ul>
                 <li tabIndex ="0"><span>Forms</span></li>
-                <li tabIndex ="0"><span>Customers</span></li>
-                <li tabIndex ="0"><span>Users</span></li>
-                <li tabIndex ="0"><span>Settings</span></li>
+                <li tabIndex ="0"><span></span></li>
+                <li tabIndex ="0"><span></span></li>
+                <li tabIndex ="0"><span></span></li>
             </ul>
         </div>
 

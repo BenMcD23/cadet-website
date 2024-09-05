@@ -2,10 +2,10 @@
 
 .side-menu{
 	background:#5bc995;
-	height:100vh;
+	height:100%;
 	width:240px;
 	position:fixed;
-	top:168px;
+	top:0;
 	left:0;
 	outline:none;
 	
@@ -56,6 +56,8 @@
 	}
 	
 	.side-menu{
+        position:fixed;
+
         top:0;
 		width:230px;
 		box-shadow:0 0 0 100em rgba(0,0,0,0);
@@ -65,7 +67,7 @@
 		.collapsed-menu-trigger{
 			width:40px;
 			height:40px;
-			position:absolute;
+			position:fixed;
 			left:100%;
 			background:#5bc995;
             /* for collapsed button */
