@@ -13,7 +13,6 @@ function Footer() {
 
     return (
         <footer className="text-center bg-dark-blue-footer dark:text-neutral-200">
-            {/* Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. */}
             <div className="mx-auto max-w-7.5xl py-4 text-center">
                 {/* Grid container */}
                 <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4">             

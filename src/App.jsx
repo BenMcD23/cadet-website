@@ -1,4 +1,6 @@
 import Navbar from './components/navbar/Navbar'
+import Footer from "./components/footer/footer"
+
 import Home from './pages/home'
 import Programme from './pages/programme'
 import Staff from './pages/adult-staff'
@@ -21,8 +23,9 @@ function App() {
           <Route path="/cadet-ncos" element={<NCOs/>}/>
           <Route path="/documents" element={<Documents/>}/>
 
-          
         </Routes>
+      <Footer/>
+
       </div>
     </>
   )
