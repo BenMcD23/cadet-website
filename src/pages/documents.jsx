@@ -50,7 +50,7 @@ const examResources = {
   
 const TableSection = ({ title, collumnName, items}) => (
     <>
-      <h1 className="text-center" id={title.toLowerCase()}>{title}</h1>
+      <h2 className="text-center" id={title.toLowerCase()}>{title}</h2>
       <table className="docs-table collapsed-table w-100 md:w-9/12">
         <thead>
           <tr>
@@ -64,7 +64,7 @@ const TableSection = ({ title, collumnName, items}) => (
               <td data-th="">{item.name}</td>
               <td data-th="">
                 <a href={item.url} target="_blank" rel="noopener noreferrer">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="size-10 m-auto cursor-pointer" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="size-10 m-auto download-svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
                   </svg>
                 </a>
@@ -91,22 +91,9 @@ function Documents() {
                     <ScrollIntoView selector="#publications" className="">
                         <span className="text-center text-base md:text-xl font-semibold leading-none tracking-tight">Publications</span>
                     </ScrollIntoView>
-                    <div className="docs-nav-dropdown rounded-r-3xl">        
-					    <span className="text-center text-base md:text-xl font-semibold leading-none tracking-tight">Exam Resources</span>
-                            <div className="docs-nav-dropdown-content">
-                            <ScrollIntoView selector="#first class" className="">
-                                <span className="text-center text-base font-semibold leading-none tracking-tight">First Class</span>
-                            </ScrollIntoView>
-                            <ScrollIntoView selector="#leading" className="">
-                            <span className="text-center text-base font-semibold leading-none tracking-tight">Leading</span>
-
-                            </ScrollIntoView>
-                            <ScrollIntoView selector="#senior" className="">
-                            <span className="text-center text-base font-semibold leading-none tracking-tight">Senior/Master</span>
-
-                            </ScrollIntoView>
-                            </div>
-                    </div>
+                    <ScrollIntoView selector="#exam-resources" className="">
+                        <span className="text-center text-base md:text-xl font-semibold leading-none tracking-tight">Exam Resources</span>
+                    </ScrollIntoView>
    
                 </div>
             </div>
