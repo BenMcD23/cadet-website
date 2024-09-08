@@ -4,7 +4,14 @@
 	cursor: pointer;
 	color: #ffffff
 }
+.docs-nav-links span {
+    transition: color 0.3s ease;
 
+}
+
+.docs-nav-links span:hover {
+    color: #ffffff41;
+}
 
 .docs-nav-dropdown {
     background-color: #4d74c2;
@@ -12,6 +19,7 @@
     display: inline-block;
 
 }
+
 
 .docs-nav-dropdown-content {
     display: none;
@@ -42,7 +50,6 @@
 .docs-nav-dropdown:hover .docs-nav-dropdown-content {
     display: block;
 }
-
 
 /* table styling */
 
@@ -78,7 +85,10 @@
 	font-weight: bold;
 
 }
+.docs-table tr {
+    transition: background-color 0.2s ease;
 
+}
 .docs-table tr:hover {
 	background-color: #4d74c2;
 
