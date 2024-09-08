@@ -50,19 +50,19 @@ const examResources = {
   
 const TableSection = ({ title, collumnName, items}) => (
     <>
-      <h2 className="text-center" id={title.toLowerCase()}>{title}</h2>
-      <table className="docs-table collapsed-table w-100 md:w-9/12">
+      <h2 className="docs-title" id={title.toLowerCase()}>{title}</h2>
+      <table className="docs-table m-auto w-11/12 md:w-9/12 lg:w-6/12 mb-3">
         <thead>
           <tr>
-            <th scope="col" className="w-9/12">{collumnName}</th>
-            <th scope="col">Download</th>
+            <th scope="col" className="w-8/12 text-base md:text-xl">{collumnName}</th>
+            <th scope="col" className="text-base md:text-xl">Download</th>
           </tr>
         </thead>
         <tbody>
           {items.map((item, index) => (
             <tr key={index}>
-              <td data-th="">{item.name}</td>
-              <td data-th="">
+              <td>{item.name}</td>
+              <td>
                 <a href={item.url} target="_blank" rel="noopener noreferrer">
                   <svg xmlns="http://www.w3.org/2000/svg" className="size-10 m-auto download-svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
@@ -84,7 +84,7 @@ function Documents() {
 
             <div className="docs-nav pt-3 lg:pt-5 px-5 text-white">
                 <h2 className="pb-2 font-bold">Quick Links</h2>
-                <div className="docs-nav-links grid grid-cols-3 m-auto xl:w-1/2 py-2.5 rounded-l-3xl rounded-r-3xl">
+                <div className="docs-nav-links grid grid-cols-3 m-auto xl:w-1/2 py-2.5 rounded-l-3xl rounded-r-3xl items-center">
                     <ScrollIntoView selector="#forms" className="">
                         <span className="text-center text-base md:text-xl font-semibold leading-none tracking-tight">Forms</span>
                     </ScrollIntoView>                
@@ -98,17 +98,15 @@ function Documents() {
                 </div>
             </div>
         </div>
-        <div className="documents-container text-center">
+        <div className="documents-container text-center pt-3">
 
-            <div className="">
             <TableSection title="Forms" collumnName="Form Name" items={forms} />
             <TableSection title="Publications" collumnName="Publication Name" items={publications} />
-            <h1 className="text-center" id="exam-resources">Exam Resources</h1>
+            <h1 className="text-center docs-title pt-4" id="exam-resources">Exam Resources</h1>
             <TableSection title="First Class" collumnName="File Name" items={examResources.firstClass} />
             <TableSection title="Leading" collumnName="File Name" items={examResources.leading} />
             <TableSection title="Senior/Master" collumnName="File Name" items={examResources.seniorMaster} />
 
-            </div>
         </div>
     </>
     );
