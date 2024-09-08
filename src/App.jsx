@@ -6,7 +6,7 @@ import Programme from './pages/programme'
 import Staff from './pages/adult-staff'
 import NCOs from './pages/nco'
 import Documents from './pages/documents'
-import FlightPoints from './pages/flight-points'
+import Test from './pages/flight-p'
 
 import { Route, Routes } from "react-router-dom"
 import './App.css'
@@ -23,7 +23,7 @@ function App() {
           <Route path="/adult-staff" element={<Staff/>}/>
           <Route path="/cadet-ncos" element={<NCOs/>}/>
           <Route path="/documents" element={<Documents/>}/>
-          <Route path="/flight-points" element={<FlightPoints/>}/>
+          <Route path="/flight-points" element={<Test/>}/>
 
         </Routes>
       <Footer/>

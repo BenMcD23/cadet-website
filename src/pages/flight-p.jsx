@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Title from "../components/mainTitle/title";
 
-function Flightpoints() {
+function FlightP() {
     const [pointsData, setpointsData] = useState([]);
 
     useEffect(() => {
@@ -25,10 +25,10 @@ function Flightpoints() {
     function parseCSV(csvText) {
         const rows = csvText.split(/\r?\n/);  
         
-        // Ensure there's at least one data row after headers
+        // Ensure there's at least one data row after headers, if not just null
         let pointsRow = rows[1] ? rows[1].split(',') : ["---", "---"]; 
 
-        return pointsRow; // Return the parsed row as an array
+        return pointsRow;
     }
 
     return (
@@ -54,4 +54,4 @@ function Flightpoints() {
     );
 }
 
-export default Flightpoints;
+export default FlightP;
