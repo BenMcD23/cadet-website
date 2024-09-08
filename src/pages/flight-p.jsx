@@ -40,7 +40,7 @@ function FlightP() {
                     This is the current points tally.
                 </p>
             </div>
-            <div className="grid grid-cols-2 text-center m-auto w-1/2 pt-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 text-center m-auto w-full xl:w-9/12 pt-3 px-5">
                 <div>
                     <h1 className="text-8xl font-extrabold">A Flight</h1>
                     <h2 className="text-5xl pt-4 font-bold">{pointsData[0]}</h2>
