@@ -1,40 +1,33 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useEffect, useState, useRef } from 'react';
 import Title from "../components/mainTitle/title";
 
 function FlightP() {
     const [pointsData, setpointsData] = useState([]);
 
+    // as was running twice on mount
+    const fetchCalled = useRef(false);
+
     useEffect(() => {
-        fetchCSVData();    // Fetch the CSV data when the component mounts
-    }, []);
+        if (!fetchCalled.current) {
+            fetchCalled.current = true;
 
-    const fetchCSVData = () => {
-        const csvUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQPqhm8v6F0T2M1Q96MMhSQEw5Jat4oU6-fqgY0USCcppYxjcpRgCSYG1vzNFhdbLfPyRZd65gf1ybT/pub?output=csv";
-
-        axios.get(csvUrl)
-            .then((response) => {
-                const parsedCsvData = parseCSV(response.data);
-                setpointsData(parsedCsvData);  // set fetched data
+            fetch("https://script.google.com/macros/s/AKfycbxqNF8X8f2YEOLRFuctGnLjUeI3ycoTIdvgUwWMlvS20JjxkhnzXBhKAs-goly4BuqTtA/exec", {
+                method: 'POST'
             })
-            .catch((error) => {
-                console.error('Error fetching CSV data:', error);
+            .then(response => response.json())
+            .then(data => {
+                setpointsData(data);
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
             });
-    };
-
-    function parseCSV(csvText) {
-        const rows = csvText.split(/\r?\n/);  
-        
-        // Ensure there's at least one data row after headers, if not just null
-        let pointsRow = rows[1] ? rows[1].split(',') : ["---", "---"]; 
-
-        return pointsRow;
-    }
+        }
+    }, []);
 
     return (
         <>
             <div className="bg-dark-blue-main title-hover text-center pb-3 lg:pt-14">
-                <Title title="Flight Points"></Title>
+                <Title title="Flight Points" />
                 <p className="text-xl leading-7 tracking-tight lg:text-2xl text-white pb-1 pt-4 px-8">
                     Throughout the year, the two main flights compete in various sessions to win a trophy at the end.<br /><br />
                     This is the current points tally.
