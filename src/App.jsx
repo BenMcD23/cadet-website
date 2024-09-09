@@ -1,6 +1,8 @@
 import Navbar from './components/navbar/Navbar'
 import Footer from "./components/footer/footer"
 
+import ScrollToTop from "./components/scrollToTop/scrollToTop"
+
 import Home from './pages/home'
 import Programme from './pages/programme'
 import Staff from './pages/adult-staff'
@@ -18,6 +20,7 @@ function App() {
     <>
     <div className="app-container">
       <Navbar/>
+      <ScrollToTop>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/programme" element={<Programme/>}/>
@@ -28,6 +31,8 @@ function App() {
           <Route path="/join" element={<Join/>}/>
 
         </Routes>
+      </ScrollToTop>
+
       <Footer/>
 
       </div>
