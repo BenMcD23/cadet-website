@@ -1,98 +1,82 @@
-import { useState } from 'react';
+
+import React, { useState, useRef } from "react";
+
 import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
-import InputGroup from 'react-bootstrap/InputGroup';
-import Row from 'react-bootstrap/Row';
 
 import "./formStyles.css"
+
 function ContactForm() {
-    const [validated, setValidated] = useState(false);
+  const [successMessage, setSuccessMessage] = useState(""); // State for success message
+  const formRef = useRef(null);
 
-    const handleSubmit = (event) => {
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-        }
 
-    setValidated(true);
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-return (
-    <Form 
-    noValidate 
-    validated={validated} 
-    onSubmit={handleSubmit} 
-    method="POST" 
-    action="https://formsubmit.co/1051405b19c2423e358e36c98ff2eee4"
-    >
-        <Row className="mb-3">
-            <Form.Group as={Col} controlId="firstname">
-                <Form.Label>First name</Form.Label>
-                <Form.Control
-                    required
-                    type="text"
-                    name="Name"
-                    placeholder="First Name + Last Name"
-                />
-                <Form.Control.Feedback type="invalid" className="form-control-feedback-invalid">
-                    Please enter your name.
-                </Form.Control.Feedback>
-            </Form.Group>
-        </Row>
+    fetch("https://script.google.com/macros/s/AKfycbyrgt7R07BlvIAuCIw7tMDtoYgCI8vyyQ97RLtNcAmu7Sq1_in3zHfso0PJS53r0k9KNA/exec", {
+      method: 'POST',
+      body: new FormData(formRef.current),
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.result === 'success') {
+        setSuccessMessage("Your message has been sent successfully!");
+        formRef.current.reset();
+      } else {
+        setSuccessMessage("There was an error sending your message. Please try again.");
+      }
+    })
+    .catch(err => {
+      console.error(err);
+      setSuccessMessage("There was an error sending your message. Please try again.");
+    });
+  };
 
-        <Row className="mb-3">
 
-            <Form.Group as={Col} controlId="email">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                    required
-                    type="email"
-                    name="Email"
-                    placeholder="example@domain.com"
-                />
-                <Form.Control.Feedback type="invalid" className="form-control-feedback-invalid">
-                    Please provide a valid email address.
-                </Form.Control.Feedback>
-            </Form.Group>
-        </Row>
-        <Row className="mb-3">
-            <Form.Group as={Col} controlId="reason">
+  return (
+      <Form 
+        className="contact-form"
+        ref={formRef} 
+        onSubmit={handleSubmit}
+      >
+        <h3 className="text-center text-3xl font-extrabold leading-none tracking-tight md:text-4xl dark:text-white">Contact Form</h3>
+        <Form.Group className="mb-3" controlId="formName">
+          <Form.Label>Full Name</Form.Label>
+          <Form.Control type="text" placeholder="Enter Full Name" name="Name" required />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control type="email" placeholder="Enter email" name="Email" required />
+        </Form.Group>
 
-                <Form.Label>Contact Reason</Form.Label>
+        <Form.Group className="mb-3" controlId="formInterest">
+        <Form.Label>Contact Reason</Form.Label>
+        <Form.Select name="Contact_Reason" required>
+          <option value="Cadet joining interest">Cadet joining interest</option>
+          <option value="Staff joining interest">Staff joining interest</option>
+          <option value="General enquiry">General enquiry</option>
+        </Form.Select>
+      </Form.Group>
 
-                <Form.Select
-                    required
-                    type="text"
-                    name="Contact_Reason"
-                >
-                    <option value="cadet">Cadet joining interest</option>
-                    <option value="staff">Staff joining interest</option>
-                    <option value="general">General enquiry</option>
-                </Form.Select>
-            </Form.Group>
+        <Form.Group className="mb-3" controlId="Description">
+          <Form.Label>Message</Form.Label>
+          <Form.Control as="textarea" rows={4} name="Message" required />
+        </Form.Group>
+        <div className="text-center">
+        <Button 
+        className="shift-button"
+        variant="success" 
+        type="submit"
+      >
+        Submit
+      </Button>
+          {successMessage && <div className="text-green-500	text-lg font-semibold pt-2">{successMessage}</div>}
 
-        </Row>
-        <Row className="mb-3">
-                <Form.Group as={Col} controlId="message">
-                    <Form.Label>Message</Form.Label>
-                    <Form.Control
-                        as="textarea"
-                        rows={8}
-                        required
-                        name="Message"
-                        placeholder="Your message"
-                        style={{ resize: 'none' }}
-                    />
-                    <Form.Control.Feedback type="invalid" className="form-control-feedback-invalid">
-                        Please enter a message.
-                    </Form.Control.Feedback>
-                </Form.Group>
-            </Row>
-        <Button type="submit" className="submit_button">Submit form</Button>
-    </Form>
-    );
-}
+        </div>
+      </Form>
+
+  );
+};
 
 export default ContactForm;
