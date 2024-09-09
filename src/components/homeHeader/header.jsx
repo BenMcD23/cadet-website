@@ -9,11 +9,8 @@ function Header() {
             <div className="header-container">
                 <img src={sqn_photo} alt="Background Image" className="background-image w-100"/>
 
-                <div className="header-content grid grid-rows-4 gap-8 md:grid-cols-1 lg:grid-cols-8">
-                    <div className="overlay-image-container lg:col-start-1 lg:col-span-2 pt-4">
-                        <img src={rafac} alt="Logo" className="overlay-image"/>
-                    </div>
-                    <div className="text-container">
+                <div className="header-content flex items-center justify-center h-full">
+                    <div className="text-container text-center">
                         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl text-white">
                             317
                         </h1>

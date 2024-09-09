@@ -8,11 +8,11 @@
 }
 
 .navbar-container a.active{
-    color: #000000;
+    color: #0d0f10;
 }
 
 .navbar-container a {
-    background-color: #4d74c2;
+    background-color: #606e7d;
 	color: #ffffff;
 	text-decoration: none;
     transition: color 0.3s ease;
@@ -39,7 +39,7 @@
 }
 
 .dropdown {
-    background-color: #4d74c2;
+    background-color: #606e7d;
     position: relative;
     display: inline-block;
 
@@ -48,7 +48,7 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #4d74c2;
+    background-color: #606e7d;
     min-width: 160px;
     z-index: 2000;
     left: 50%;
@@ -85,7 +85,7 @@
 		top: auto;
         bottom: 0;
         left: 0;
-        background-color: #4d74c2;
+        background-color: #606e7d;
         width: 100%;
         z-index: 1000;
     }

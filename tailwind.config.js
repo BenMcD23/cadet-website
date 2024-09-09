@@ -17,8 +17,6 @@ export default {
       },
       screens: {
         'middle': '1500px',
-        'middle-small': '900px',
-
       },
       
       gridTemplateColumns: {
