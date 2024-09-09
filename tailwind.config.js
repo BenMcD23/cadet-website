@@ -17,7 +17,10 @@ export default {
       },
       screens: {
         'middle': '1500px',
+        'middle-small': '900px',
+
       },
+      
       gridTemplateColumns: {
         '14': 'repeat(14, minmax(0, 1fr))',
       }
