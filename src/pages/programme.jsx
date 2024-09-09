@@ -5,7 +5,7 @@ import Title from "../components/mainTitle/title";
 function Programme() {
     return (
         <>
-        <div className="bg-dark-blue-main title-hover text-center pb-3 lg:pt-14">
+        <div className="bg-dark-blue-main title-hover text-center pb-4 lg:pt-14">
             <Title title="Programme"></Title>
         </div>
 
