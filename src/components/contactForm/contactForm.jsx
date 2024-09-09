@@ -56,17 +56,17 @@ function ContactForm() {
       ref={formRef} 
       onSubmit={handleSubmit}
     >
-      <h3 className="text-center text-3xl font-extrabold leading-none tracking-tight md:text-4xl dark:text-white">Contact Form</h3>
+      <h3 className="text-center text-3xl font-extrabold leading-none md:text-4xl dark:text-white">Contact Form</h3>
       <Form.Group className="mb-3" controlId="formName">
-        <Form.Label>Full Name</Form.Label>
+        <Form.Label className="text-xl font-extrabold leading-none">Full Name:</Form.Label>
         <Form.Control type="text" placeholder="Enter Full Name" name="Name" required />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email</Form.Label>
+        <Form.Label className="text-xl font-extrabold leading-none">Email:</Form.Label>
         <Form.Control type="email" placeholder="Enter email" name="Email" required />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formInterest">
-        <Form.Label>Contact Reason</Form.Label>
+        <Form.Label className="text-xl font-extrabold leading-none">Contact Reason:</Form.Label>
         <Form.Select name="Contact_Reason" required>
           <option value="Cadet joining interest">Cadet joining interest</option>
           <option value="Staff joining interest">Staff joining interest</option>
@@ -74,7 +74,7 @@ function ContactForm() {
         </Form.Select>
       </Form.Group>
       <Form.Group className="mb-3" controlId="Description">
-        <Form.Label>Message</Form.Label>
+        <Form.Label className="text-xl font-extrabold leading-none">Message:</Form.Label>
         <Form.Control as="textarea" rows={4} name="Message" required />
       </Form.Group>
       <Form.Group className="mb-3 flex justify-center">
