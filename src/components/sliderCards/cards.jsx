@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Title from "../mainTitle/title";
 import "./cardStyles.css";
 
+import drill from "../../assets/317_drill.png";
 
 
 function Card() {
@@ -61,37 +62,37 @@ function Card() {
 const data = [
     {
         title: `Aviation`,
-        img: `src/assets/317_drill.png`,
+        img: {drill},
         main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
 		link: ``
     },
     {
         title: `Adventure Training`,
-        img: `src/assets/317_drill.png`,
+        img: {drill},
         main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
 		link: ``
     },
     {
         title: `Marksmanship`,
-        img: `src/assets/317_drill.png`,
+        img: {drill},
         main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
 		link: ``
     },
 	{
         title: `Drill`,
-        img: `src/assets/317_drill.png`,
+        img: {drill},
         main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
 		link: ``
     },
 	{
         title: `Camps`,
-        img: `src/assets/317_drill.png`,
+        img: {drill},
         main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
 		link: ``
     },
 	{
         title: `DofE`,
-        img: `src/assets/317_drill.png`,
+        img: {drill},
         main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
 		link: ``
     },
