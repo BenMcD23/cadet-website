@@ -62,37 +62,37 @@ function Card() {
 const data = [
     {
         title: `Aviation`,
-        img: {drill},
+        img: drill,
         main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
 		link: ``
     },
     {
         title: `Adventure Training`,
-        img: {drill},
+        img: drill,
         main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
 		link: ``
     },
     {
         title: `Marksmanship`,
-        img: {drill},
+        img: drill,
         main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
 		link: ``
     },
 	{
         title: `Drill`,
-        img: {drill},
+        img: drill,
         main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
 		link: ``
     },
 	{
         title: `Camps`,
-        img: {drill},
+        img: drill,
         main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
 		link: ``
     },
 	{
         title: `DofE`,
-        img: {drill},
+        img: drill,
         main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
 		link: ``
     },

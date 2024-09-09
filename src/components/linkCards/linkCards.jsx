@@ -36,19 +36,19 @@ function LinkCards() {
 const data = [
     {
         title: `Programme`,
-        img: {drill},
+        img: drill,
         main: `See what we're up to this month`,
         link: ``
     },
     {
         title: `Meet the Staff`,
-        img: {drill},
+        img: drill,
         main: `Our dedicated volunteers who help run the squadron every night and organise exciting events and training`,
         link: ``
     },
     {
         title: `Our Cadet NCO's`,
-        img: {drill},
+        img: drill,
         main: `Our cadet NCO team run sessions each night and are responsible for the organisation of every parade night.`,
         link: ``
     },
