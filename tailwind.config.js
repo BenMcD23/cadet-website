@@ -5,7 +5,11 @@ export default {
     extend: {
       colors: {
         'dark-blue-footer': '#002856',
-        'dark-blue-main': '#384357'
+        'dark-blue-main': '#384357',
+        // 'light-blue-main': '#4682B4'
+        // 6d6e79 708090
+        'slate-grey-main': '#606e7d'
+
       },
 
       maxWidth : {

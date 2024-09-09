@@ -37,7 +37,7 @@
 /* Basic button styles */
 .shift-button {
     padding: 15px 30px !important;
-    background: #ff0000;
+    background: #ff0000 !important;
     color: #ffffff;
     font-weight: 800 !important;
     text-transform: uppercase;
