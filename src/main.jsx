@@ -4,13 +4,17 @@ import App from './App.jsx'
 import './index.css'
 import { BrowserRouter } from 'react-router-dom'
 
+import { FlightPointsProvider } from './context/flightPointsContext' 
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
+      <FlightPointsProvider> 
       <App />
+      </FlightPointsProvider> 
     </BrowserRouter>
   </React.StrictMode>,
 )

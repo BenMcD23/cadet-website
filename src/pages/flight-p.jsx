@@ -1,28 +1,10 @@
-import { useEffect, useState, useRef } from 'react';
+// components/FlightP.js
+import { useContext } from 'react';
+import PointsContext from '../context/flightPointsContext';
 import Title from "../components/mainTitle/title";
 
 function FlightP() {
-    const [pointsData, setpointsData] = useState([]);
-
-    // as was running twice on mount
-    const fetchCalled = useRef(false);
-
-    useEffect(() => {
-        if (!fetchCalled.current) {
-            fetchCalled.current = true;
-
-            fetch("https://script.google.com/macros/s/AKfycbxqNF8X8f2YEOLRFuctGnLjUeI3ycoTIdvgUwWMlvS20JjxkhnzXBhKAs-goly4BuqTtA/exec", {
-                method: 'POST'
-            })
-            .then(response => response.json())
-            .then(data => {
-                setpointsData(data);
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-        }
-    }, []);
+    const { pointsData } = useContext(PointsContext);
 
     return (
         <>
