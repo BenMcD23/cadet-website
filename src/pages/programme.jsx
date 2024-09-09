@@ -1,11 +1,12 @@
-import Programme_pdf from "/programme.pdf"
-
+import Programme_png from "/programme.png";
 
 function Programme() {
     return (
-    <div className="lg:pt-20" style={{height:"90vh"}}>
-        <embed src={`${Programme_pdf}#navpanes=0&scrollbar=0&view=Fit`} width="100%" height="100%"/>
-    </div>
+        <div className="lg:pt-20">
+            <a href="/programme.pdf" download="Programme.pdf">
+                <img src={Programme_png} className="m-auto max-h-screen max-w-screen object-contain" alt="Programme" />
+            </a>
+        </div>
     );
 }
 
