@@ -7,9 +7,7 @@ import Cards from "../components/sliderCards/cards"
 import Join from "../components/joinHome/join"
 
 
-import Parade from "../assets/parade.jpeg"
-import Drill from "../assets/317_drill.png"
-import sqn from "../assets/sqn_photo.JPG"
+
 
 function Home() {
 

@@ -1,5 +1,4 @@
 import ScrollIntoView from 'react-scroll-into-view';
-import rafac from "../../assets/rafac.png";
 import sqn_photo from "../../assets/sqn_photo.JPG";
 import "./headerStyles.css";
 
