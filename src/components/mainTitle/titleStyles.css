@@ -1,22 +1,29 @@
 .title-text {
-    display: block; /* Takes up full width of the parent container */
-    text-align: center; /* Centers the text horizontally */
+    display: block;
+    text-align: center; 
     position: relative;
-    margin: 0 auto; /* Center the block within the container */
+    margin: 0 auto;
 }
 
 .title-text:after {
     position: absolute;
-    bottom: -33px; /* Positioning the underline just below the text */
-    left: 50%; /* Start from the center */
-    width: 0%; /* Initial width of the underline */
+    bottom: -18px;
+    left: 50%;
+    width: 72%;
     content: '';
-    background: #aaa; /* Underline color */
-    height: 4px; /* Thickness of the underline */
-    transition: all 0.5s ease-out; /* Smooth transition effect */
-    transform: translateX(-50%); /* Centering the underline */
+    background: #aaa;
+    height: 4px;
+    transition: all 0.5s ease-out;
+    transform: translateX(-50%);
 }
 
-.title-hover:hover .title-text:after {
-    width: 72%;
+/* so on small screens underlines just shows */
+@media (min-width: 1024px) { 
+    .title-text:after {
+        width: 0%; 
+    }
+    
+    .title-hover:hover .title-text:after {
+        width: 72%;
+    }
 }
