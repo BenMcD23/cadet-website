@@ -40,7 +40,7 @@ function Card() {
                 <div className="mt-20">
                     <Slider {...settings}>
                         {data.map((d) => (
-                            <div key={d.title} className="bg-white h-fit text-black rounded-xl">
+                            <div key={d.title} className="bg-white h-full text-black rounded-xl">
                                 <div className='h-56 bg-indigo-500 flex justify-center items-center rounded-t-xl'>
                                     <img src={d.img} alt="" className="h-full w-full rounded-t-xl"/>
                                 </div>
@@ -48,7 +48,6 @@ function Card() {
                                 <div className="flex flex-col items-center justify-center gap-4 p-4">
                                     <p className="text-xl font-semibold">{d.title}</p>
                                     <p className="text-center">{d.main}</p>
-                                    <button className='bg-indigo-500 text-white text-lg px-6 py-1 rounded-xl'>Read More</button>
                                 </div>
                             </div>
                         ))}
@@ -63,38 +62,32 @@ const data = [
     {
         title: `Aviation`,
         img: drill,
-        main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-		link: ``
+        main: `The Air Cadets provide opportunities to go flying and gliding. Some cadets even get the opportunity to fly solo.`,
     },
     {
         title: `Adventure Training`,
         img: drill,
-        main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-		link: ``
+        main: `There are many Adventure Training camps every year. Cadets have the opportunity to try rock climbing, abseiling, mountain-biking and a variety of water sports.`,
     },
     {
         title: `Marksmanship`,
         img: drill,
-        main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-		link: ``
+        main: `We shoot 3 types of weapon, one of which is the L98A2, a similar weapon to what the Armed Forces use. There are lots of shooting opportunities throughout the year.`,
     },
-	{
+    {
         title: `Drill`,
         img: drill,
-        main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-		link: ``
+        main: `We take a lot of pride in our drill skills as a Squadron. We compete with other squadrons every year and regularly perform very well.`,
     },
-	{
+    {
         title: `Camps`,
         img: drill,
-        main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-		link: ``
+        main: `There is a variety of camps each year. Some are just for a weekend, but most are for a full week. This is when cadets get most opportunities to do these exciting activities.`,
     },
-	{
+    {
         title: `DofE`,
         img: drill,
-        main: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.`,
-		link: ``
+        main: `As a squadron, we run DofE expeditions every year as we have dedicated members of staff who are qualified to run these expeditions. You can even achieve Gold DofE with the Air Cadets.`,
     },
 ];
 

@@ -10,10 +10,23 @@
 
 .card-container .slick-dots li button:before {
   font-size: 10px; /* Adjust size of dots */
-  color:orange !important;
+  color:#000000;
 }
 
 
 .slick-slide > div {
   margin: 0 10px;
+  height: 100%;
+}
+
+
+.slick-slide {
+  height: auto; 
+}
+
+.slick-track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
 }
