@@ -17,15 +17,12 @@ import { Route, Routes } from "react-router-dom"
 import './App.css'
 
 import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 function App() {
   return (
     
     <>
     <Analytics/>
-    <SpeedInsights/>
-    
     <div className="app-container">
       <Navbar/>
       <ScrollToTop>
