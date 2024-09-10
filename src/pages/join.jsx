@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
 import Title from "../components/mainTitle/title";
 import ContactForm from "../components/contactForm/contactForm";
 

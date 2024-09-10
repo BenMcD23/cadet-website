@@ -1,7 +1,7 @@
 import React from 'react';
 import { Fragment, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-import Iframe from 'react-iframe'
 
 function Footer() {
 	const [year, setYear] = useState(new Date().getFullYear());
@@ -126,6 +126,10 @@ function Footer() {
                                 <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                             </svg>
                             adj.317@rafac.mod.gov.uk
+                            <div className='ml-2'>|</div>
+                            <Link className="ml-2 items-center text-neutral-200" to="/contact">
+                                Contact Form
+                            </Link>
                         </p>
                         <p className="mb-2 flex items-center justify-center lg:justify-start">
                             <svg
@@ -141,14 +145,15 @@ function Footer() {
                             0161 688 6705
                         </p>
                         <p className="mb-0 flex items-center justify-center lg:justify-start">
-                        <svg 
+                            <svg 
                             xmlns="http://www.w3.org/2000/svg" 
                             viewBox="0 0 24 24" 
-                            fill="currentColor" 
+                            fill="currentColor"
                             className="mr-3 h-5 w-5"
                             >
-                              <path d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z"/>
-                        </svg>
+                            <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z" clipRule="evenodd" />
+                            </svg>
+
                             Wednesday: 19:00 - 21:30<br/>
                             Friday: 19:00 - 21:30
                         </p>
