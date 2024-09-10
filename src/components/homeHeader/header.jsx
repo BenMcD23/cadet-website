@@ -10,10 +10,10 @@ function Header() {
 
                 <div className="header-content flex items-center justify-center h-full">
                     <div className="text-container text-center">
-                        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl text-white">
+                        <h1 className="mb-4 text-4xl font-extrabold leading-none md:text-5xl text-white">
                             317
                         </h1>
-                        <h1 className="text-3xl font-extrabold leading-none tracking-tight md:text-4xl text-white">
+                        <h1 className="text-3xl font-extrabold leading-none md:text-4xl text-white">
                             Failsworth & Newton Heath<br/>Squadron
                         </h1>
                     </div>

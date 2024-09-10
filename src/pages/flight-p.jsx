@@ -9,7 +9,7 @@ function FlightP() {
         <>
             <div className="bg-dark-blue-main title-hover text-center pb-3 lg:pt-14">
                 <Title title="Flight Points" />
-                <p className="text-xl leading-7 tracking-tight lg:text-2xl text-white pb-1 px-8">
+                <p className="text-xl leading-7 lg:text-2xl text-white pb-1 px-8">
                     Throughout the year, the two main flights compete in various sessions to win a trophy at the end.<br /><br />
                     This is the current points tally.
                 </p>

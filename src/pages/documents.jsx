@@ -86,13 +86,13 @@ function Documents() {
                 <h2 className="pb-2 font-bold underline">Quick Links</h2>
                 <div className="docs-nav-links grid grid-cols-3 m-auto xl:w-1/2 py-2.5 rounded-l-3xl rounded-r-3xl items-center">
                     <ScrollIntoView selector="#forms" className="">
-                        <span className="text-center text-base md:text-xl font-semibold leading-none tracking-tight">Forms</span>
+                        <span className="text-center text-base md:text-xl font-semibold leading-none">Forms</span>
                     </ScrollIntoView>                
                     <ScrollIntoView selector="#publications" className="">
-                        <span className="text-center text-base md:text-xl font-semibold leading-none tracking-tight">Publications</span>
+                        <span className="text-center text-base md:text-xl font-semibold leading-none">Publications</span>
                     </ScrollIntoView>
                     <ScrollIntoView selector="#exam-resources" className="">
-                        <span className="text-center text-base md:text-xl font-semibold leading-none tracking-tight">Exam Resources</span>
+                        <span className="text-center text-base md:text-xl font-semibold leading-none">Exam Resources</span>
                     </ScrollIntoView>
    
                 </div>
