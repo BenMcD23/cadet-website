@@ -47,11 +47,11 @@ function Card() {
                     <Slider {...settings}>
                         {data.map((d) => (
                             <div key={d.title} className="bg-white h-full text-black rounded-xl">
-                                <div className='h-56 flex justify-center items-center rounded-t-xl'>
-                                    <img src={d.img} alt="" className="h-full mt-4 rounded-xl"/>
+                                <div className='h-56 flex justify-center items-center rounded-t-xl mt-4 px-4'>
+                                    <img src={d.img} alt="" className="h-full rounded-xl object-cover"/>
                                 </div>
 
-                                <div className="flex flex-col items-center justify-center gap-4 p-4">
+                                <div className="flex flex-col items-center justify-center p-3">
                                     <p className="text-xl font-semibold">{d.title}</p>
                                     <p className="text-center">{d.main}</p>
                                 </div>
