@@ -1,9 +1,9 @@
 import Title from "../components/mainTitle/title";
 import "./parentsStyles.css"
 
-import StandingOrder from "../assets/standing_order.png";
-import TG21 from "../assets/documents/TG Form 021.docx";
-import TG23 from "../assets/documents/TG Form 023.docx";
+import StandingOrder from "../assets/documents/standing_order.png";
+import TG21 from "../assets/documents/forms/TG Form 021.docx";
+import TG23 from "../assets/documents/forms/TG Form 023.docx";
 import KitList from "../assets/documents/Kit List.pdf";
 
 
