@@ -82,7 +82,7 @@ function Documents() {
         <div className="bg-dark-blue-main title-hover text-center pb-3 lg:pt-14">
             <Title title="Documents"></Title>
 
-            <div className="docs-nav  px-5 text-white">
+            <div className="docs-nav px-5 text-white">
                 <h2 className="pb-2 font-bold">Quick Links</h2>
                 <div className="docs-nav-links grid grid-cols-3 m-auto xl:w-1/2 py-2.5 rounded-l-3xl rounded-r-3xl items-center">
                     <ScrollIntoView selector="#forms" className="">

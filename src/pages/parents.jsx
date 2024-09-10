@@ -14,7 +14,7 @@ function Parents() {
         <>
             <div className="text-white bg-dark-blue-main title-hover text-center pb-3 lg:pt-14 mb-2">
                 <Title title="Parents"></Title>
-                <p className="text-xl leading-7 lg:text-2xl pb-1 pt-2 px-8">
+                <p className="text-xl leading-7 lg:text-2xl pb-1 px-8">
                     This page is just some general information for parents/carers.
                 </p>
             </div>
