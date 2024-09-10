@@ -2,8 +2,10 @@ import Flt_Lt_Doherty from "../../assets/staff_pics/Flt_Lt_Doherty.PNG";
 import CI_Catterall from "../../assets/staff_pics/CI_Catterall.PNG";
 import WO_Barker from "../../assets/staff_pics/WO_Barker.PNG";
 import FS_Gill from "../../assets/staff_pics/FS_Gill.PNG";
-import CI_McDonld from "../../assets/staff_pics/CI_McDonald.PNG";
+import CI_McDonld from "../../assets/staff_pics/CI_McDonald.png";
 import CI_Gill from "../../assets/staff_pics/CI_Gill.png";
+import CI_Stone from "../../assets/staff_pics/CI_Stone.png";
+
 import Placeholder from "../../assets/staff_pics/Placeholder.png";
 
 import "./staffPicsStyles.css";
@@ -56,7 +58,7 @@ function StaffPics() {
 
                 <div className="flex items-center justify-center md:col-start-9 md:col-end-13 md:row-start-4 md:row-end-5">
                     <div className="image-text-container m-auto">
-                        <img src={Placeholder} className="staff-img"/>
+                        <img src={CI_Stone} className="staff-img"/>
                         <p className="text-xl font-extrabold leading-none tracking-tight lg:text-2xl text-black">CI Sophie Stone</p>
                     </div>
                 </div>
