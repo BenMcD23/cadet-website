@@ -6,8 +6,6 @@ import Programmes from "../../assets/home_images/programmes.png";
 import Contact from "../../assets/home_images/contact.png";
 import Facebook from "../../assets/home_images/facebook.png";
 
-import drill from "../../assets/317_drill.png";
-
 function LinkCards() {
     return (
         <div className="link-card-container title-hover clip-path-sm-l-r md:clip-path-md-l-r lg:clip-path-lg-l-r">

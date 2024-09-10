@@ -15,9 +15,6 @@ import Cpl_Mullery_McCourt from "../../assets/nco_pics/Cpl_Mullery_McCourt.PNG";
 
 import "./ncoPicsStyles.css";
 
-import Title from "../mainTitle/title";
-
-
 function NCOPics() {
     return (
         <>

@@ -1,7 +1,5 @@
 import React from 'react';
-import { Fragment, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
+import { useState, useEffect } from "react";
 
 function Footer() {
 	const [year, setYear] = useState(new Date().getFullYear());
@@ -171,7 +169,7 @@ function Footer() {
            
 
             {/* Copyright section */}
-            <div className="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
+            <div className="p-6 text-center bg-slate-grey-main">
 				<span>{`© Crown Copyright ${year} 317 Squadron`}</span>
 
             </div>			

@@ -1,4 +1,3 @@
-import SideMenu from "../components/sideMenu/sideMenu";
 import Title from "../components/mainTitle/title";
 import ScrollIntoView from 'react-scroll-into-view';
 

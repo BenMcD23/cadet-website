@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Title from "../mainTitle/title";
 import "./cardStyles.css";
 
-import drill from "../../assets/317_drill.png";
 import Plane from "../../assets/home_images/plane.jpg";
 import Kyacking from "../../assets/home_images/kyacking.jpg";
 import Shooting from "../../assets/home_images/shooting.jpg";
