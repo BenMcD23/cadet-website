@@ -90,7 +90,7 @@ function ContactForm() {
           </Form.Group>
           <Form.Group className="mb-3 flex justify-center">
             <ReCAPTCHA
-              sitekey="6LenpjsqAAAAAL2_JNQZC4WmIjOf1llhhqsxufWI" 
+              sitekey="6LfCoT0qAAAAAHAvwuSD3fbr6x_nMeNGBonKAAWk" 
               onChange={handleRecaptchaChange}
             />
           </Form.Group>
