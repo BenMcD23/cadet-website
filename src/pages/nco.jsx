@@ -1,5 +1,6 @@
 import NCOPics from "../components/ncoPics/ncoPics"
 import Title from "../components/mainTitle/title";
+import { Link } from "react-router-dom";
 
 function NCO() {
 
@@ -18,7 +19,7 @@ function NCO() {
             NCOs are responsible for maintaining cadet standards, as well as overseeing the organization and timings of parade nights.
 
             </p>
-            <button className="shift-button">Interested In Joining?</button>
+            <Link to="/join"><button className="shift-button">Interested In Joining?</button></Link>
         </div>
             <NCOPics></NCOPics>
         </>

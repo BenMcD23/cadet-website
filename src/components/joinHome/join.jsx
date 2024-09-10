@@ -1,5 +1,6 @@
 import "./joinStyles.css";
 import Plane from "../../assets/home_images/plane_join.jpeg"
+import { Link } from "react-router-dom";
 
 
 function Join() {
@@ -10,7 +11,7 @@ function Join() {
             <div className="text-container">
                 <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl lg:text-5xl text-white pb-3">Interested in joining?</h1>
 
-                <button className="shift-button">How To Join</button>
+                <Link to="/join"><button className="shift-button">How To Join</button></Link>
 
             </div>
         </div>

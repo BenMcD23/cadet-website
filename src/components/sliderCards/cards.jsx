@@ -52,8 +52,8 @@ function Card() {
                                 </div>
 
                                 <div className="flex flex-col items-center justify-center p-3">
-                                    <p className="text-xl font-semibold">{d.title}</p>
-                                    <p className="text-center">{d.main}</p>
+                                    <p className="text-xl font-bold underline">{d.title}</p>
+                                    <p className="text-center font-semibold">{d.main}</p>
                                 </div>
                             </div>
                         ))}

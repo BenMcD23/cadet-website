@@ -83,7 +83,7 @@ function Documents() {
             <Title title="Documents"></Title>
 
             <div className="docs-nav px-5 text-white">
-                <h2 className="pb-2 font-bold">Quick Links</h2>
+                <h2 className="pb-2 font-bold underline">Quick Links</h2>
                 <div className="docs-nav-links grid grid-cols-3 m-auto xl:w-1/2 py-2.5 rounded-l-3xl rounded-r-3xl items-center">
                     <ScrollIntoView selector="#forms" className="">
                         <span className="text-center text-base md:text-xl font-semibold leading-none tracking-tight">Forms</span>
