@@ -50,7 +50,7 @@ const examResources = {
   
 const TableSection = ({ title, collumnName, items}) => (
     <>
-      <h2 className="docs-title" id={title.toLowerCase()}>{title}</h2>
+      <h2 className="font-bold" id={title.toLowerCase()}>{title}</h2>
       <table className="docs-table m-auto w-11/12 md:w-9/12 lg:w-6/12 mb-3">
         <thead>
           <tr>
@@ -102,7 +102,7 @@ function Documents() {
 
             <TableSection title="Forms" collumnName="Form Name" items={forms} />
             <TableSection title="Publications" collumnName="Publication Name" items={publications} />
-            <h1 className="text-center docs-title pt-4" id="exam-resources">Exam Resources</h1>
+            <h1 className="text-center pt-4 font-extrabold " id="exam-resources">Exam Resources</h1>
             <TableSection title="First Class" collumnName="File Name" items={examResources.firstClass} />
             <TableSection title="Leading" collumnName="File Name" items={examResources.leading} />
             <TableSection title="Senior/Master" collumnName="File Name" items={examResources.seniorMaster} />

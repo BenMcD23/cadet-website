@@ -53,8 +53,8 @@
     z-index: 2000;
     left: 50%;
     transform: translateX(-50%);
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
     overflow: hidden;
 }
 
@@ -97,8 +97,8 @@
         /* make the border on the top */
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-        border-top-left-radius: 15px;
-        border-top-right-radius: 15px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
 
     }
 
