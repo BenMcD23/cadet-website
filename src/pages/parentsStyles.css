@@ -1,0 +1,24 @@
+.parents-svg {
+	color: #000000;
+	transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.parents-svg:hover {
+	color: #0000003d;
+}
+.parent-main hr{
+    margin-bottom: 0;
+    border: 2px solid #000000;
+}
+
+
+/* tailwind wouldnt work */
+.text-align {
+    text-align: left;
+} 
+@media (max-width: 1024px) { 
+    .text-align {
+        text-align: center;
+    } 
+}

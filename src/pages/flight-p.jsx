@@ -1,4 +1,3 @@
-// components/FlightP.js
 import { useContext } from 'react';
 import PointsContext from '../context/flightPointsContext';
 import Title from "../components/mainTitle/title";

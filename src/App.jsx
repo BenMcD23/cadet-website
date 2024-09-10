@@ -11,6 +11,7 @@ import Documents from './pages/documents'
 import FlightP from './pages/flight-p'
 import Join from './pages/join'
 import Contact from './pages/contact'
+import Parents from './pages/parents'
 
 import { Route, Routes } from "react-router-dom"
 import './App.css'
@@ -30,6 +31,7 @@ function App() {
           <Route path="/documents" element={<Documents/>}/>
           <Route path="/flight-points" element={<FlightP/>}/>
           <Route path="/join" element={<Join/>}/>
+          <Route path="/parents" element={<Parents/>}/>
 
           <Route path="/contact" element={<Contact/>}/>
 
