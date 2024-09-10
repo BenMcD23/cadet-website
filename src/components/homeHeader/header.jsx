@@ -1,5 +1,5 @@
 import ScrollIntoView from 'react-scroll-into-view';
-import sqn_photo from "../../assets/sqn_photo.JPG";
+import sqn_photo from "../../assets/sqn_photo_2024.jpg";
 import "./headerStyles.css";
 
 function Header() {
