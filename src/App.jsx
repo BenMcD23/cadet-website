@@ -12,6 +12,7 @@ import FlightP from './pages/flight-p'
 import Join from './pages/join'
 import Contact from './pages/contact'
 import Parents from './pages/parents'
+import NotFound from './pages/404'
 
 import { Route, Routes } from "react-router-dom"
 import './App.css'
@@ -35,9 +36,9 @@ function App() {
           <Route path="/flight-points" element={<FlightP/>}/>
           <Route path="/join" element={<Join/>}/>
           <Route path="/parents" element={<Parents/>}/>
-
           <Route path="/contact" element={<Contact/>}/>
 
+          <Route path='*' element={<NotFound />}/>
         </Routes>
       </ScrollToTop>
 
