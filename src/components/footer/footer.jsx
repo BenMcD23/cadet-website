@@ -169,7 +169,7 @@ function Footer() {
            
 
             {/* Copyright section */}
-            <div className="p-6 text-center bg-slate-grey-main">
+            <div className="p-6 text-center bg-blue-500">
 				<span>{`© Crown Copyright ${year} 317 Squadron`}</span>
 
             </div>			

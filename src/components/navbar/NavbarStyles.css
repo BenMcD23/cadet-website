@@ -5,7 +5,22 @@
 	z-index: 1000;
 	top: 0;
     position: absolute;
+    height: 7.5vh;
 }
+
+/* md */
+@media (min-width: 768px) {
+    .navbar-container {
+        height: 10vh;
+    }
+}
+
+@media (min-width: 1024px) {
+    .navbar-container {
+        height: auto;
+    }
+}
+
 
 .navbar-container a.active{
     color: #0d0f10;
