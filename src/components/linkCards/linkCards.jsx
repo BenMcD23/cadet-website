@@ -26,7 +26,7 @@ function LinkCards() {
                             </div>
 
                             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-4">
-                                <p className="mb-6 font-normal lg:text-xl text-center dark:text-white">{d.main}</p>
+                                <p className="mb-6 font-normal lg:text-xl text-center text-white">{d.main}</p>
                             </div>
                         </Link>
 
