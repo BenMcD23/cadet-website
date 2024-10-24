@@ -26,12 +26,20 @@ function Parents() {
                     <p className="text-xl lg:text-2xl col-span-3 md:pr-5">
                         We charge £17 per month per cadet. This is to cover costs on the Squadron as well as insurance for the cadets and national camps.
                         <br/><br/>
-                        Please set up a standing order to pay this monthly to these details shown.
+                        Please set up a standing order to pay £17 a month to the account as follows:
+                        <br/><br/>
+                        <p className="text-center subs-container">
+                            Account name: 317 Squadron ATC<br/>
+                            Account Number: 90782807<br/>
+                            Sort Code: 20-55-41<br/>
+                            Reference: SUBS/SURNAME.INITIAL<br/>
+                            Amount: £17 per month<br/>
+                        </p>
+                        For any issues or inquiries, email "treasurer.317@rafac.mod.gov.uk"
+
 
                     </p>
-                    <div className="text-center m-auto text-3xl lg:text-4xl font-semibold">
-                        <img src={StandingOrder} className="m-auto"></img>
-                    </div>
+
                 </div>
 
                 <hr/>
@@ -95,7 +103,7 @@ function Parents() {
                     <p className="text-xl lg:text-2xl col-span-3 md:pr-5">
                         The committee is a group of people who meet once a month to discuss funding proposals and upcoming events which the committee organise.<br/><br/>
 
-                        Anyone can join, email chair.317@rafac.mod.gov.uk for more info.
+                        Anyone can join, email "chair.317@rafac.mod.gov.uk" for more info.
 
                     </p>
                 <hr/>
