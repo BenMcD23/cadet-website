@@ -11,7 +11,7 @@ import "./joinStyles.css"
 function Join() {
     const settings = {
         dots: true,
-        infinite: false,
+        infinite: true,
         speed: 800,
         slidesToShow: 3, // Default to show 3 slides
         slidesToScroll: 1,
