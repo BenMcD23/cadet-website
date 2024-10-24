@@ -78,9 +78,13 @@ function ContactForm() {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formInterest">
             <Form.Label className="text-xl font-extrabold leading-none">Contact Reason:</Form.Label>
-            <Form.Select name="Contact_Reason" required>
+            <Form.Select name="Contact_Reason" required defaultValue="">
+              <option value="" disabled>Please select</option> {/* Default empty option */}
+
               <option value="Cadet joining interest">Cadet joining interest</option>
               <option value="Staff joining interest">Staff joining interest</option>
+              <option value="Committee joining interest">Committee joining interest</option>
+
               <option value="General enquiry">General enquiry</option>
             </Form.Select>
           </Form.Group>
@@ -90,7 +94,7 @@ function ContactForm() {
           </Form.Group>
           <Form.Group className="mb-3 flex justify-center">
             <ReCAPTCHA
-              sitekey="6LfCoT0qAAAAAHAvwuSD3fbr6x_nMeNGBonKAAWk" 
+              sitekey="6LcKO2sqAAAAALn3TkQDe81ddIE1l_iez1tOqjGS" 
               onChange={handleRecaptchaChange}
             />
           </Form.Group>
