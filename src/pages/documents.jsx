@@ -24,10 +24,12 @@ import ACP321 from "../assets/documents/first_class/ACP 32-1.pdf";
 import ACP331 from "../assets/documents/first_class/ACP 33-1.pdf";
 import ACP341 from "../assets/documents/first_class/ACP 34-1.pdf";
 import History from "../assets/documents/first_class/History of the ATC.pptx";
+import FirstClassBadge from "../assets/documents/first_class/first_class_badge.png";
 
 import ACP322 from "../assets/documents/leading/ACP 32-2.pdf";
 import ACP332 from "../assets/documents/leading/ACP 33-2.pdf";
 import ACP342 from "../assets/documents/leading/ACP 34-2.pdf";
+import LeadingBadge from "../assets/documents/leading/leading_badge.png";
 
 import ACP323 from "../assets/documents/senior-master/ACP 32-3.pdf";
 import ACP324 from "../assets/documents/senior-master/ACP 32-4.pdf";
@@ -37,6 +39,7 @@ import ACP343 from "../assets/documents/senior-master/ACP 34-3.pdf";
 import ACP344 from "../assets/documents/senior-master/ACP 34-4.pdf";
 import ACP353 from "../assets/documents/senior-master/ACP 35-3.pdf";
 import ACP354 from "../assets/documents/senior-master/ACP 35-4.pdf";
+import SeniorMasterBadge from "../assets/documents/senior-master/senior_master_badge.png";
 
 
 const forms = [
@@ -83,9 +86,28 @@ const examResources = {
     ],
 };
   
-const TableSection = ({ title, collumnName, items}) => (
+const TableSection = ({ title, collumnName, items}) => {
+    let sectionImage = null;
+    if (title === "First Class") {
+      sectionImage = FirstClassBadge;
+    } 
+    else if (title === "Leading") {
+      sectionImage = LeadingBadge;
+    }
+    else if (title === "Senior/Master") {
+    sectionImage = SeniorMasterBadge;
+    }
+
+    return (
     <>
       <h2 className="font-bold" id={title.toLowerCase()}>{title}</h2>
+
+      {sectionImage && (
+        <div className="flex justify-center mb-4">
+          <img src={sectionImage} alt={`${title} Image`} className="w-auto h-24 md:h-32" />
+        </div>
+      )}
+
       <table className="docs-table m-auto w-11/12 md:w-9/12 xl:w-6/12 mb-3">
         <thead>
           <tr>
@@ -109,7 +131,8 @@ const TableSection = ({ title, collumnName, items}) => (
         </tbody>
       </table>
     </>
-);
+    )
+};
 
 function Documents() {
   return (
