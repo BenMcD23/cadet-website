@@ -1,5 +1,7 @@
 import Header from "../components/homeHeader/header"
-import LinkCards from "../components/linkCards/linkCards"
+import QuickLinkCards from "../components/linkCards/quickLinkCards"
+import SocialCards from "../components/linkCards/socialCards"
+
 import Cards from "../components/homeSliderCards/cards"
 import Join from "../components/joinHome/join"
 
@@ -12,7 +14,7 @@ function Home() {
             <Header/>
             <Cards/>
             <Join/>
-            <LinkCards/>
+            <QuickLinkCards/>
         </div>
         </>
     );

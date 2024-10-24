@@ -4,8 +4,6 @@ import Form from 'react-bootstrap/Form';
 import ReCAPTCHA from 'react-google-recaptcha';
 import Title from "../mainTitle/title";
 
-import Poppy from "../../assets/poppy.JPG";
-
 function ContactForm() {
   const [successMessage, setSuccessMessage] = useState("");
   const [captchaMessage, setCaptchaMessage] = useState("");
