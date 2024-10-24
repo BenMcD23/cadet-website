@@ -1,6 +1,6 @@
 import Header from "../components/homeHeader/header"
 import LinkCards from "../components/linkCards/linkCards"
-import Cards from "../components/sliderCards/cards"
+import Cards from "../components/homeSliderCards/cards"
 import Join from "../components/joinHome/join"
 
 

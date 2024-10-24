@@ -1,0 +1,31 @@
+.join-card-container {
+    margin-top: 10px;
+    /* 384357 */
+    padding-bottom: 40px;
+    padding-top: 10px;
+  }
+  
+  
+  
+.join-card-container .slick-dots li button:before {
+    font-size: 10px; /* Adjust size of dots */
+    color:#ffffff;
+}
+
+
+.slick-slide > div {
+    margin: 0 10px;
+    height: 100%;
+}
+
+
+.slick-slide {
+    height: auto; 
+}
+
+.slick-track {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
