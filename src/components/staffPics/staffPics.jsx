@@ -1,7 +1,8 @@
-import Flt_Lt_Doherty from "../../assets/staff_pics/Flt_Lt_Doherty.PNG";
-import CI_Catterall from "../../assets/staff_pics/CI_Catterall.PNG";
-import WO_Barker from "../../assets/staff_pics/WO_Barker.PNG";
-import FS_Gill from "../../assets/staff_pics/FS_Gill.PNG";
+import Flt_Lt_Doherty from "../../assets/staff_pics/Flt_Lt_Doherty.png";
+import CI_Catterall from "../../assets/staff_pics/CI_Catterall.png";
+import Fg_Off_Quick from "../../assets/staff_pics/Fg_Off_Quick.png";
+import WO_Barker from "../../assets/staff_pics/WO_Barker.png";
+import FS_Gill from "../../assets/staff_pics/FS_Gill.png";
 import CI_McDonld from "../../assets/staff_pics/CI_McDonald.png";
 import CI_Gill from "../../assets/staff_pics/CI_Gill.png";
 import CI_Stone from "../../assets/staff_pics/CI_Stone.png";
@@ -24,6 +25,11 @@ function StaffPics() {
                 <div className="image-text-container text-center">
                     <img src={CI_Catterall} className="staff-img m-auto" alt="CI Roy Catterall" />
                     <p className="text-xl font-extrabold leading-none lg:text-2xl text-black">CI Roy Catterall (Wg Cdr Ret'd)</p>
+                </div>
+
+                <div className="image-text-container text-center">
+                    <img src={Fg_Off_Quick} className="staff-img m-auto" alt="Fg Off Jack Quick" />
+                    <p className="text-xl font-extrabold leading-none lg:text-2xl text-black">Fg Off Jack Quick (RAF)</p>
                 </div>
 
                 <div className="image-text-container text-center">

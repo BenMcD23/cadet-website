@@ -1,17 +1,17 @@
-import CWO_Lloyd_Morris from "../../assets/nco_pics/CWO_Lloyd_Morris.PNG";
-import Sgt_Bardsley from "../../assets/nco_pics/Sgt_Bardsley.PNG";
-import Sgt_Murray from "../../assets/nco_pics/Sgt_Murray.PNG";
-import Sgt_Evans from "../../assets/nco_pics/Sgt_Evans.PNG";
-import Sgt_Hall from "../../assets/nco_pics/Sgt_Hall.PNG";
-import Sgt_Wimbury from "../../assets/nco_pics/Sgt_Wimbury.PNG";
-import Sgt_Tyrell from "../../assets/nco_pics/Sgt_Tyrell.PNG";
-import Cpl_Milligan from "../../assets/nco_pics/Cpl_Milligan.PNG";
-import Cpl_Davies from "../../assets/nco_pics/Cpl_Davies.PNG";
-import Cpl_Lear from "../../assets/nco_pics/Cpl_Lear.PNG";
-import Cpl_Evans from "../../assets/nco_pics/Cpl_Evans.PNG";
-import Cpl_Drury from "../../assets/nco_pics/Cpl_Drury.PNG";
-import Cpl_Beverley from "../../assets/nco_pics/Cpl_Beverley.PNG";
-import Cpl_Mullery_McCourt from "../../assets/nco_pics/Cpl_Mullery_McCourt.PNG";
+import CWO_Lloyd_Morris from "../../assets/nco_pics/CWO_Lloyd_Morris.png";
+import Sgt_Bardsley from "../../assets/nco_pics/Sgt_Bardsley.png";
+import Sgt_Murray from "../../assets/nco_pics/Sgt_Murray.png";
+import Sgt_Evans from "../../assets/nco_pics/Sgt_Evans.png";
+import Sgt_Hall from "../../assets/nco_pics/Sgt_Hall.png";
+import Sgt_Wimbury from "../../assets/nco_pics/Sgt_Wimbury.png";
+import Sgt_Tyrell from "../../assets/nco_pics/Sgt_Tyrell.png";
+import Cpl_Milligan from "../../assets/nco_pics/Cpl_Milligan.png";
+import Cpl_Davies from "../../assets/nco_pics/Cpl_Davies.png";
+import Cpl_Lear from "../../assets/nco_pics/Cpl_Lear.png";
+import Cpl_Evans from "../../assets/nco_pics/Cpl_Evans.png";
+import Cpl_Drury from "../../assets/nco_pics/Cpl_Drury.png";
+import Cpl_Beverley from "../../assets/nco_pics/Cpl_Beverley.png";
+import Cpl_Mullery_McCourt from "../../assets/nco_pics/Cpl_Mullery_McCourt.png";
 
 import "./ncoPicsStyles.css";
 
