@@ -14,7 +14,7 @@ function doPost(e) {
 
 function submitFormData(data) {
   const timestamp = new Date();
-  const spreadsheetId = '1Yv3JoNhQG8MjZ8Mgj0SFvgLkPszagoZ1kTf4hxTpqKc'; 
+  const spreadsheetId = '1PVvSWH6aWN7Z6LHJZaHn14xMjeH7xKRgvF6haDkmkm4'; 
 
   const sheet = SpreadsheetApp.openById(spreadsheetId).getActiveSheet();
 
@@ -27,7 +27,7 @@ function submitFormData(data) {
   sheet.appendRow([timestamp, sanitizedName, sanitizedEmail, sanitizedContactReason, sanitizedMessage]);
 
   MailApp.sendEmail({
-    to: "mcdonaldben02@gmail.com",
+    to: "adj.317@rafac.mod.gov.uk",
     replyTo: sanitizedEmail,
     subject: "Contact Form Submission",
     htmlBody: `
@@ -51,4 +51,3 @@ function sanitizeInput(input) {
   const reg = /[&<>"'/]/ig;
   return input.replace(reg, (match)=>(map[match]));
 }
-
