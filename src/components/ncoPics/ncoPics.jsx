@@ -1,17 +1,20 @@
-import CWO_Lloyd_Morris from "../../assets/nco_pics/CWO_Lloyd_Morris.png";
-import Sgt_Bardsley from "../../assets/nco_pics/Sgt_Bardsley.png";
-import Sgt_Murray from "../../assets/nco_pics/Sgt_Murray.png";
-import Sgt_Evans from "../../assets/nco_pics/Sgt_Evans.png";
-import Sgt_Hall from "../../assets/nco_pics/Sgt_Hall.png";
-import Sgt_Wimbury from "../../assets/nco_pics/Sgt_Wimbury.png";
-import Sgt_Tyrell from "../../assets/nco_pics/Sgt_Tyrell.png";
-import Cpl_Milligan from "../../assets/nco_pics/Cpl_Milligan.png";
-import Cpl_Davies from "../../assets/nco_pics/Cpl_Davies.png";
-import Cpl_Lear from "../../assets/nco_pics/Cpl_Lear.png";
-import Cpl_Evans from "../../assets/nco_pics/Cpl_Evans.png";
-import Cpl_Drury from "../../assets/nco_pics/Cpl_Drury.png";
-import Cpl_Beverley from "../../assets/nco_pics/Cpl_Beverley.png";
-import Cpl_Mullery_McCourt from "../../assets/nco_pics/Cpl_Mullery_McCourt.png";
+import CWO_Lloyd_Morris from "../../assets/nco_pics/CWO_Lloyd_Morris.webp";
+
+import FS_Wimbury from "../../assets/nco_pics/FS_Wimbury.webp";
+import FS_Tyrell from "../../assets/nco_pics/FS_Tyrell.webp";
+
+import Sgt_Bardsley from "../../assets/nco_pics/Sgt_Bardsley.webp";
+import Sgt_Murray from "../../assets/nco_pics/Sgt_Murray.webp";
+import Sgt_Evans from "../../assets/nco_pics/Sgt_Evans.webp";
+import Sgt_Hall from "../../assets/nco_pics/Sgt_Hall.webp";
+import Sgt_Mullery_McCourt from "../../assets/nco_pics/Sgt_Mullery_McCourt.webp";
+
+import Cpl_Beverley from "../../assets/nco_pics/Cpl_Beverley.webp";
+import Cpl_Brice from "../../assets/nco_pics/Cpl_Brice.webp";
+import Cpl_Davies from "../../assets/nco_pics/Cpl_Davies.webp";
+import Cpl_Drury from "../../assets/nco_pics/Cpl_Drury.webp";
+import Cpl_Milligan from "../../assets/nco_pics/Cpl_Milligan.webp";
+import Cpl_Tyrell from "../../assets/nco_pics/Cpl_Tyrell.webp";
 
 import "./ncoPicsStyles.css";
 
@@ -25,6 +28,15 @@ function NCOPics() {
                 <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">CWO G Lloyd Morris</p>
             </div>
 
+            <div className="image-text-container text-center">
+                <img src={FS_Wimbury} className="staff-img m-auto" alt="FS T Wimbury" />
+                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">FS T Wimbury</p>
+            </div>
+
+            <div className="image-text-container text-center">
+                <img src={FS_Tyrell} className="staff-img m-auto" alt="FS V Tyrell" />
+                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">FS V Tyrell</p>
+            </div>
     
             <div className="image-text-container text-center">
                 <img src={Sgt_Bardsley} className="staff-img m-auto" alt="Sgt A Bardsley" />
@@ -47,13 +59,8 @@ function NCOPics() {
             </div>
 
             <div className="image-text-container text-center">
-                <img src={Sgt_Wimbury} className="staff-img m-auto" alt="Sgt T Wimbury" />
-                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Sgt T Wimbury</p>
-            </div>
-
-            <div className="image-text-container text-center">
-                <img src={Sgt_Tyrell} className="staff-img m-auto" alt="Sgt V Tyrell" />
-                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Sgt V Tyrell</p>
+                <img src={Sgt_Mullery_McCourt} className="staff-img m-auto" alt="Sgt N Mullery McCourt" />
+                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Sgt N Mullery McCourt</p>
             </div>
 
             <div className="image-text-container text-center">
@@ -62,18 +69,18 @@ function NCOPics() {
             </div>
 
             <div className="image-text-container text-center">
+                <img src={Cpl_Tyrell} className="staff-img m-auto" alt="Cpl E Tyrell" />
+                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Cpl E Tyrell</p>
+            </div>
+
+            <div className="image-text-container text-center">
                 <img src={Cpl_Davies} className="staff-img m-auto" alt="Cpl G Davies" />
                 <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Cpl G Davies</p>
             </div>
 
             <div className="image-text-container text-center">
-                <img src={Cpl_Lear} className="staff-img m-auto" alt="Cpl J Lear" />
-                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Cpl J Lear</p>
-            </div>
-
-            <div className="image-text-container text-center">
-                <img src={Cpl_Evans} className="staff-img m-auto" alt="Cpl K Evans" />
-                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Cpl K Evans</p>
+                <img src={Cpl_Brice} className="staff-img m-auto" alt="Cpl J Brice" />
+                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Cpl J Brice</p>
             </div>
 
             <div className="image-text-container text-center">
@@ -86,10 +93,6 @@ function NCOPics() {
                 <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Cpl M Beverly</p>
             </div>
 
-            <div className="image-text-container text-center">
-                <img src={Cpl_Mullery_McCourt} className="staff-img m-auto" alt="Cpl N Mullery McCourt" />
-                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Cpl N Mullery McCourt</p>
-            </div>
         </div>
     </>
     );

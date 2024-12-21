@@ -30,7 +30,7 @@ function Programme() {
                             </a> */}
 
                         <p className="text-xl leading-7 lg:text-2xl text-white pb-1 px-8">Unit Stand Down
-                                <br/><br/>We are back on 10/01/2025
+                                <br/><br/>We are back on 10/01/2025 
                         </p>
                         </div>
                     </div>
