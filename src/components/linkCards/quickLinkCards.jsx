@@ -2,9 +2,9 @@ import "./linkCardStyles.css";
 import Title from "../mainTitle/title";
 import { Link } from "react-router-dom";
 
-import Programmes from "../../assets/home_images/programmes.png";
-import Contact from "../../assets/home_images/contact.png";
-import Facebook from "../../assets/home_images/facebook.png";
+import Programmes from "../../assets/home_images/programmes.webp";
+import Contact from "../../assets/home_images/contact.webp";
+import Facebook from "../../assets/home_images/facebook.webp";
 
 function LinkCards() {
     return (

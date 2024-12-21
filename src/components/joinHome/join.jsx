@@ -1,5 +1,5 @@
 import "./joinStyles.css";
-import Plane from "../../assets/home_images/plane_join.jpeg"
+import Plane from "../../assets/home_images/plane_join.webp"
 import { Link } from "react-router-dom";
 
 

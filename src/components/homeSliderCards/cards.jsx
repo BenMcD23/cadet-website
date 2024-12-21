@@ -5,12 +5,12 @@ import "slick-carousel/slick/slick-theme.css";
 import Title from "../mainTitle/title";
 import "./cardStyles.css";
 
-import Plane from "../../assets/home_images/plane.jpg";
-import Kyacking from "../../assets/home_images/kyacking.jpg";
-import Shooting from "../../assets/home_images/shooting.jpg";
-import arms_drill from "../../assets/home_images/arms_drill.jpg";
-import camp from "../../assets/home_images/camp.jpg";
-import dofe from "../../assets/home_images/dofe.jpg";
+import Plane from "../../assets/home_images/plane.webp";
+import Kyacking from "../../assets/home_images/kyacking.webp";
+import Shooting from "../../assets/home_images/shooting.webp";
+import arms_drill from "../../assets/home_images/arms_drill.webp";
+import camp from "../../assets/home_images/camp.webp";
+import dofe from "../../assets/home_images/dofe.webp";
 
 
 function Card() {
