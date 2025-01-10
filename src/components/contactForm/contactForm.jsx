@@ -19,15 +19,15 @@ function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    if (!recaptchaValue) {
-      setCaptchaMessage("Complete captcha to submit message");
-      return;
-    }
+    // if (!recaptchaValue) {
+    //   setCaptchaMessage("Complete captcha to submit message");
+    //   return;
+    // }
 
     setCaptchaMessage("");
     setIsSubmitting(true);
 
-    fetch("https://script.google.com/macros/s/AKfycbwkmo0clcgIPrXSz9eEDWFVCnu-5UKmcP1ivzaQvnO01PTS8SeZVUjdCa8J9jf4BA7f2w/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxCh4KTwOwty00pdmymJLHql-XP3S9IuJX4dAOgalrp7KfwiiCuxnkjDaiQldu8joghEg/exec", {
       method: 'POST',
       body: new FormData(formRef.current),
     })
@@ -80,8 +80,23 @@ function ContactForm() {
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label className="text-xl font-extrabold leading-none">Email:</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" name="Email" required />
+            <Form.Control type="email" placeholder="Enter Email" name="Email" required />
           </Form.Group>
+          
+          <Form.Group className="mb-3" controlId="formPhone">
+            <Form.Label className="text-xl font-extrabold leading-none">Phone Number:</Form.Label>
+            <Form.Control 
+              type="tel" 
+              placeholder="Enter Phone Number" 
+              name="Phone" 
+              required 
+              pattern="^0\d{10}$|^\+?[1-9]\d{1,14}$"
+              title="Please enter a valid phone number (e.g., 01616886705)" 
+            />
+          </Form.Group>
+
+
+
           <Form.Group className="mb-3" controlId="formInterest">
             <Form.Label className="text-xl font-extrabold leading-none">Contact Reason:</Form.Label>
             <Form.Select name="Contact_Reason" required defaultValue="">
@@ -104,7 +119,7 @@ function ContactForm() {
               onChange={handleRecaptchaChange}
             />
           </Form.Group>
-          <div className="text-center">
+          <div className="text-center"> 
             <Button 
               className="shift-button"
               variant="success" 
