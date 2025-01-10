@@ -19,15 +19,15 @@ function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // if (!recaptchaValue) {
-    //   setCaptchaMessage("Complete captcha to submit message");
-    //   return;
-    // }
+    if (!recaptchaValue) {
+      setCaptchaMessage("Complete captcha to submit message");
+      return;
+    }
 
     setCaptchaMessage("");
     setIsSubmitting(true);
 
-    fetch("https://script.google.com/macros/s/AKfycbxCh4KTwOwty00pdmymJLHql-XP3S9IuJX4dAOgalrp7KfwiiCuxnkjDaiQldu8joghEg/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxA64swxRap_uw3VyVHJeONz-Zz-B-MEvrR9uWLNKA3Z9ASpOPVwEmRQUTEkrEgQshZHA/exec", {
       method: 'POST',
       body: new FormData(formRef.current),
     })
