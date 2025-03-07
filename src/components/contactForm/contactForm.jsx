@@ -27,7 +27,7 @@ function ContactForm() {
     setCaptchaMessage("");
     setIsSubmitting(true);
 
-    fetch("https://script.google.com/macros/s/AKfycbxA64swxRap_uw3VyVHJeONz-Zz-B-MEvrR9uWLNKA3Z9ASpOPVwEmRQUTEkrEgQshZHA/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbw_6vimglqHlB0gdiLetfpgQy3ilJJeKuV4MqpwOHCMB_wTWNhKylQNmFpR7gqTxbIhYA/exec", {
       method: 'POST',
       body: new FormData(formRef.current),
     })
