@@ -3,6 +3,7 @@ import CI_Catterall from "../../assets/staff_pics/CI_Catterall.webp";
 import Fg_Off_Quick from "../../assets/staff_pics/Fg_Off_Quick.webp";
 import WO_Barker from "../../assets/staff_pics/WO_Barker.webp";
 import FS_Gill from "../../assets/staff_pics/FS_Gill.webp";
+import Sgt_Lloyd_Morris from "../../assets/staff_pics/Sgt_Lloyd_Morris.webp";
 import CI_McDonld from "../../assets/staff_pics/CI_McDonald.webp";
 import CI_Gill from "../../assets/staff_pics/CI_Gill.webp";
 import CI_Stone from "../../assets/staff_pics/CI_Stone.webp";
@@ -41,6 +42,12 @@ function StaffPics() {
                     <img src={FS_Gill} className="staff-img m-auto" alt="FS Joseph Gill" />
                     <p className="text-xl font-extrabold leading-none lg:text-2xl text-black">FS Joseph Gill</p>
                 </div>
+
+                <div className="image-text-container text-center">
+                    <img src={Sgt_Lloyd_Morris} className="staff-img m-auto" alt="CWO G Lloyd Morris" />
+                    <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Sgt G Lloyd Morris</p>
+                </div>
+
 
                 <div className="image-text-container text-center">
                     <img src={CI_McDonld} className="staff-img m-auto" alt="CI Ben McDonald" />

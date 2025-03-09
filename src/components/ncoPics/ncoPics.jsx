@@ -1,5 +1,3 @@
-import CWO_Lloyd_Morris from "../../assets/nco_pics/CWO_Lloyd_Morris.webp";
-
 import FS_Wimbury from "../../assets/nco_pics/FS_Wimbury.webp";
 import FS_Tyrell from "../../assets/nco_pics/FS_Tyrell.webp";
 
@@ -23,10 +21,6 @@ function NCOPics() {
         <>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-1 staff-container pt-4">
-            <div className="image-text-container text-center">
-                <img src={CWO_Lloyd_Morris} className="staff-img m-auto" alt="CWO G Lloyd Morris" />
-                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">CWO G Lloyd Morris</p>
-            </div>
 
             <div className="image-text-container text-center">
                 <img src={FS_Wimbury} className="staff-img m-auto" alt="FS T Wimbury" />
@@ -41,6 +35,11 @@ function NCOPics() {
             <div className="image-text-container text-center">
                 <img src={Sgt_Bardsley} className="staff-img m-auto" alt="Sgt A Bardsley" />
                 <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Sgt A Bardsley</p>
+            </div>
+
+            <div className="image-text-container text-center">
+                <img src={Cpl_Beverley} className="staff-img m-auto" alt="Cpl M Beverely" />
+                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Sgt M Beverly</p>
             </div>
 
             <div className="image-text-container text-center">
@@ -88,10 +87,6 @@ function NCOPics() {
                 <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Cpl L Drury</p>
             </div>
 
-            <div className="image-text-container text-center">
-                <img src={Cpl_Beverley} className="staff-img m-auto" alt="Cpl M Beverly" />
-                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Cpl M Beverly</p>
-            </div>
 
         </div>
     </>
