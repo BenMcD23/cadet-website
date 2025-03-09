@@ -39,7 +39,7 @@ function NCOPics() {
 
             <div className="image-text-container text-center">
                 <img src={Cpl_Beverley} className="staff-img m-auto" alt="Cpl M Beverely" />
-                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Sgt M Beverly</p>
+                <p className="text-xl font-extrabold leading-none xl:text-2xl text-black">Sgt M Beverely</p>
             </div>
 
             <div className="image-text-container text-center">
