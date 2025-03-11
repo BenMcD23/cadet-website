@@ -19,7 +19,7 @@ function StaffPics() {
             {/* Grid Container */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {/* Card 1 */}
-                <div className="image-text-container bg-transparent border border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-blue-500">
+                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
                             src={Flt_Lt_Doherty}
@@ -28,14 +28,14 @@ function StaffPics() {
                         />
                     </div>
                     <div className="p-4 text-center">
-                        <p className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">
+                        <p className="text-xl font-bold text-gray-900">
                             Flt Lt Simon Doherty
                         </p>
                     </div>
                 </div>
 
                 {/* Card 2 */}
-                <div className="image-text-container bg-transparent border border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-blue-500">
+                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
                             src={CI_Catterall}
@@ -44,14 +44,14 @@ function StaffPics() {
                         />
                     </div>
                     <div className="p-4 text-center">
-                        <p className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">
+                        <p className="text-xl font-bold text-gray-900">
                             CI Roy Catterall (Wg Cdr Ret'd)
                         </p>
                     </div>
                 </div>
 
                 {/* Card 3 */}
-                <div className="image-text-container bg-transparent border border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-blue-500">
+                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
                             src={Fg_Off_Quick}
@@ -60,14 +60,14 @@ function StaffPics() {
                         />
                     </div>
                     <div className="p-4 text-center">
-                        <p className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">
+                        <p className="text-xl font-bold text-gray-900">
                             Fg Off Jack Quick (RAF)
                         </p>
                     </div>
                 </div>
 
                 {/* Card 4 */}
-                <div className="image-text-container bg-transparent border border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-blue-500">
+                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
                             src={WO_Barker}
@@ -76,14 +76,14 @@ function StaffPics() {
                         />
                     </div>
                     <div className="p-4 text-center">
-                        <p className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">
+                        <p className="text-xl font-bold text-gray-900">
                             WO Jonathon Barker
                         </p>
                     </div>
                 </div>
 
                 {/* Card 5 */}
-                <div className="image-text-container bg-transparent border border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-blue-500">
+                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
                             src={FS_Gill}
@@ -92,14 +92,14 @@ function StaffPics() {
                         />
                     </div>
                     <div className="p-4 text-center">
-                        <p className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">
+                        <p className="text-xl font-bold text-gray-900">
                             FS Joseph Gill
                         </p>
                     </div>
                 </div>
 
                 {/* Card 6 */}
-                <div className="image-text-container bg-transparent border border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-blue-500">
+                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
                             src={Sgt_MacGregor}
@@ -108,14 +108,14 @@ function StaffPics() {
                         />
                     </div>
                     <div className="p-4 text-center">
-                        <p className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">
+                        <p className="text-xl font-bold text-gray-900">
                             Sgt Callum MacGregor
                         </p>
                     </div>
                 </div>
 
                 {/* Card 7 */}
-                <div className="image-text-container bg-transparent border border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-blue-500">
+                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
                             src={Sgt_Lloyd_Morris}
@@ -124,14 +124,14 @@ function StaffPics() {
                         />
                     </div>
                     <div className="p-4 text-center">
-                        <p className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">
+                        <p className="text-xl font-bold text-gray-900">
                             A Sgt G Lloyd Morris
                         </p>
                     </div>
                 </div>
 
                 {/* Card 8 */}
-                <div className="image-text-container bg-transparent border border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-blue-500">
+                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
                             src={CI_McDonld}
@@ -140,14 +140,14 @@ function StaffPics() {
                         />
                     </div>
                     <div className="p-4 text-center">
-                        <p className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">
+                        <p className="text-xl font-bold text-gray-900">
                             CI Ben McDonald
                         </p>
                     </div>
                 </div>
 
                 {/* Card 9 */}
-                <div className="image-text-container bg-transparent border border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-blue-500">
+                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
                             src={CI_Gill}
@@ -156,14 +156,14 @@ function StaffPics() {
                         />
                     </div>
                     <div className="p-4 text-center">
-                        <p className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">
+                        <p className="text-xl font-bold text-gray-900">
                             CI Jacob Gill
                         </p>
                     </div>
                 </div>
 
                 {/* Card 10 */}
-                <div className="image-text-container bg-transparent border border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 hover:border-blue-500">
+                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
                             src={CI_Stone}
@@ -172,7 +172,7 @@ function StaffPics() {
                         />
                     </div>
                     <div className="p-4 text-center">
-                        <p className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors duration-300">
+                        <p className="text-xl font-bold text-gray-900">
                             CI Sophie Stone
                         </p>
                     </div>
