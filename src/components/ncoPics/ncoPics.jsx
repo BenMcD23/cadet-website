@@ -146,7 +146,7 @@ function NCOPics() {
                     </div>
                     <div className="p-4 text-center">
                         <p className="text-xl font-bold text-gray-900">
-                            Sgt K Evans"
+                            Sgt K Evans
                         </p>
                     </div>
                 </div>

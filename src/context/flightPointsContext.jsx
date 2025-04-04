@@ -12,7 +12,7 @@ export const FlightPointsProvider = ({ children }) => {
     useEffect(() => {
         // check if data is already in local storage, if not, fetch it
         if (!sessionStorage.getItem('pointsData')) {
-            fetch("https://script.google.com/macros/s/AKfycbyxyrLU-xGuiUfBUbnYjhOzWBpndAzzHZ6L_1Dqv_CHwDUNHyMByFW6GuZyZy_qvrYoYw/exec", {
+            fetch("https://script.google.com/macros/s/AKfycbz6MiAk40cBVs52jc0uaj9g7WZj6azrGh9dCR1fSpkldh8saqse1z3cMyiN6c-px8X3_w/exec ", {
                 method: 'POST'
             })
             .then(response => response.json())
