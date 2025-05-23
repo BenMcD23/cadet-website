@@ -8,7 +8,7 @@ function ContactForm() {
   const [successMessage, setSuccessMessage] = useState("");
   const [captchaMessage, setCaptchaMessage] = useState("");
   const [recaptchaValue, setRecaptchaValue] = useState(null);
-  // for changing button to submitting so cant spam
+  const [selectedReason, setSelectedReason] = useState(""); // Track selected reason
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef(null);
 
@@ -27,7 +27,7 @@ function ContactForm() {
     setCaptchaMessage("");
     setIsSubmitting(true);
 
-    fetch("https://script.google.com/macros/s/AKfycbzqCIr6DV3gR7vU1IRa2_T1te1w2uzh-Uojh0kBLmQ8-uuM4PUiuLbakylv8kjuA4hYHQ/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbwkt-smkBtwgQWpIPjgm10cLFgtqXsg5eNGDFsLQsuF3ds_8mVWjnNuuNRgyLni6DkEZQ/exec", {
       method: 'POST',
       body: new FormData(formRef.current),
     })
@@ -37,9 +37,8 @@ function ContactForm() {
         setSuccessMessage("Your message has been sent successfully!");
         formRef.current.reset();
         setRecaptchaValue(null);
-      } 
-      
-      else {
+        setSelectedReason(""); // Reset selection
+      } else {
         setSuccessMessage("There was an error sending your message. Please try again.");
       }
     })
@@ -52,14 +51,19 @@ function ContactForm() {
     });
   };
 
+  const handleReasonChange = (e) => {
+    const value = e.target.value;
+    setSelectedReason(value);
+  };
+
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 bg-slate-grey-main clip-path-sm-r-l md:clip-path-md-r-l lg:clip-path-lg-r-l pb-5">
       <div className="flex items-center justify-center px-3 md:px-5 pt-5 flex">
         <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29263.47679096115!2d-2.1712879893655064!3d53.524250203160896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb72d3073f64d%3A0xbe6cac6a7b6a2dcc!2s317%20Squadron%20Air%20Training%20Corps!5e0!3m2!1sen!2suk!4v1723907678744!5m2!1sen!2suk" 
+          src="https://www.google.com/maps/embed?pb= !1m18!1m12!1m3!1d29263.47679096115!2d-2.1712879893655064!3d53.524250203160896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb72d3073f64d%3A0xbe6cac6a7b6a2dcc!2s317%20Squadron%20Air%20Training%20Corps!5e0!3m2!1sen!2suk!4v1723907678744!5m2!1sen!2suk" 
           width="100%" 
           height="100%" 
-          style={{ border: 0, maxWidth: '100%'}} 
+          style={{ border: 0, maxWidth: '100%' }} 
           allowFullScreen={true} 
           loading="lazy" 
           referrerPolicy="no-referrer-when-downgrade"
@@ -95,38 +99,54 @@ function ContactForm() {
             />
           </Form.Group>
 
-
-
           <Form.Group className="mb-3" controlId="formInterest">
             <Form.Label className="text-xl font-extrabold leading-none">Contact Reason:</Form.Label>
-            <Form.Select name="Contact_Reason" required defaultValue="">
-              <option value="" disabled>Please select</option> {/* Default empty option */}
+            <Form.Select 
+              name="Contact_Reason" 
+              required 
+              defaultValue="" 
+              onChange={handleReasonChange}
+            >
+              <option value="" disabled>Please select</option>
               <option value="General enquiry">General enquiry</option>
-
               <option value="Cadet joining interest">Cadet joining interest</option>
               <option value="Staff joining interest">Staff joining interest</option>
               <option value="Committee joining interest">Committee joining interest</option>
-
             </Form.Select>
           </Form.Group>
+
+          {/* Show Date of Birth only if Cadet joining interest is selected */}
+          {selectedReason === "Cadet joining interest" && (
+            <Form.Group className="mb-3" controlId="formDOB">
+              <Form.Label className="text-xl font-extrabold leading-none">Cadet Date of Birth:</Form.Label>
+              <Form.Control 
+                type="date" 
+                name="Date_of_Birth" 
+                required 
+              />
+            </Form.Group>
+          )}
+
           <Form.Group className="mb-3" controlId="Description">
             <Form.Label className="text-xl font-extrabold leading-none">Message:</Form.Label>
             <Form.Control as="textarea" rows={4} name="Message" required />
           </Form.Group>
+
           <Form.Group className="mb-3 flex justify-center">
             <ReCAPTCHA
               sitekey="6LcKO2sqAAAAALn3TkQDe81ddIE1l_iez1tOqjGS" 
               onChange={handleRecaptchaChange}
             />
           </Form.Group>
+
           <div className="text-center"> 
             <Button 
               className="shift-button"
               variant="success" 
               type="submit"
-              disabled={isSubmitting} // Disable button when submitting
+              disabled={isSubmitting}
             >
-              {isSubmitting ? "Submitting..." : "Submit"} {/* Change button text when submitting */}
+              {isSubmitting ? "Submitting..." : "Submit"}
             </Button>
             {successMessage && <div className="text-green-500 text-lg font-semibold pt-2">{successMessage}</div>}
             {captchaMessage && <div className="text-red-800 text-lg font-bold pt-2">{captchaMessage}</div>}
