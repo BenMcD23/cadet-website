@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import Programmes from "../../assets/home_images/programmes.webp";
 import Contact from "../../assets/home_images/contact.webp";
-import Facebook from "../../assets/home_images/facebook.webp";
+import Uniform from "../../assets/home_images/uniform.png";
 import Store from "../../assets/home_images/store.webp";
 
 function LinkCards() {
@@ -14,12 +14,11 @@ function LinkCards() {
 
             <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 middle:grid-cols-4 w-3/4 mx-auto content-center text-center mt-10">
                 {data.map((d, index) => (
-                        <div
-                            key={d.title}
-                            className={`link-card relative`}
-                        >
+                    <div
+                        key={d.title}
+                        className={`link-card relative`}
+                    >
                         <Link to={d.link}>
-
                             <img className="link-card-img w-full" src={d.img} alt={d.title} />
                             
                             <div className="absolute top-2 left-1/2 transform -translate-x-1/2 text-white text-xl font-bold">
@@ -30,9 +29,7 @@ function LinkCards() {
                                 <p className="mb-6 font-normal lg:text-xl text-center text-white">{d.main}</p>
                             </div>
                         </Link>
-
-                        </div>
-
+                    </div>
                 ))}
             </div>
         </div>
@@ -53,16 +50,16 @@ const data = [
         link: `/programme`
     },
     {
-        title: `Our Facebook`,
-        img: Facebook,
-        main: `Stay updated with all our latest news and events`,
-        link: `https://www.facebook.com/317atc`
+        title: `Uniform Order Form`,
+        img: Uniform,
+        main: `Form for Cadets to order uniform`,
+        link: `https://docs.google.com/forms/d/e/1FAIpQLSccWyk4xnre_JKbQdTg0w9SO2AaexoQ2R31hFdjV7zceIwxpw/viewform?usp=dialog`
     },
     {
         title: `Store`,
         img: Store,
         main: `Cadet SumUp store`,
-        link: `https://317atc.sumupstore.com/`
+        link: `https://317atc.sumupstore.com/  `
     },
 ];
 
