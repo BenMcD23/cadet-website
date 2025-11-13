@@ -17,11 +17,13 @@ function FlightP() {
             <div className="grid grid-cols-1 md:grid-cols-2 text-center m-auto w-full xl:w-9/12 py-3 px-5">
                 <div>
                     <h1 className="text-5xl md:text-4xl lg:text-6xl font-extrabold">A Flight</h1>
-                    <h2 className="text-4xl lg:text-5xl pt-4 font-bold">{pointsData[0]}</h2>
+                    <h2 className="text-4xl lg:text-5xl pt-4 font-bold">----</h2>
+                    {/* <h2 className="text-4xl lg:text-5xl pt-4 font-bold">{pointsData[0]}</h2> */}
                 </div>
                 <div>
                     <h1 className="text-5xl md:text-4xl lg:text-6xl font-extrabold">B Flight</h1>
-                    <h2 className="text-4xl lg:text-5xl pt-4 font-bold">{pointsData[1]}</h2>
+                    <h2 className="text-4xl lg:text-5xl pt-4 font-bold">----</h2>
+                    {/* <h2 className="text-4xl lg:text-5xl pt-4 font-bold">{pointsData[1]}</h2> */}
                 </div>
             </div>
         </>
