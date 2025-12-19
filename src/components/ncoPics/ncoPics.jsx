@@ -1,29 +1,111 @@
-import FS_Wimbury from "../../assets/nco_pics/FS_Wimbury.webp";
-import FS_Tyrell from "../../assets/nco_pics/FS_Tyrell.webp";
+const images = import.meta.glob(
+  "../../assets/nco_pics/*.webp",
+  { eager: true }
+);
 
-import Sgt_Bardsley from "../../assets/nco_pics/Sgt_Bardsley.webp";
-import Sgt_Beverley from "../../assets/nco_pics/Sgt_Beverley.webp";
-import Sgt_Murray from "../../assets/nco_pics/Sgt_Murray.webp";
-import Sgt_Evans from "../../assets/nco_pics/Sgt_Evans.webp";
-import Sgt_Hall from "../../assets/nco_pics/Sgt_Hall.webp";
-import Sgt_Mullery_McCourt from "../../assets/nco_pics/Sgt_Mullery_McCourt.webp";
-
-import Cpl_Brice from "../../assets/nco_pics/Cpl_Brice.webp";
-import Cpl_Davies from "../../assets/nco_pics/Cpl_Davies.webp";
-import Cpl_Drury from "../../assets/nco_pics/Cpl_Drury.webp";
-import Cpl_Milligan from "../../assets/nco_pics/Cpl_Milligan.webp";
-import Cpl_Tyrell from "../../assets/nco_pics/Cpl_Tyrell.webp";
-import Cpl_Mack from "../../assets/nco_pics/Cpl_Mack.webp";
-import Cpl_Malik from "../../assets/nco_pics/Cpl_Malik.webp";
+const getImage = (fileName) =>
+  images[`../../assets/nco_pics/${fileName}`]?.default;
 
 import "./ncoPicsStyles.css";
 
 function NCOPics() {
+
+    const ncos = [
+        { name: "CWO V Tyrell", alt: "CWO V Tyrell", image: "CWO Tyrell.webp" },
+        { name: "FS M Beverley", alt: "FS M Beverley", image: "Sgt Beverley.webp" },
+        { name: "FS N Mullery-McCourt", alt: "FS N Mullery-McCourt", image: "Sgt Mullery-McCourt.webp" },
+        { name: "FS T Wimbury", alt: "FS T Wimbury", image: "FS Wimbury.webp" },
+
+        { name: "Sgt J Brice", alt: "Sgt J Brice", image: "Cpl Brice.webp" },
+        { name: "Sgt A Davies", alt: "Sgt A Davies", image: "Cpl Davies.webp" },
+        { name: "Sgt L Drury", alt: "Sgt L Drury", image: "Cpl Drury.webp" },
+        { name: "Sgt L Hall", alt: "Sgt L Hall", image: "Sgt Hall.webp" },
+
+        { name: "Cpl A Ahsan", alt: "Cpl A Ahsan", image: "Cdt Ahsan.webp" },
+        { name: "Cpl K Evans", alt: "Cpl K Evans", image: "Cpl Evans.webp" },
+        { name: "Cpl C Mack", alt: "Cpl C Mack", image: "Cpl Mack.webp" },
+        { name: "Cpl F Malik", alt: "Cpl F Malik", image: "Cpl Malik.webp" },
+        { name: "Cpl T Partington", alt: "Cpl T Partington", image: "Cdt Partington.webp" },
+        { name: "Cpl R Sawczuk", alt: "Cpl R Sawczuk", image: "Cdt Sawczuk.webp" },
+        { name: "Cpl E Tyrell", alt: "Cpl E Tyrell", image: "Cpl Tyrell.webp" },
+        { name: "Cpl T Tyrell", alt: "Cpl T Tyrell", image: "Cdt Tyrell.webp" },
+        ];
+
     return (
         <div className="staff-container max-w-7xl mx-auto px-4 py-4">
             {/* Grid Container */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {/* Card 1 */}
+                  {ncos.map((person) => (
+                        <div
+                        key={person.name}
+                        className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105"
+                        >
+                        <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
+                            <img
+                            src={getImage(person.image)}
+                            className="w-full h-full max-h-72 w-auto"
+                            alt={person.alt}
+                            />
+                        </div>
+                        <div className="p-4 text-center">
+                            <p className="text-xl font-bold text-gray-900">
+                            {person.name}
+                            </p>
+                        </div>
+                        </div>
+                    ))}
+
+
+
+
+
+{/* 
+                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                    <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
+                        <img
+                            src={FS_Tyrell}
+                            className="w-full h-full max-h-72 w-auto"
+                            alt="CWO V Tyrell"
+                        />
+                    </div>
+                    <div className="p-4 text-center">
+                        <p className="text-xl font-bold text-gray-900">
+                            FS V Tyrell
+                        </p>
+                    </div>
+                </div>
+
+
+                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                    <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
+                        <img
+                            src={FS_Wimbury}
+                            className="w-full h-full max-h-72 w-auto"
+                            alt="FS M Beverley"
+                        />
+                    </div>
+                    <div className="p-4 text-center">
+                        <p className="text-xl font-bold text-gray-900">
+                            FS M Beverley
+                        </p>
+                    </div>
+                </div>
+
+                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                    <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
+                        <img
+                            src={FS_Wimbury}
+                            className="w-full h-full max-h-72 w-auto"
+                            alt="FS N Mullery-McCourt"
+                        />
+                    </div>
+                    <div className="p-4 text-center">
+                        <p className="text-xl font-bold text-gray-900">
+                            FS N Mullery-McCourt
+                        </p>
+                    </div>
+                </div>
+
                 <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
@@ -39,55 +121,51 @@ function NCOPics() {
                     </div>
                 </div>
 
-                {/* Card 2 */}
                 <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
-                            src={FS_Tyrell}
+                            src={FS_Wimbury}
                             className="w-full h-full max-h-72 w-auto"
-                            alt="FS V Tyrell"
+                            alt="Sgt J Brice"
                         />
                     </div>
                     <div className="p-4 text-center">
                         <p className="text-xl font-bold text-gray-900">
-                            FS V Tyrell
+                            Sgt J Brice
                         </p>
                     </div>
                 </div>
 
-                {/* Card 3 */}
                 <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
-                            src={Sgt_Bardsley}
+                            src={FS_Wimbury}
                             className="w-full h-full max-h-72 w-auto"
-                            alt="Sgt A Bardsley"
+                            alt="Sgt A Davies"
                         />
                     </div>
                     <div className="p-4 text-center">
                         <p className="text-xl font-bold text-gray-900">
-                            Sgt A Bardsley
+                            Sgt A Davies
                         </p>
                     </div>
                 </div>
-
-                {/* Card 5 */}
+               
                 <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
-                            src={Sgt_Murray}
+                            src={FS_Wimbury}
                             className="w-full h-full max-h-72 w-auto"
-                            alt="Sgt C Murray"
+                            alt="Sgt L Drury"
                         />
                     </div>
                     <div className="p-4 text-center">
                         <p className="text-xl font-bold text-gray-900">
-                            Sgt C Murray
+                            Sgt L Drury
                         </p>
                     </div>
                 </div>
 
-                {/* Card 7 */}
                 <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
@@ -103,76 +181,40 @@ function NCOPics() {
                     </div>
                 </div>
 
-                {/* Card 4 */}
                 <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
-                            src={Sgt_Beverley}
+                            src={Sgt_Hall}
                             className="w-full h-full max-h-72 w-auto"
-                            alt="Sgt M Beverley"
+                            alt="Cpl A Ahsan"
                         />
                     </div>
                     <div className="p-4 text-center">
                         <p className="text-xl font-bold text-gray-900">
-                            Sgt M Beverley
+                            Cpl A Ahsan
                         </p>
                     </div>
                 </div>
 
-                {/* Card 8 */}
                 <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
-                            src={Sgt_Mullery_McCourt}
+                            src={Sgt_Hall}
                             className="w-full h-full max-h-72 w-auto"
-                            alt="Sgt N Mullery McCourt"
+                            alt="Cpl K Evans"
                         />
                     </div>
                     <div className="p-4 text-center">
                         <p className="text-xl font-bold text-gray-900">
-                            Sgt N Mullery McCourt
+                            Cpl K Evans
                         </p>
                     </div>
                 </div>
 
-                {/* Card 6 */}
                 <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
-                            src={Sgt_Evans}
-                            className="w-full h-full max-h-72 w-auto"
-                            alt="Sgt K Evans"
-                        />
-                    </div>
-                    <div className="p-4 text-center">
-                        <p className="text-xl font-bold text-gray-900">
-                            Sgt K Evans
-                        </p>
-                    </div>
-                </div>
-
-
-                {/* Card 9 */}
-                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                    <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
-                        <img
-                            src={Cpl_Milligan}
-                            className="w-full h-full max-h-72 w-auto"
-                            alt="Cpl B Milligan"
-                        />
-                    </div>
-                    <div className="p-4 text-center">
-                        <p className="text-xl font-bold text-gray-900">
-                            Cpl B Milligan
-                        </p>
-                    </div>
-                </div>
-
-                {/* Card 10 */}
-                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                    <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
-                        <img
-                            src={Cpl_Mack}
+                            src={Sgt_Hall}
                             className="w-full h-full max-h-72 w-auto"
                             alt="Cpl C Mack"
                         />
@@ -184,29 +226,10 @@ function NCOPics() {
                     </div>
                 </div>
 
-
-
-                {/* Card 10 */}
                 <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
-                            src={Cpl_Tyrell}
-                            className="w-full h-full max-h-72 w-auto"
-                            alt="Cpl E Tyrell"
-                        />
-                    </div>
-                    <div className="p-4 text-center">
-                        <p className="text-xl font-bold text-gray-900">
-                            Cpl E Tyrell
-                        </p>
-                    </div>
-                </div>
-
-                {/* Card 10 */}
-                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                    <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
-                        <img
-                            src={Cpl_Malik}
+                            src={Sgt_Hall}
                             className="w-full h-full max-h-72 w-auto"
                             alt="Cpl F Malik"
                         />
@@ -218,54 +241,65 @@ function NCOPics() {
                     </div>
                 </div>
 
-                {/* Card 10 */}
                 <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
-                            src={Cpl_Davies}
+                            src={Sgt_Hall}
                             className="w-full h-full max-h-72 w-auto"
-                            alt="Cpl G Davies"
+                            alt="Cpl T Partington"
                         />
                     </div>
                     <div className="p-4 text-center">
                         <p className="text-xl font-bold text-gray-900">
-                            Cpl G Davies
+                            Cpl T Partington
                         </p>
                     </div>
                 </div>
 
-                {/* Card 10 */}
                 <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
-                            src={Cpl_Brice}
+                            src={Sgt_Hall}
                             className="w-full h-full max-h-72 w-auto"
-                            alt="Cpl J Brice"
+                            alt="Cpl R Sawczuk"
                         />
                     </div>
                     <div className="p-4 text-center">
                         <p className="text-xl font-bold text-gray-900">
-                            Cpl J Brice
+                            Cpl R Sawczuk
                         </p>
                     </div>
                 </div>
 
-                {/* Card 10 */}
                 <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                     <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
                         <img
-                            src={Cpl_Drury}
+                            src={Sgt_Hall}
                             className="w-full h-full max-h-72 w-auto"
-                            alt="Cpl L Drury"
+                            alt="Cpl E Tyrell"
                         />
                     </div>
                     <div className="p-4 text-center">
                         <p className="text-xl font-bold text-gray-900">
-                            Cpl L Drury
+                            Cpl E Tyrell
                         </p>
                     </div>
                 </div>
 
+                <div className="image-text-container bg-transparent border border-3 border-gray-300 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                    <div className="aspect-w-3 aspect-h-4 flex items-center justify-center overflow-hidden">
+                        <img
+                            src={Sgt_Hall}
+                            className="w-full h-full max-h-72 w-auto"
+                            alt="Cpl T Tyrell"
+                        />
+                    </div>
+                    <div className="p-4 text-center">
+                        <p className="text-xl font-bold text-gray-900">
+                            Cpl T Tyrell
+                        </p>
+                    </div>
+                </div> */}
             </div>
         </div>
     );
