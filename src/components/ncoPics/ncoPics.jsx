@@ -17,7 +17,7 @@ function NCOPics() {
         { name: "FS T Wimbury", alt: "FS T Wimbury", image: "FS Wimbury.webp" },
 
         { name: "Sgt J Brice", alt: "Sgt J Brice", image: "Cpl Brice.webp" },
-        { name: "Sgt A Davies", alt: "Sgt A Davies", image: "Cpl Davies.webp" },
+        { name: "Sgt G Davies", alt: "Sgt A Davies", image: "Cpl Davies.webp" },
         { name: "Sgt L Drury", alt: "Sgt L Drury", image: "Cpl Drury.webp" },
         { name: "Sgt L Hall", alt: "Sgt L Hall", image: "Sgt Hall.webp" },
 
