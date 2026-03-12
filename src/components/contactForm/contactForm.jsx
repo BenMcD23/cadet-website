@@ -109,7 +109,7 @@ function ContactForm() {
             >
               <option value="" disabled>Please select</option>
               <option value="General enquiry">General enquiry</option>
-              <option value="Cadet joining interest">Cadet joining interest</option>
+              {/* <option value="Cadet joining interest">Cadet joining interest</option> */}
               <option value="Staff joining interest">Staff joining interest</option>
               <option value="Committee joining interest">Committee joining interest</option>
             </Form.Select>

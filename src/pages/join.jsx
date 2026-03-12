@@ -64,9 +64,12 @@ function Join() {
                     </div>
                 </div>
                 <h3 className="text-3xl lg:text-4xl font-bold underline">To Join</h3>
-                <p className="text-xl leading-7 lg:text-2xl pb-2 pt-2 px-8">
+                {/* <p className="text-xl leading-7 lg:text-2xl pb-2 pt-2 px-8">
                     Fill out this contact form with your information and we will get back to you with more details.
-                </p>                
+                </p> */}
+                <p className="text-2xl leading-7 lg:text-4xl pb-2 pt-2 px-8">
+                    Apologies, but we are not accepting any new cadet applications at the moment.
+                </p>
             </div>
 
             <ContactForm></ContactForm>
