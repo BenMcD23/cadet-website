@@ -72,6 +72,9 @@ function ContactForm() {
 
       <div className="title-hover">
         <Title title="Contact Form"></Title>
+        <div className="mx-3 md:mx-5 mt-3 p-3 text-white font-semibold text-center rounded text-xl">
+          Apologies, but we are not accepting any new cadet applications at the moment.
+        </div>
         <br/>
         <Form 
           className="text-white px-3 md:mx-5 title-hover"
