@@ -12,6 +12,8 @@ import FlightP from './pages/flight-p'
 import Join from './pages/join'
 import Contact from './pages/contact'
 import Parents from './pages/parents'
+import News from './pages/news'
+import Gallery from './pages/gallery'
 import NotFound from './pages/404'
 
 import { Route, Routes } from "react-router-dom"
@@ -24,7 +26,7 @@ function App() {
     
     <>
     <Analytics/>
-    <div className="app-container">
+    <div className="pt-16">
       <Navbar/>
       <ScrollToTop>
         <Routes>
@@ -37,6 +39,8 @@ function App() {
           <Route path="/join" element={<Join/>}/>
           <Route path="/parents" element={<Parents/>}/>
           <Route path="/contact" element={<Contact/>}/>
+          <Route path="/news" element={<News/>}/>
+          <Route path="/gallery" element={<Gallery/>}/>
 
           <Route path='*' element={<NotFound />}/>
         </Routes>

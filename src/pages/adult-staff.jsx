@@ -1,21 +1,25 @@
 import StaffPics from "../components/staffPics/staffPics"
-import Title from "../components/mainTitle/title";
+import PageHeader from "../components/pageHeader/pageHeader";
 import { Link } from "react-router-dom";
 
 function Staff() {
-
-
     return (
         <>
-            <div className="bg-dark-blue-main title-hover text-center pb-3 lg:pt-14">
-                <Title title="Adult Staff"></Title>
-                <p className="text-xl leading-7 lg:text-2xl text-white pb-1 px-8">Our squadron is managed by a dedicated group of volunteer staff and civilian committee members.
-                    <br/><br/>The team has years of experience and is committed to providing cadets with the Air Cadet experience.
-                </p>
-                <Link to="/join"><button className="shift-button">Interested In becoming a staff member?</button></Link>
+            <PageHeader
+                title="Adult Staff"
+                intro="Our squadron is managed by a dedicated group of volunteer staff and civilian committee members.
+                    The team has years of experience and is committed to providing cadets with the Air Cadet experience."
+            />
 
+            <div className="section bg-surface">
+                <div className="section-container">
+                    <StaffPics></StaffPics>
+
+                    <div className="mt-10 text-center">
+                        <Link to="/join" className="btn-primary">Interested in becoming a staff member?</Link>
+                    </div>
+                </div>
             </div>
-            <StaffPics></StaffPics>
         </>
     );
 }

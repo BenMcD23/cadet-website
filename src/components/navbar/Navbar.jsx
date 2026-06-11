@@ -1,64 +1,142 @@
-import { NavLink, useLocation } from "react-router-dom";
-import "./NavbarStyles.css";
+import { useEffect, useState } from "react";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import nav_logo from "../../assets/317_logo.png";
 
+const aboutLinks = [
+	{ to: "/adult-staff", label: "Adult Staff" },
+	{ to: "/cadet-ncos", label: "Cadet NCO's" },
+];
+
+const resourceLinks = [
+	{ to: "/documents", label: "Documents" },
+	{ to: "/flight-points", label: "Flight Points" },
+	{ to: "/parents", label: "Parents" },
+];
+
+const linkClasses = ({ isActive }) =>
+	`block rounded-md px-3 py-2 text-sm font-semibold transition-colors ${
+		isActive ? "text-accent" : "text-white hover:text-accent"
+	}`;
+
+function Dropdown({ label, links, active }) {
+	return (
+		<div className="group relative">
+			<button
+				type="button"
+				className={`flex items-center gap-1 rounded-md px-3 py-2 text-sm font-semibold transition-colors ${
+					active ? "text-accent" : "text-white group-hover:text-accent"
+				}`}
+			>
+				{label}
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="size-3 transition-transform group-hover:rotate-180">
+					<path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+				</svg>
+			</button>
+			<div className="invisible absolute left-1/2 top-full z-50 w-44 -translate-x-1/2 pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
+				<div className="overflow-hidden rounded-lg bg-navy-light shadow-lg ring-1 ring-white/10">
+					{links.map((l) => (
+						<NavLink
+							key={l.to}
+							to={l.to}
+							className={({ isActive }) =>
+								`block px-4 py-2.5 text-sm font-semibold transition-colors ${
+									isActive ? "text-accent" : "text-white hover:bg-navy hover:text-accent"
+								}`
+							}
+						>
+							{l.label}
+						</NavLink>
+					))}
+				</div>
+			</div>
+		</div>
+	);
+}
+
 function Navbar() {
-    const location = useLocation().pathname;
-    const aboutActive = location === '/adult-staff' || location === '/cadet-ncos';
-    const resourcesActive = location === '/documents' || location === '/flight-points' || location === '/parents';
+	const location = useLocation();
+	const [menuOpen, setMenuOpen] = useState(false);
+
+	// close the mobile menu whenever the route changes
+	useEffect(() => {
+		setMenuOpen(false);
+	}, [location.pathname]);
+
+	const aboutActive = aboutLinks.some((l) => l.to === location.pathname);
+	const resourcesActive = resourceLinks.some((l) => l.to === location.pathname);
+
+	const mobileLink = ({ isActive }) =>
+		`block rounded-md px-4 py-2.5 text-base font-semibold ${
+			isActive ? "bg-navy-light text-accent" : "text-white hover:bg-navy-light"
+		}`;
 
 	return (
-		<>
-			<div className="lg:w-8/12 xl:w-7/12 2xl:w-6/12 lg:m-auto">
- 				<nav className="fixed grid grid-cols-5 lg:grid-cols-6 navbar-container pt-1 pb-1.5 lg:w-8/12 xl:w-7/12 2xl:w-6/12">
-					<NavLink to="/" className="hidden lg:flex lg:justify-center lg:rounded-l-xl"><img src={nav_logo} style={{height: "64px", width:"auto"}}/></NavLink>
-						
-					<NavLink to="/" className="lg:py-4" >
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-7 md:size-10 m-auto block lg:hidden">
-						<path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
-						</svg>
-						<p className="text-center text-xs md:text-sm lg:text-xl font-semibold leading-none">Home</p>
-					</NavLink>
-					<NavLink to="/programme" className="lg:py-4">
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-7 md:size-10 m-auto block lg:hidden">
-						<path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
-						</svg>
-						<p className="text-center text-xs md:text-sm lg:text-xl font-semibold leading-none">Programme</p>
-					</NavLink>
-					<div className={`relative dropdown lg:py-4 ${aboutActive ? 'active' : ''}`}>
+		<header className="fixed inset-x-0 top-0 z-50 bg-navy shadow-lg">
+			<nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+				<Link to="/" className="flex min-w-0 items-center gap-3">
+					<img src={nav_logo} alt="317 Squadron crest" className="h-11 w-auto shrink-0" />
+					<span className="truncate text-sm font-bold leading-tight text-white sm:text-base">
+						317 Failsworth &amp; Newton Heath<span className="hidden md:inline"> Squadron</span>
+					</span>
+				</Link>
 
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-7 md:size-10 m-auto block lg:hidden">
-						<path strokeLinecap="round" strokeLinejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
-						</svg>
-						<p className="text-center text-xs md:text-sm lg:text-xl font-semibold leading-none">About</p>
-						<div className="dropdown-content">
-							<NavLink to="/adult-staff" className="text-center text-base lg:text-lg font-semibold leading-none">Adult Staff</NavLink>
-							<NavLink to="/cadet-ncos" className="text-center text-base lg:text-lg font-semibold leading-none">Cadet NCO's</NavLink>
-						</div>
-					</div>
-					<div className={`relative dropdown lg:py-4 ${resourcesActive ? 'active' : ''}`}>
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-7 md:size-10 m-auto block lg:hidden">
-						<path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
-						</svg>
-						<p className="text-center text-xs md:text-sm lg:text-xl font-semibold leading-none">Resources</p>
-						<div className="dropdown-content">
-							<NavLink to="/documents" className="text-center text-base lg:text-lg font-semibold leading-none">Documents</NavLink>
-							<NavLink to="/flight-points" className="text-center text-base lg:text-lg font-semibold leading-none">Flight Points</NavLink>
-							<NavLink to="/parents" className="text-center text-base lg:text-lg font-semibold leading-none">Parents</NavLink>
-
-						</div>
-					</div>
-					<NavLink to="/join" className="lg:py-4 lg:rounded-r-xl">
-						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-7 md:size-10 m-auto block lg:hidden">
-						<path strokeLinecap="round" strokeLinejoin="round" d="M18 7.5v3m0 0v3m0-3h3m-3 0h-3m-2.25-4.125a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0ZM3 19.235v-.11a6.375 6.375 0 0 1 12.75 0v.109A12.318 12.318 0 0 1 9.374 21c-2.331 0-4.512-.645-6.374-1.766Z" />
-						</svg>
-						<p className="text-center text-xs md:text-sm lg:text-xl font-semibold leading-none">Join</p>
+				{/* desktop links */}
+				<div className="hidden items-center gap-1 lg:flex">
+					<NavLink to="/" className={linkClasses}>Home</NavLink>
+					<Dropdown label="About" links={aboutLinks} active={aboutActive} />
+					<NavLink to="/programme" className={linkClasses}>Programme</NavLink>
+					<NavLink to="/news" className={linkClasses}>News</NavLink>
+					<NavLink to="/gallery" className={linkClasses}>Gallery</NavLink>
+					<Dropdown label="Resources" links={resourceLinks} active={resourcesActive} />
+					<NavLink to="/contact" className={linkClasses}>Contact</NavLink>
+					<NavLink to="/join" className="ml-2 rounded-lg bg-accent-dark px-4 py-2 text-sm font-bold text-white transition-colors hover:bg-accent">
+						Join Us
 					</NavLink>
-				</nav>
-			</div>
-		</>
+				</div>
 
+				{/* mobile hamburger */}
+				<button
+					type="button"
+					className="rounded-md p-2 text-white lg:hidden"
+					aria-label={menuOpen ? "Close menu" : "Open menu"}
+					aria-expanded={menuOpen}
+					onClick={() => setMenuOpen((open) => !open)}
+				>
+					{menuOpen ? (
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="size-7">
+							<path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+						</svg>
+					) : (
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="size-7">
+							<path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+						</svg>
+					)}
+				</button>
+			</nav>
+
+			{/* mobile menu */}
+			{menuOpen && (
+				<div className="border-t border-white/10 bg-navy px-4 pb-4 pt-2 lg:hidden">
+					<NavLink to="/" className={mobileLink}>Home</NavLink>
+					<p className="px-4 pb-1 pt-3 text-xs font-bold uppercase tracking-wider text-accent">About</p>
+					{aboutLinks.map((l) => (
+						<NavLink key={l.to} to={l.to} className={mobileLink}>{l.label}</NavLink>
+					))}
+					<NavLink to="/programme" className={mobileLink}>Programme</NavLink>
+					<NavLink to="/news" className={mobileLink}>News</NavLink>
+					<NavLink to="/gallery" className={mobileLink}>Gallery</NavLink>
+					<p className="px-4 pb-1 pt-3 text-xs font-bold uppercase tracking-wider text-accent">Resources</p>
+					{resourceLinks.map((l) => (
+						<NavLink key={l.to} to={l.to} className={mobileLink}>{l.label}</NavLink>
+					))}
+					<NavLink to="/contact" className={mobileLink}>Contact</NavLink>
+					<NavLink to="/join" className="mt-3 block rounded-lg bg-accent-dark px-4 py-2.5 text-center text-base font-bold text-white">
+						Join Us
+					</NavLink>
+				</div>
+			)}
+		</header>
 	);
-	}
+}
 
 export default Navbar;

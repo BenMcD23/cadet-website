@@ -2,48 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
+@layer base {
+    body {
+        @apply font-sans text-ink antialiased;
+    }
 
-    /* l-r meaning largest on the left smallest on right */
-    .clip-path-lg-l-r {
-        clip-path: polygon(0% 0%, 100% 30px, 100% 100%, 0% calc(100% - 30px));
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold text-navy;
     }
-    .clip-path-md-l-r {
-        clip-path: polygon(0% 0%, 100% 20px, 100% 100%, 0% calc(100% - 20px));
-    }
-    .clip-path-sm-l-r {
-        clip-path: polygon(0% 0%, 100% 15px, 100% 100%, 0% calc(100% - 15px));
-    }
-    
-    /* r-l largest on right */
-    .clip-path-lg-r-l {
-        clip-path: polygon(0% 30px,100% 0%,100% calc(100% - 30px),0% 100%);
-    }
-    .clip-path-md-r-l {
-        clip-path: polygon(0% 20px,100% 0%,100% calc(100% - 20px),0% 100%);
-    }
-    .clip-path-sm-r-l {
-        clip-path: polygon(0% 15px,100% 0%,100% calc(100% - 15px),0% 100%);
-    }
- }
 
+    :focus-visible {
+        @apply outline-none ring-2 ring-accent ring-offset-2;
+    }
 
-.app-container {
-    padding-top: 0px;
-    padding-bottom: 7.5vh;
-}
-
-/* md */
-@media (min-width: 768px) {
-    .app-container {
-        padding-top: 0px;
-        padding-bottom: 10vh;
-
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
     }
 }
 
-@media (min-width: 1024px) {
-    .app-container {
-        padding-bottom: 0px;
+@layer components {
+    .btn-primary {
+        @apply inline-block rounded-lg bg-accent-dark px-6 py-3 font-semibold text-white transition-colors hover:bg-accent focus-visible:ring-offset-navy;
+    }
+
+    .btn-secondary {
+        @apply inline-block rounded-lg border-2 border-white px-6 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-navy;
+    }
+
+    .section {
+        @apply py-12 md:py-16;
+    }
+
+    .section-container {
+        @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+    }
+
+    .card {
+        @apply overflow-hidden rounded-xl bg-white shadow-md transition duration-300;
     }
 }

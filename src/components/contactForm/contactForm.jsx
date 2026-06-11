@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import { useState, useRef } from "react";
 import ReCAPTCHA from 'react-google-recaptcha';
-import Title from "../mainTitle/title";
+
+const inputClasses = "w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-ink placeholder-gray-400 transition-colors focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent/50";
+const labelClasses = "mb-1.5 block font-semibold text-navy";
 
 function ContactForm() {
   const [successMessage, setSuccessMessage] = useState("");
@@ -18,7 +18,7 @@ function ContactForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (!recaptchaValue) {
       setCaptchaMessage("Complete captcha to submit message");
       return;
@@ -57,106 +57,77 @@ function ContactForm() {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 bg-slate-grey-main clip-path-sm-r-l md:clip-path-md-r-l lg:clip-path-lg-r-l pb-5">
-      <div className="flex items-center justify-center px-3 md:px-5 pt-5 flex">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29263.47679096115!2d-2.1712879893655064!3d53.524250203160896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb72d3073f64d%3A0xbe6cac6a7b6a2dcc!2s317%20Squadron%20Air%20Training%20Corps!5e0!3m2!1sen!2suk!4v1723907678744!5m2!1sen!2suk" 
-          width="100%" 
-          height="100%" 
-          style={{ border: 0, maxWidth: '100%' }} 
-          allowFullScreen={true} 
-          loading="lazy" 
-          referrerPolicy="no-referrer-when-downgrade"
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+      <div>
+        <label htmlFor="formName" className={labelClasses}>Full Name:</label>
+        <input id="formName" className={inputClasses} type="text" placeholder="Enter Full Name" name="Name" required />
+      </div>
+
+      <div>
+        <label htmlFor="formEmail" className={labelClasses}>Email:</label>
+        <input id="formEmail" className={inputClasses} type="email" placeholder="Enter Email" name="Email" required />
+      </div>
+
+      <div>
+        <label htmlFor="formPhone" className={labelClasses}>Phone Number:</label>
+        <input
+          id="formPhone"
+          className={inputClasses}
+          type="tel"
+          placeholder="Enter Phone Number"
+          name="Phone"
+          required
+          pattern="^0\d{10}$|^\+?[1-9]\d{1,14}$"
+          title="Please enter a valid phone number (e.g., 01616886705)"
         />
       </div>
 
-      <div className="title-hover">
-        <Title title="Contact Form"></Title>
-        <div className="mx-3 md:mx-5 mt-3 p-3 text-white font-semibold text-center rounded text-xl">
-          Apologies, but we are not accepting any new cadet applications at the moment.
-        </div>
-        <br/>
-        <Form 
-          className="text-white px-3 md:mx-5 title-hover"
-          ref={formRef} 
-          onSubmit={handleSubmit}
+      <div>
+        <label htmlFor="formInterest" className={labelClasses}>Contact Reason:</label>
+        <select
+          id="formInterest"
+          className={inputClasses}
+          name="Contact_Reason"
+          required
+          defaultValue=""
+          onChange={handleReasonChange}
         >
-          <Form.Group className="mb-3" controlId="formName">
-            <Form.Label className="text-xl font-extrabold leading-none">Full Name:</Form.Label>
-            <Form.Control type="text" placeholder="Enter Full Name" name="Name" required />
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label className="text-xl font-extrabold leading-none">Email:</Form.Label>
-            <Form.Control type="email" placeholder="Enter Email" name="Email" required />
-          </Form.Group>
-          
-          <Form.Group className="mb-3" controlId="formPhone">
-            <Form.Label className="text-xl font-extrabold leading-none">Phone Number:</Form.Label>
-            <Form.Control 
-              type="tel" 
-              placeholder="Enter Phone Number" 
-              name="Phone" 
-              required 
-              pattern="^0\d{10}$|^\+?[1-9]\d{1,14}$"
-              title="Please enter a valid phone number (e.g., 01616886705)" 
-            />
-          </Form.Group>
-
-          <Form.Group className="mb-3" controlId="formInterest">
-            <Form.Label className="text-xl font-extrabold leading-none">Contact Reason:</Form.Label>
-            <Form.Select 
-              name="Contact_Reason" 
-              required 
-              defaultValue="" 
-              onChange={handleReasonChange}
-            >
-              <option value="" disabled>Please select</option>
-              <option value="General enquiry">General enquiry</option>
-              {/* <option value="Cadet joining interest">Cadet joining interest</option> */}
-              <option value="Staff joining interest">Staff joining interest</option>
-              <option value="Committee joining interest">Committee joining interest</option>
-            </Form.Select>
-          </Form.Group>
-
-          {/* Show Date of Birth only if Cadet joining interest is selected */}
-          {selectedReason === "Cadet joining interest" && (
-            <Form.Group className="mb-3" controlId="formDOB">
-              <Form.Label className="text-xl font-extrabold leading-none">Cadet Date of Birth:</Form.Label>
-              <Form.Control 
-                type="date" 
-                name="Date_of_Birth" 
-                required 
-              />
-            </Form.Group>
-          )}
-
-          <Form.Group className="mb-3" controlId="Description">
-            <Form.Label className="text-xl font-extrabold leading-none">Message:</Form.Label>
-            <Form.Control as="textarea" rows={4} name="Message" required />
-          </Form.Group>
-
-          <Form.Group className="mb-3 flex justify-center">
-            <ReCAPTCHA
-              sitekey="6LcKO2sqAAAAALn3TkQDe81ddIE1l_iez1tOqjGS" 
-              onChange={handleRecaptchaChange}
-            />
-          </Form.Group>
-
-          <div className="text-center"> 
-            <Button 
-              className="shift-button"
-              variant="success" 
-              type="submit"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Submitting..." : "Submit"}
-            </Button>
-            {successMessage && <div className="text-green-500 text-lg font-semibold pt-2">{successMessage}</div>}
-            {captchaMessage && <div className="text-red-800 text-lg font-bold pt-2">{captchaMessage}</div>}
-          </div>
-        </Form>
+          <option value="" disabled>Please select</option>
+          <option value="General enquiry">General enquiry</option>
+          {/* <option value="Cadet joining interest">Cadet joining interest</option> */}
+          <option value="Staff joining interest">Staff joining interest</option>
+          <option value="Committee joining interest">Committee joining interest</option>
+        </select>
       </div>
-    </div>
+
+      {/* Show Date of Birth only if Cadet joining interest is selected */}
+      {selectedReason === "Cadet joining interest" && (
+        <div>
+          <label htmlFor="formDOB" className={labelClasses}>Cadet Date of Birth:</label>
+          <input id="formDOB" className={inputClasses} type="date" name="Date_of_Birth" required />
+        </div>
+      )}
+
+      <div>
+        <label htmlFor="formMessage" className={labelClasses}>Message:</label>
+        <textarea id="formMessage" className={inputClasses} rows={4} name="Message" required />
+      </div>
+
+      <div className="flex justify-center">
+        <ReCAPTCHA
+          sitekey="6LcKO2sqAAAAALn3TkQDe81ddIE1l_iez1tOqjGS"
+          onChange={handleRecaptchaChange}
+        />
+      </div>
+
+      <div className="text-center">
+        <button type="submit" className="btn-primary disabled:cursor-not-allowed disabled:opacity-60" disabled={isSubmitting}>
+          {isSubmitting ? "Submitting..." : "Submit"}
+        </button>
+        {successMessage && <div className="pt-2 text-lg font-semibold text-green-600">{successMessage}</div>}
+        {captchaMessage && <div className="pt-2 text-lg font-bold text-red-600">{captchaMessage}</div>}
+      </div>
+    </form>
   );
 }
 

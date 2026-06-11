@@ -1,7 +1,5 @@
-import Title from "../components/mainTitle/title";
+import PageHeader from "../components/pageHeader/pageHeader";
 import ScrollIntoView from 'react-scroll-into-view';
-
-import "./documentsStyles.css"
 
 // all documents imports
 import TG21 from "../assets/documents/forms/TG Form 021.docx";
@@ -47,7 +45,7 @@ const forms = [
     { name: "TG 23 - Medical Form", link: TG23 },
     { name: "Aviation Medical Form", link: AvMed }
   ];
-  
+
 const publications = [
     { name: "ACP 1 - Ethos and Core Values", link: ACP001 },
     { name: "ACP 1358 - Uniform and Dress", link: ACP1358 },
@@ -85,86 +83,80 @@ const examResources = {
         { name: "ACP 35-4 - Satellite Communication", link: ACP354 },
     ],
 };
-  
-const TableSection = ({ title, collumnName, items}) => {
-    let sectionImage = null;
-    if (title === "First Class") {
-      sectionImage = FirstClassBadge;
-    } 
-    else if (title === "Leading") {
-      sectionImage = LeadingBadge;
-    }
-    else if (title === "Senior/Master") {
-    sectionImage = SeniorMasterBadge;
-    }
 
-    return (
-    <>
-      <h2 className="font-bold" id={title.toLowerCase()}>{title}</h2>
-
-      {sectionImage && (
-        <div className="flex justify-center mb-4">
-          <img src={sectionImage} alt={`${title} Image`} className="w-auto h-24 md:h-32" />
-        </div>
-      )}
-
-      <table className="docs-table m-auto w-11/12 md:w-9/12 xl:w-6/12 mb-3">
-        <thead>
-          <tr>
-            <th scope="col" className="w-8/12 text-base md:text-xl">{collumnName}</th>
-            <th scope="col" className="text-base md:text-xl">Download</th>
-          </tr>
-        </thead>
-        <tbody>
-          {items.map((item, index) => (
-            <tr key={index}>
-              <td>{item.name}</td>
-              <td>
-                <a href={item.link} target="_blank" rel="noopener noreferrer">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="size-10 m-auto download-svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
-                  </svg>
-                </a>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </>
-    )
+const fileType = (link) => {
+    const ext = link.split(".").pop().toLowerCase();
+    return ["pdf", "docx", "xlsx", "pptx"].includes(ext) ? ext.toUpperCase() : "FILE";
 };
+
+const DocSection = ({ title, items, badge, id }) => (
+    <section id={id} className="mx-auto mb-10 max-w-3xl scroll-mt-24">
+        <h2 className="mb-4 text-center text-2xl font-bold text-navy">{title}</h2>
+
+        {badge && (
+            <div className="mb-4 flex justify-center">
+                <img src={badge} alt={`${title} badge`} loading="lazy" className="h-24 w-auto md:h-32" />
+            </div>
+        )}
+
+        <ul className="card divide-y divide-gray-100">
+            {items.map((item) => (
+                <li key={item.name}>
+                    <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center gap-4 px-5 py-3.5 transition-colors hover:bg-surface"
+                    >
+                        <span className="w-14 shrink-0 rounded bg-navy px-2 py-1 text-center text-xs font-bold text-white">
+                            {fileType(item.link)}
+                        </span>
+                        <span className="grow text-left font-semibold text-ink/90">{item.name}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="size-5 shrink-0 text-accent-dark transition-colors group-hover:text-accent" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                        </svg>
+                    </a>
+                </li>
+            ))}
+        </ul>
+    </section>
+);
 
 function Documents() {
   return (
     <>
-        <div className="bg-dark-blue-main title-hover text-center pb-3 lg:pt-14">
-            <Title title="Documents"></Title>
+        <PageHeader
+            title="Documents"
+            intro="Forms, publications and exam resources for cadets and parents."
+        />
 
-            <div className="docs-nav px-5 text-white">
-                <h2 className="pb-2 font-bold underline">Quick Links</h2>
-                <div className="docs-nav-links grid grid-cols-3 m-auto xl:w-1/2 py-2.5 rounded-l-3xl rounded-r-3xl items-center">
-                    <ScrollIntoView selector="#forms" className="">
-                        <span className="text-center text-base md:text-xl font-semibold leading-none">Forms</span>
-                    </ScrollIntoView>                
-                    <ScrollIntoView selector="#publications" className="">
-                        <span className="text-center text-base md:text-xl font-semibold leading-none">Publications</span>
+        {/* quick links */}
+        <div className="sticky top-16 z-40 border-b border-gray-200 bg-white/95 py-3 shadow-sm backdrop-blur">
+            <div className="section-container flex flex-wrap justify-center gap-2">
+                {[
+                    { selector: "#forms", label: "Forms" },
+                    { selector: "#publications", label: "Publications" },
+                    { selector: "#exam-resources", label: "Exam Resources" },
+                ].map((l) => (
+                    <ScrollIntoView key={l.selector} selector={l.selector}>
+                        <span className="cursor-pointer rounded-full bg-surface px-4 py-1.5 text-sm font-semibold text-navy transition-colors hover:bg-accent/30">
+                            {l.label}
+                        </span>
                     </ScrollIntoView>
-                    <ScrollIntoView selector="#exam-resources" className="">
-                        <span className="text-center text-base md:text-xl font-semibold leading-none">Exam Resources</span>
-                    </ScrollIntoView>
-   
-                </div>
+                ))}
             </div>
         </div>
-        <div className="documents-container text-center pt-3">
 
-            <TableSection title="Forms" collumnName="Form Name" items={forms} />
-            <TableSection title="Publications" collumnName="Publication Name" items={publications} />
-            <h1 className="text-center pt-4 font-extrabold " id="exam-resources">Exam Resources</h1>
-            <TableSection title="First Class" collumnName="File Name" items={examResources.firstClass} />
-            <TableSection title="Leading" collumnName="File Name" items={examResources.leading} />
-            <TableSection title="Senior/Master" collumnName="File Name" items={examResources.seniorMaster} />
+        <div className="section bg-surface">
+            <div className="section-container">
+                <DocSection id="forms" title="Forms" items={forms} />
+                <DocSection id="publications" title="Publications" items={publications} />
 
+                <h1 id="exam-resources" className="mb-8 scroll-mt-24 text-center text-3xl font-extrabold text-navy">Exam Resources</h1>
+                <DocSection id="first-class" title="First Class" items={examResources.firstClass} badge={FirstClassBadge} />
+                <DocSection id="leading" title="Leading" items={examResources.leading} badge={LeadingBadge} />
+                <DocSection id="senior-master" title="Senior/Master" items={examResources.seniorMaster} badge={SeniorMasterBadge} />
+            </div>
         </div>
     </>
     );

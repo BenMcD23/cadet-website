@@ -1,4 +1,3 @@
-import "./linkCardStyles.css";
 import Title from "../mainTitle/title";
 import { Link } from "react-router-dom";
 
@@ -6,41 +5,39 @@ import Programmes from "../../assets/home_images/programmes.webp";
 import Contact from "../../assets/home_images/contact.webp";
 import Uniform from "../../assets/home_images/uniform.png";
 import Store from "../../assets/home_images/store.webp";
+import Parade from "../../assets/parade.jpeg";
+
+function CardContent({ d }) {
+    return (
+        <>
+            <img className="h-52 w-full object-cover transition duration-300 group-hover:scale-105" src={d.img} alt={d.title} loading="lazy" />
+            <div className="absolute inset-0 flex flex-col items-center justify-end bg-gradient-to-t from-navy/90 via-navy/40 to-navy/10 p-5 text-center">
+                <h3 className="text-2xl font-extrabold text-white">{d.title}</h3>
+                <p className="mt-1 text-sm text-white/85">{d.main}</p>
+            </div>
+        </>
+    );
+}
 
 function LinkCards() {
     return (
-        <div className="link-card-container title-hover clip-path-sm-l-r md:clip-path-md-l-r lg:clip-path-lg-l-r">
-            <Title title="Quick Links"></Title>
+        <div className="section bg-white">
+            <div className="section-container">
+                <Title title="Quick Links"></Title>
 
-            <div className="flex flex-wrap justify-center gap-8 w-3/4 mx-auto content-center text-center mt-10">
-                {data.map((d) => (
-                    <div
-                        key={d.title}
-                        className="link-card relative w-full sm:w-5/12 xl:w-2/6"
-                    >
-                        {d.external ? (
-                            <a href={d.link} target="_blank" rel="noopener noreferrer">
-                                <img className="link-card-img w-full h-full object-cover" src={d.img} alt={d.title} />
-                                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 text-white text-xl font-bold whitespace-nowrap">
-                                    <h1 className="mb-4 text-3xl font-extrabold leading-none md:text-3xl lg:text-4xl text-white">{d.title}</h1>
-                                </div>
-                                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-4">
-                                    <p className="mb-6 font-normal lg:text-xl text-center text-white">{d.main}</p>
-                                </div>
+                <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {data.map((d) => (
+                        d.external ? (
+                            <a key={d.title} href={d.link} target="_blank" rel="noopener noreferrer" className="card group relative">
+                                <CardContent d={d} />
                             </a>
                         ) : (
-                            <Link to={d.link}>
-                                <img className="link-card-img w-full h-full object-cover" src={d.img} alt={d.title} />
-                                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 text-white text-xl font-bold whitespace-nowrap">
-                                    <h1 className="mb-4 text-3xl font-extrabold leading-none md:text-3xl lg:text-4xl text-white">{d.title}</h1>
-                                </div>
-                                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-4">
-                                    <p className="mb-6 font-normal lg:text-xl text-center text-white">{d.main}</p>
-                                </div>
+                            <Link key={d.title} to={d.link} className="card group relative">
+                                <CardContent d={d} />
                             </Link>
-                        )}
-                    </div>
-                ))}
+                        )
+                    ))}
+                </div>
             </div>
         </div>
     );
@@ -50,7 +47,7 @@ const data = [
     {
         title: `Contact Us`,
         img: Contact,
-        main: `Contact form for any enqiures`,
+        main: `Contact form for any enquiries`,
         link: `/contact`,
         external: false
     },
@@ -77,7 +74,7 @@ const data = [
     },
     {
         title: `Newsletter`,
-        img: `https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&auto=format&fit=crop`,
+        img: Parade,
         main: `Read our latest squadron newsletter`,
         link: `https://newsletter.317atc.co.uk/`,
         external: true

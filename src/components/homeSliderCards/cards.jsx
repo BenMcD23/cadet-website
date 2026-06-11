@@ -1,9 +1,4 @@
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-
 import Title from "../mainTitle/title";
-import "./cardStyles.css";
 
 import Plane from "../../assets/home_images/plane.webp";
 import Kyacking from "../../assets/home_images/kyacking.webp";
@@ -12,51 +7,22 @@ import arms_drill from "../../assets/home_images/arms_drill.webp";
 import camp from "../../assets/home_images/camp.webp";
 import dofe from "../../assets/home_images/dofe.webp";
 
-
 function Card() {
-    const settings = {
-        dots: true,
-        infinite: true,
-        speed: 800,
-        slidesToShow: 3, // Default to show 3 slides
-        slidesToScroll: 1,
-        responsive: [
-            {
-                breakpoint: 1024, // Medium screens and below
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                }
-            },
-            {
-                breakpoint: 700, // Small screens
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
-    };
-
     return (
-        <div id="scroll-into-view" className="card-container title-hover clip-path-sm-r-l md:clip-path-md-r-l lg:clip-path-lg-r-l">
-            <Title title="What We Do"></Title>
-            <div className='w-3/4 m-auto'>
-                <div className="mt-10">
-                    <Slider {...settings}>
-                        {data.map((d) => (
-                            <div key={d.title} className="bg-white h-full text-black rounded-xl">
-                                <div className='h-56 flex justify-center items-center rounded-t-xl mt-4 px-4'>
-                                    <img src={d.img} alt="" className="h-full rounded-xl object-cover"/>
-                                </div>
+        <div id="scroll-into-view" className="section bg-surface">
+            <div className="section-container">
+                <Title title="What We Do"></Title>
 
-                                <div className="flex flex-col items-center justify-center p-3">
-                                    <p className="text-xl font-bold underline">{d.title}</p>
-                                    <p className="text-center font-semibold">{d.main}</p>
-                                </div>
+                <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                    {data.map((d) => (
+                        <div key={d.title} className="card hover:-translate-y-1 hover:shadow-xl">
+                            <img src={d.img} alt={d.title} loading="lazy" className="h-48 w-full object-cover"/>
+                            <div className="p-5">
+                                <h3 className="mb-2 text-xl font-bold text-navy">{d.title}</h3>
+                                <p className="text-sm leading-relaxed text-ink/80">{d.main}</p>
                             </div>
-                        ))}
-                    </Slider>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>

@@ -1,29 +1,32 @@
 import { useContext } from 'react';
 import PointsContext from '../context/flightPointsContext';
-import Title from "../components/mainTitle/title";
+import PageHeader from "../components/pageHeader/pageHeader";
 
 function FlightP() {
     const { pointsData } = useContext(PointsContext);
 
+    const flights = [
+        { name: "A Flight", points: pointsData[0] },
+        { name: "B Flight", points: pointsData[1] },
+    ];
+
     return (
         <>
-            <div className="bg-dark-blue-main title-hover text-center pb-3 lg:pt-14">
-                <Title title="Flight Points" />
-                <p className="text-xl leading-7 lg:text-2xl text-white pb-1 px-8">
-                    Throughout the year, the two main flights compete in various sessions to win a trophy at the end.<br /><br />
-                    This is the current points tally.
-                </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 text-center m-auto w-full xl:w-9/12 py-3 px-5">
-                <div>
-                    <h1 className="text-5xl md:text-4xl lg:text-6xl font-extrabold">A Flight</h1>
-                    {/* <h2 className="text-4xl lg:text-5xl pt-4 font-bold">----</h2> */}
-                    <h2 className="text-4xl lg:text-5xl pt-4 font-bold">{pointsData[0]}</h2>
-                </div>
-                <div>
-                    <h1 className="text-5xl md:text-4xl lg:text-6xl font-extrabold">B Flight</h1>
-                    {/* <h2 className="text-4xl lg:text-5xl pt-4 font-bold">----</h2> */}
-                    <h2 className="text-4xl lg:text-5xl pt-4 font-bold">{pointsData[1]}</h2>
+            <PageHeader
+                title="Flight Points"
+                intro="Throughout the year, the two main flights compete in various sessions to win a trophy at the end.
+                    This is the current points tally."
+            />
+
+            <div className="section bg-surface">
+                <div className="section-container grid gap-6 md:grid-cols-2">
+                    {flights.map((flight) => (
+                        <div key={flight.name} className="card border-t-4 border-accent p-10 text-center">
+                            <h2 className="text-3xl font-extrabold text-navy md:text-4xl">{flight.name}</h2>
+                            <p className="mt-4 text-6xl font-extrabold text-accent-dark md:text-7xl">{flight.points}</p>
+                            <p className="mt-2 text-sm font-semibold uppercase tracking-wider text-ink/60">points</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </>
