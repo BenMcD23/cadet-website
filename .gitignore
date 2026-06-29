@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# dev image pipeline (not for deploy)
+convert_images.py
+
+# dev image pipeline (not for deploy)
+convert_images.py
+venv
