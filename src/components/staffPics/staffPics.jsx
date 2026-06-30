@@ -16,7 +16,7 @@ function StaffPics() {
         { name: "Fg Off Jack Quick (RAF)", alt: "Fg Off Jack Quick", image: "Fg_Off_Quick.webp" },
         { name: "Fg Off Jonathon Barker", alt: "Fg Off Jonathon Barker", image: "Fg_Off_Barker.webp" },
         { name: "FS Joseph Gill", alt: "FS Joseph Gill", image: "FS_Gill.webp" },
-        { name: "Sgt Callum MacGregor", alt: "Sgt Callum MacGregor", image: "Sgt_MacGregor.webp" },
+        { name: "Sgt Calum MacGregor", alt: "Sgt Calum MacGregor", image: "Sgt_MacGregor.webp" },
         { name: "Sgt Gareth Lloyd Morris", alt: "A Sgt Gareth Lloyd Morris", image: "Sgt_Lloyd_Morris.webp" },
         { name: "CI Ben McDonald", alt: "CI Ben McDonald", image: "CI_McDonald.webp" },
         { name: "CI Graham Boxall", alt: "CI Graham Boxall", image: "Placeholder.webp" },
