@@ -9,20 +9,23 @@ Currently, two official plugins are available:
 
 ## Staff / NCO photos
 
-Photos live in `src/assets/nco_pics/` and `src/assets/staff_pics/` and are
-listed in `ncoPics.jsx` / `staffPics.jsx`. Drop a new image (any format) into
-the right folder, then run the pipeline to strip its background and convert it
-to `.webp`:
+Staff and NCO people are defined in `src/data/people.json` (two arrays,
+`staff` and `ncos`). Each entry is `{ id, rank, name, image }`, where `image`
+is a public path under `public/people/`. The photo grids (`staffPics.jsx` /
+`ncoPics.jsx`) render from this data, sorted by rank then alphabetically by
+first name (NCOs use an initial) — see `src/data/people.js` for the rank
+order.
 
-```sh
-pip install "rembg[cli]" onnxruntime pillow   # once
-python3 convert_images.py                     # converts every non-webp, deletes originals
-```
+You normally don't edit these by hand: the **Staff Photos** tool in the
+317 SMS site lets staff upload a photo (with in-browser background removal and
+cropping), pick a rank, and it commits the new `.webp` plus the updated
+`people.json` straight to this repo — Vercel then redeploys automatically.
 
-`convert_images.py` is gitignored (dev-only). Add the new file's `.webp` name
-to the `ncos` / `staff` array in the matching component.
+To add someone manually instead: drop a `.webp` into `public/people/staff/`
+or `public/people/nco/`, then add an entry to `src/data/people.json`. People
+without a photo can point `image` at `/people/placeholder.webp`.
 
-Single-image convert without background removal:
+Single-image convert to `.webp`:
 
 ```sh
 cwebp -q 85 in.png -o out.webp
