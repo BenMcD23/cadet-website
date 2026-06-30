@@ -22,9 +22,8 @@ function NCOPics() {
         { name: "Sgt F Malik", alt: "Sgt F Malik", image: "Cpl Malik.webp" },
         { name: "Sgt G Davies", alt: "Sgt G Davies", image: "Sgt Davies.webp" },
 
-        { name: "Cpl F Malik", alt: "Cpl F Malik", image: "Cpl Malik.webp" },
         { name: "Cpl H Boxall", alt: "Cpl H Boxall", image: "Cdt Boxall.webp" },
-        { name: "Cpl I Wigget", alt: "Cpl I Wigget", image: "Cdt Wiggett.webp" },
+        { name: "Cpl I Wiggett", alt: "Cpl I Wiggett", image: "Cdt Wiggett.webp" },
         { name: "Cpl R Sawczuk", alt: "Cpl R Sawczuk", image: "Cdt Sawczuk.webp" },
         { name: "Cpl T Partington", alt: "Cpl T Partington", image: "Cpl Partington.webp" },
         { name: "Cpl T Tyrell", alt: "Cpl T Tyrell", image: "Cpl Tyrell.webp" },
