@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import Programmes from "../../assets/home_images/programmes.webp";
 import Contact from "../../assets/home_images/contact.webp";
-import Portal from "../../assets/sqn_photo.webp";
+import Portal from "../../assets/317_logo.png";
 import Store from "../../assets/home_images/store.webp";
 
 function LinkCards() {
