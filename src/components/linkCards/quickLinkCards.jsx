@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import Programmes from "../../assets/home_images/programmes.webp";
 import Contact from "../../assets/home_images/contact.webp";
-import Uniform from "../../assets/home_images/uniform.png";
+import Portal from "../../assets/sqn_photo.webp";
 import Store from "../../assets/home_images/store.webp";
 
 function LinkCards() {
@@ -62,10 +62,10 @@ const data = [
         external: false
     },
     {
-        title: `Uniform Order Form`,
-        img: Uniform,
-        main: `Form for Cadets to order uniform`,
-        link: `https://docs.google.com/forms/d/e/1FAIpQLSccWyk4xnre_JKbQdTg0w9SO2AaexoQ2R31hFdjV7zceIwxpw/viewform?usp=dialog`,
+        title: `Cadet Portal`,
+        img: Portal,
+        main: `Log in to the 317 Cadet Portal`,
+        link: `https://cadet-portal.317atc.co.uk/`,
         external: true
     },
     {
