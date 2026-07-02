@@ -65,7 +65,7 @@ const data = [
         title: `Cadet Portal`,
         img: Portal,
         main: `Log in to the 317 Cadet Portal`,
-        link: `https://portal.317atc.co.uk/`,
+        link: `https://cadet-portal.317atc.co.uk/`,
         external: true
     },
     {
