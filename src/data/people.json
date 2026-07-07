@@ -1,0 +1,30 @@
+{
+  "staff": [
+    { "id": "doherty", "rank": "Flt Lt", "name": "Simon Doherty", "image": "/people/staff/Flt_Lt_Doherty.webp" },
+    { "id": "quick", "rank": "Fg Off", "name": "Jack Quick (RAF)", "image": "/people/staff/Fg_Off_Quick.webp" },
+    { "id": "barker", "rank": "Fg Off", "name": "Jonathon Barker", "image": "/people/staff/Fg_Off_Barker.webp" },
+    { "id": "joseph-gill", "rank": "FS", "name": "Joseph Gill", "image": "/people/staff/FS_Gill.webp" },
+    { "id": "macgregor", "rank": "Sgt", "name": "Calum MacGregor", "image": "/people/staff/Sgt_MacGregor.webp" },
+    { "id": "lloyd-morris", "rank": "Sgt", "name": "Gareth Lloyd Morris", "image": "/people/staff/Sgt_Lloyd_Morris.webp" },
+    { "id": "mcdonald", "rank": "CI", "name": "Ben McDonald", "image": "/people/staff/CI_McDonald.webp" },
+    { "id": "boxall-staff", "rank": "CI", "name": "Graham Boxall", "image": "/people/placeholder.webp" },
+    { "id": "jacob-gill", "rank": "CI", "name": "Jacob Gill", "image": "/people/staff/CI_Gill.webp" },
+    { "id": "catterall", "rank": "CI", "name": "Roy Catterall (Wg Cdr Ret'd)", "image": "/people/staff/CI_Catterall.webp" },
+    { "id": "stone", "rank": "CI", "name": "Sophie Stone", "image": "/people/staff/CI_Stone.webp" }
+  ],
+  "ncos": [
+    { "id": "v-tyrell", "rank": "CWO", "name": "V Tyrell", "image": "/people/nco/CWO_Tyrell.webp" },
+    { "id": "beverley", "rank": "FS", "name": "M Beverley", "image": "/people/nco/FS_Beverley.webp" },
+    { "id": "mullery-mccourt", "rank": "FS", "name": "N Mullery-McCourt", "image": "/people/nco/FS_Mullery-McCourt.webp" },
+    { "id": "wimbury", "rank": "FS", "name": "T Wimbury", "image": "/people/nco/FS_Wimbury.webp" },
+    { "id": "mack", "rank": "Sgt", "name": "C Mack", "image": "/people/nco/Sgt_Mack.webp" },
+    { "id": "e-tyrell", "rank": "Sgt", "name": "E Tyrell", "image": "/people/nco/Sgt_Tyrell.webp" },
+    { "id": "malik", "rank": "Sgt", "name": "F Malik", "image": "/people/nco/Cpl_Malik.webp" },
+    { "id": "davies", "rank": "Sgt", "name": "G Davies", "image": "/people/nco/Sgt_Davies.webp" },
+    { "id": "boxall-nco", "rank": "Cpl", "name": "H Boxall", "image": "/people/nco/Cdt_Boxall.webp" },
+    { "id": "wiggett", "rank": "Cpl", "name": "I Wiggett", "image": "/people/nco/Cdt_Wiggett.webp" },
+    { "id": "sawczuk", "rank": "Cpl", "name": "R Sawczuk", "image": "/people/nco/Cdt_Sawczuk.webp" },
+    { "id": "partington", "rank": "Cpl", "name": "T Partington", "image": "/people/nco/Cpl_Partington.webp" },
+    { "id": "t-tyrell", "rank": "Cpl", "name": "T Tyrell", "image": "/people/nco/Cpl_Tyrell.webp" }
+  ]
+}
