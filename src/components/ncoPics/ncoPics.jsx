@@ -8,23 +8,21 @@ const getImage = (fileName) =>
 
 const ncos = [
     { name: "CWO V Tyrell", alt: "CWO V Tyrell", image: "CWO Tyrell.webp" },
-    { name: "FS M Beverley", alt: "FS M Beverley", image: "Sgt Beverley.webp" },
-    { name: "FS N Mullery-McCourt", alt: "FS N Mullery-McCourt", image: "Sgt Mullery-McCourt.webp" },
+
+    { name: "FS M Beverley", alt: "FS M Beverley", image: "FS Beverley.webp" },
+    { name: "FS N Mullery-McCourt", alt: "FS N Mullery-McCourt", image: "FS Mullery-McCourt.webp" },
     { name: "FS T Wimbury", alt: "FS T Wimbury", image: "FS Wimbury.webp" },
 
-    { name: "Sgt J Brice", alt: "Sgt J Brice", image: "Cpl Brice.webp" },
-    { name: "Sgt G Davies", alt: "Sgt A Davies", image: "Cpl Davies.webp" },
-    { name: "Sgt L Drury", alt: "Sgt L Drury", image: "Cpl Drury.webp" },
-    { name: "Sgt L Hall", alt: "Sgt L Hall", image: "Sgt Hall.webp" },
+    { name: "Sgt C Mack", alt: "Sgt C Mack", image: "Sgt Mack.webp" },
+    { name: "Sgt E Tyrell", alt: "Sgt E Tyrell", image: "Sgt Tyrell.webp" },
+    { name: "Sgt F Malik", alt: "Sgt F Malik", image: "Cpl Malik.webp" },
+    { name: "Sgt G Davies", alt: "Sgt G Davies", image: "Sgt Davies.webp" },
 
-    { name: "Cpl A Ahsan", alt: "Cpl A Ahsan", image: "Cdt Ahsan.webp" },
-    { name: "Cpl K Evans", alt: "Cpl K Evans", image: "Cpl Evans.webp" },
-    { name: "Cpl C Mack", alt: "Cpl C Mack", image: "Cpl Mack.webp" },
-    { name: "Cpl F Malik", alt: "Cpl F Malik", image: "Cpl Malik.webp" },
-    { name: "Cpl T Partington", alt: "Cpl T Partington", image: "Cdt Partington.webp" },
+    { name: "Cpl H Boxall", alt: "Cpl H Boxall", image: "Cdt Boxall.webp" },
+    { name: "Cpl I Wiggett", alt: "Cpl I Wiggett", image: "Cdt Wiggett.webp" },
     { name: "Cpl R Sawczuk", alt: "Cpl R Sawczuk", image: "Cdt Sawczuk.webp" },
-    { name: "Cpl E Tyrell", alt: "Cpl E Tyrell", image: "Cpl Tyrell.webp" },
-    { name: "Cpl T Tyrell", alt: "Cpl T Tyrell", image: "Cdt Tyrell.webp" },
+    { name: "Cpl T Partington", alt: "Cpl T Partington", image: "Cpl Partington.webp" },
+    { name: "Cpl T Tyrell", alt: "Cpl T Tyrell", image: "Cpl Tyrell.webp" },
 ];
 
 function NCOPics() {

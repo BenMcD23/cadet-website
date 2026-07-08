@@ -1,25 +1,23 @@
-import Flt_Lt_Doherty from "../../assets/staff_pics/Flt_Lt_Doherty.webp";
-import CI_Catterall from "../../assets/staff_pics/CI_Catterall.webp";
-import Fg_Off_Quick from "../../assets/staff_pics/Fg_Off_Quick.webp";
-import WO_Barker from "../../assets/staff_pics/WO_Barker.webp";
-import FS_Gill from "../../assets/staff_pics/FS_Gill.webp";
-import Sgt_Lloyd_Morris from "../../assets/staff_pics/Sgt_Lloyd_Morris.webp";
-import Sgt_MacGregor from "../../assets/staff_pics/Sgt_MacGregor.webp";
-import CI_McDonald from "../../assets/staff_pics/CI_McDonald.webp";
-import CI_Gill from "../../assets/staff_pics/CI_Gill.webp";
-import CI_Stone from "../../assets/staff_pics/CI_Stone.webp";
+const images = import.meta.glob(
+  "../../assets/staff_pics/*.webp",
+  { eager: true }
+);
+
+const getImage = (fileName) =>
+  images[`../../assets/staff_pics/${fileName}`]?.default;
 
 const staff = [
-    { img: Flt_Lt_Doherty, name: "Flt Lt Simon Doherty" },
-    { img: CI_Catterall, name: "CI Roy Catterall (Wg Cdr Ret'd)" },
-    { img: Fg_Off_Quick, name: "Fg Off Jack Quick (RAF)" },
-    { img: WO_Barker, name: "WO Jonathon Barker" },
-    { img: FS_Gill, name: "FS Joseph Gill" },
-    { img: Sgt_MacGregor, name: "Sgt Callum MacGregor" },
-    { img: Sgt_Lloyd_Morris, name: "A Sgt G Lloyd Morris" },
-    { img: CI_McDonald, name: "CI Ben McDonald" },
-    { img: CI_Gill, name: "CI Jacob Gill" },
-    { img: CI_Stone, name: "CI Sophie Stone" },
+    { name: "Flt Lt Simon Doherty", image: "Flt_Lt_Doherty.webp" },
+    { name: "CI Roy Catterall (Wg Cdr Ret'd)", image: "CI_Catterall.webp" },
+    { name: "Fg Off Jack Quick (RAF)", image: "Fg_Off_Quick.webp" },
+    { name: "Fg Off Jonathon Barker", image: "Fg_Off_Barker.webp" },
+    { name: "FS Joseph Gill", image: "FS_Gill.webp" },
+    { name: "Sgt Calum MacGregor", image: "Sgt_MacGregor.webp" },
+    { name: "Sgt Gareth Lloyd Morris", image: "Sgt_Lloyd_Morris.webp" },
+    { name: "CI Ben McDonald", image: "CI_McDonald.webp" },
+    { name: "CI Graham Boxall", image: "Placeholder.webp" },
+    { name: "CI Jacob Gill", image: "CI_Gill.webp" },
+    { name: "CI Sophie Stone", image: "CI_Stone.webp" },
 ];
 
 function StaffPics() {
@@ -28,7 +26,7 @@ function StaffPics() {
             {staff.map((person) => (
                 <div key={person.name} className="card transition hover:-translate-y-1 hover:shadow-xl hover:ring-2 hover:ring-accent">
                     <img
-                        src={person.img}
+                        src={getImage(person.image)}
                         alt={person.name}
                         loading="lazy"
                         className="aspect-[3/4] w-full object-cover object-top"

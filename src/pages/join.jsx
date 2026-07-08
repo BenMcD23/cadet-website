@@ -42,8 +42,18 @@ function Join() {
                 </div>
             </div>
 
-            {/* how joining works */}
+            {/* contact form */}
             <div className="section bg-surface">
+                <div className="section-container">
+                    <Title title="Get In Touch"></Title>
+                    <div className="card mx-auto mt-8 max-w-2xl p-6 md:p-8">
+                        <ContactForm />
+                    </div>
+                </div>
+            </div>
+
+            {/* how joining works */}
+            <div className="section bg-white">
                 <div className="section-container">
                     <Title title="How Joining Works"></Title>
                     <div className="mt-10">
@@ -53,21 +63,11 @@ function Join() {
             </div>
 
             {/* FAQ */}
-            <div className="section bg-white">
+            <div className="section bg-surface">
                 <div className="section-container">
                     <Title title="Frequently Asked Questions"></Title>
                     <div className="mt-8">
                         <Faq />
-                    </div>
-                </div>
-            </div>
-
-            {/* contact form */}
-            <div className="section bg-surface">
-                <div className="section-container">
-                    <Title title="Get In Touch"></Title>
-                    <div className="card mx-auto mt-8 max-w-2xl p-6 md:p-8">
-                        <ContactForm />
                     </div>
                 </div>
             </div>
