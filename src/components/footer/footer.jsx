@@ -16,10 +16,8 @@ const usefulLinks = [
 ];
 
 const internalLinks = [
-	{ to: "/news", label: "News" },
-	{ to: "/gallery", label: "Gallery" },
+	{ to: "/newsletter", label: "Newsletter" },
 	{ to: "/programme", label: "Programme" },
-	{ to: "/documents", label: "Documents" },
 ];
 
 const linkClass = "text-white/80 transition-colors hover:text-accent";

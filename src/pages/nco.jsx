@@ -11,15 +11,13 @@ function NCO() {
                     Selection is based on the cadet's performance and commitment to the Squadron and Corps.
                     The NCO rank structure mirrors that of the RAF, and NCOs are responsible for maintaining cadet
                     standards as well as overseeing the organisation and timings of parade nights."
-            />
+            >
+                <Link to="/join" className="btn-primary">Interested in joining?</Link>
+            </PageHeader>
 
             <div className="section bg-surface">
                 <div className="section-container">
                     <NCOPics></NCOPics>
-
-                    <div className="mt-10 text-center">
-                        <Link to="/join" className="btn-primary">Interested in joining?</Link>
-                    </div>
                 </div>
             </div>
         </>

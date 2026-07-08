@@ -7,13 +7,11 @@ import Home from './pages/home'
 import Programme from './pages/programme'
 import Staff from './pages/adult-staff'
 import NCOs from './pages/nco'
-import Documents from './pages/documents'
 import FlightP from './pages/flight-p'
 import Join from './pages/join'
 import Contact from './pages/contact'
 import Parents from './pages/parents'
-import News from './pages/news'
-import Gallery from './pages/gallery'
+import Newsletter from './pages/newsletter'
 import NotFound from './pages/404'
 
 import { Route, Routes } from "react-router-dom"
@@ -26,7 +24,7 @@ function App() {
     
     <>
     <Analytics/>
-    <div className="pt-16">
+    <div className="pt-16 pb-16 lg:pb-0">
       <Navbar/>
       <ScrollToTop>
         <Routes>
@@ -34,13 +32,11 @@ function App() {
           <Route path="/programme" element={<Programme/>}/>
           <Route path="/adult-staff" element={<Staff/>}/>
           <Route path="/cadet-ncos" element={<NCOs/>}/>
-          <Route path="/documents" element={<Documents/>}/>
           <Route path="/flight-points" element={<FlightP/>}/>
           <Route path="/join" element={<Join/>}/>
           <Route path="/parents" element={<Parents/>}/>
           <Route path="/contact" element={<Contact/>}/>
-          <Route path="/news" element={<News/>}/>
-          <Route path="/gallery" element={<Gallery/>}/>
+          <Route path="/newsletter" element={<Newsletter/>}/>
 
           <Route path='*' element={<NotFound />}/>
         </Routes>

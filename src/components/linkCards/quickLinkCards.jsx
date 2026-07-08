@@ -6,6 +6,7 @@ import Contact from "../../assets/home_images/contact.webp";
 import Uniform from "../../assets/home_images/uniform.png";
 import Store from "../../assets/home_images/store.webp";
 import Parade from "../../assets/parade.jpeg";
+import Portal from "../../assets/317_logo.png";
 
 function CardContent({ d }) {
     return (
@@ -63,6 +64,13 @@ const data = [
         img: Uniform,
         main: `Form for Cadets to order uniform`,
         link: `https://docs.google.com/forms/d/e/1FAIpQLSccWyk4xnre_JKbQdTg0w9SO2AaexoQ2R31hFdjV7zceIwxpw/viewform?usp=dialog`,
+        external: true
+    },
+    {
+        title: `Cadet Portal`,
+        img: Portal,
+        main: `Log in to the 317 Cadet Portal`,
+        link: `https://cadet-portal.317atc.co.uk/`,
         external: true
     },
     {
