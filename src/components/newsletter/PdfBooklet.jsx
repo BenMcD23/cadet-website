@@ -1,4 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from "react";
+// Resolve the worker from the installed pdfjs-dist so its version always
+// matches the API — a hand-copied public worker drifts and breaks loading.
+import pdfWorkerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 
 // Palette vars the booklet relies on (from the newsletter site's globals.css),
 // scoped to this component's root so they don't leak into the site theme.
@@ -43,9 +46,7 @@ export default function PdfBooklet({ newsletter }) {
       try {
         const pdfjsLib = await import("pdfjs-dist");
 
-        // ✅ FIX 1: Use the legacy CJS worker which works in Safari/iOS
-        // The .mjs ES module worker fails on iOS Safari WebWorker restrictions
-        pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
+        pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
         const doc = await pdfjsLib.getDocument({
           url: newsletter.pdfPath,
