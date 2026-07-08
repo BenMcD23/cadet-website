@@ -10,6 +10,7 @@ const aboutLinks = [
 const resourceLinks = [
 	{ to: "/flight-points", label: "Flight Points" },
 	{ to: "/parents", label: "Parents" },
+	{ href: "https://cadet-portal.317atc.co.uk/", label: "317 Cadet Portal", external: true },
 ];
 
 // Heroicons (outline) path data, keyed by nav item.
@@ -52,19 +53,31 @@ function Dropdown({ label, links, active }) {
 			</button>
 			<div className="invisible absolute left-1/2 top-full z-50 w-44 -translate-x-1/2 pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
 				<div className="overflow-hidden rounded-lg bg-navy-light shadow-lg ring-1 ring-white/10">
-					{links.map((l) => (
-						<NavLink
-							key={l.to}
-							to={l.to}
-							className={({ isActive }) =>
-								`block px-4 py-2.5 text-sm font-semibold transition-colors ${
-									isActive ? "text-accent" : "text-white hover:bg-navy hover:text-accent"
-								}`
-							}
-						>
-							{l.label}
-						</NavLink>
-					))}
+					{links.map((l) =>
+						l.external ? (
+							<a
+								key={l.href}
+								href={l.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="block px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-navy hover:text-accent"
+							>
+								{l.label}
+							</a>
+						) : (
+							<NavLink
+								key={l.to}
+								to={l.to}
+								className={({ isActive }) =>
+									`block px-4 py-2.5 text-sm font-semibold transition-colors ${
+										isActive ? "text-accent" : "text-white hover:bg-navy hover:text-accent"
+									}`
+								}
+							>
+								{l.label}
+							</NavLink>
+						)
+					)}
 				</div>
 			</div>
 		</div>
@@ -104,20 +117,33 @@ function BottomDropdown({ label, icon, links, active, open, onToggle, onNavigate
 			</button>
 			{open && (
 				<div className="absolute bottom-full left-1/2 mb-2 w-40 -translate-x-1/2 overflow-hidden rounded-lg bg-navy-light shadow-lg ring-1 ring-white/10">
-					{links.map((l) => (
-						<NavLink
-							key={l.to}
-							to={l.to}
-							onClick={onNavigate}
-							className={({ isActive }) =>
-								`block px-4 py-3 text-center text-sm font-semibold transition-colors ${
-									isActive ? "text-accent" : "text-white hover:bg-navy hover:text-accent"
-								}`
-							}
-						>
-							{l.label}
-						</NavLink>
-					))}
+					{links.map((l) =>
+						l.external ? (
+							<a
+								key={l.href}
+								href={l.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								onClick={onNavigate}
+								className="block px-4 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-navy hover:text-accent"
+							>
+								{l.label}
+							</a>
+						) : (
+							<NavLink
+								key={l.to}
+								to={l.to}
+								onClick={onNavigate}
+								className={({ isActive }) =>
+									`block px-4 py-3 text-center text-sm font-semibold transition-colors ${
+										isActive ? "text-accent" : "text-white hover:bg-navy hover:text-accent"
+									}`
+								}
+							>
+								{l.label}
+							</NavLink>
+						)
+					)}
 				</div>
 			)}
 		</div>
