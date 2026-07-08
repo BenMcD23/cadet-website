@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 import Programmes from "../../assets/home_images/programmes.webp";
 import Contact from "../../assets/home_images/contact.webp";
-import Uniform from "../../assets/home_images/uniform.png";
 import Store from "../../assets/home_images/store.webp";
 import Parade from "../../assets/parade.jpeg";
 import Portal from "../../assets/317_logo.png";
@@ -20,20 +19,23 @@ function CardContent({ d }) {
     );
 }
 
+// full-width on mobile, 2-up at sm, 3-up at lg — gap-6 (1.5rem) baked into the widths
+const cardClasses = "card group relative w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]";
+
 function LinkCards() {
     return (
         <div className="section bg-white">
             <div className="section-container">
                 <Title title="Quick Links"></Title>
 
-                <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="mt-8 flex flex-wrap justify-center gap-6">
                     {data.map((d) => (
                         d.external ? (
-                            <a key={d.title} href={d.link} target="_blank" rel="noopener noreferrer" className="card group relative">
+                            <a key={d.title} href={d.link} target="_blank" rel="noopener noreferrer" className={cardClasses}>
                                 <CardContent d={d} />
                             </a>
                         ) : (
-                            <Link key={d.title} to={d.link} className="card group relative">
+                            <Link key={d.title} to={d.link} className={cardClasses}>
                                 <CardContent d={d} />
                             </Link>
                         )
@@ -58,13 +60,6 @@ const data = [
         main: `See what we're up to this month`,
         link: `/programme`,
         external: false
-    },
-    {
-        title: `Uniform Order Form`,
-        img: Uniform,
-        main: `Form for Cadets to order uniform`,
-        link: `https://docs.google.com/forms/d/e/1FAIpQLSccWyk4xnre_JKbQdTg0w9SO2AaexoQ2R31hFdjV7zceIwxpw/viewform?usp=dialog`,
-        external: true
     },
     {
         title: `Cadet Portal`,
