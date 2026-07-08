@@ -1,7 +1,7 @@
 const steps = [
     {
         title: "Get in touch",
-        text: "Fill out the contact form below (or give us a ring) and tell us a bit about yourself. We'll get back to you with the next available intake.",
+        text: "Fill out the contact form below and tell us a bit about yourself. We'll get back to you with the next available intake.",
     },
     {
         title: "Come and visit",
@@ -9,11 +9,11 @@ const steps = [
     },
     {
         title: "Your first nights",
-        text: "Wear something smart-casual and comfortable — no uniform needed yet. You'll join in with training and activities and learn how the squadron works.",
+        text: "Wear something comfortable — no uniform needed yet. Within the first few weeks we'll get you a squadron logo embroidered polo. You'll join in with training and activities and learn how the squadron works.",
     },
     {
         title: "Enrolment",
-        text: "After a few weeks, you'll be issued your uniform free of charge and officially enrolled as a cadet — the start of your Air Cadets journey.",
+        text: "After around 5 months, you'll pass out and become a full member of the squadron and the Air Cadets — the start of your Air Cadets journey.",
     },
 ];
 

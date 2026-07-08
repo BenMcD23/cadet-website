@@ -34,7 +34,7 @@ export const faqs = [
     {
         id: "before-uniform",
         question: "What should new cadets wear before they get a uniform?",
-        answer: "Smart-casual clothing and trainers are fine for your first few weeks — dark trousers or jeans and a plain top work well. We'll let you know when your uniform is ready.",
+        answer: "Casual clothing and trainers are fine for your first few weeks.",
     },
     {
         id: "safeguarding",
