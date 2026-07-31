@@ -12,7 +12,6 @@ function Home() {
         <div className="m-0">
             <Header/>
             <Cards/>
-            <Socials/>
             <Join/>
             <QuickLinkCards/>
         </div>
