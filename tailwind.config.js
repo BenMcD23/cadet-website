@@ -1,29 +1,34 @@
+import defaultTheme from 'tailwindcss/defaultTheme'
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}",],
   theme: {
     extend: {
       colors: {
-        'dark-blue-footer': '#002856',
-        'dark-blue-main': '#384357',
-        // 'light-blue-main': '#4682B4'
-        // 6d6e79 708090
-        'slate-grey-main': '#606e7d'
-
+        // RAF Air Cadets palette
+        'navy': '#002856',
+        'navy-light': '#0A3A75',
+        'accent': '#6CACE4',
+        'accent-dark': '#3D87C9',
+        'surface': '#F4F6F8',
+        'ink': '#1A202C',
       },
 
-      maxWidth : {
-        '7.5xl': '100rem',
+      fontFamily: {
+        sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
       },
-      screens: {
-        'middle': '1500px',
+
+      keyframes: {
+        'fade-up': {
+          '0%': { opacity: '0', transform: 'translateY(16px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
       },
-      
-      gridTemplateColumns: {
-        '14': 'repeat(14, minmax(0, 1fr))',
-      }
+      animation: {
+        'fade-up': 'fade-up 0.6s ease-out both',
+      },
     },
   },
   plugins: [],
 }
-

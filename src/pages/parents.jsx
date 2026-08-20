@@ -1,113 +1,95 @@
-import Title from "../components/mainTitle/title";
-import "./parentsStyles.css"
+import PageHeader from "../components/pageHeader/pageHeader";
 
-import StandingOrder from "../assets/documents/standing_order.png";
 import TG21 from "../assets/documents/forms/TG Form 021.docx";
 import TG23 from "../assets/documents/forms/TG Form 023.docx";
 import KitList from "../assets/documents/Kit List.pdf";
 
+function DownloadButton({ href, label }) {
+    return (
+        <a href={href} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="size-5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+            </svg>
+            {label}
+        </a>
+    );
+}
 
 function Parents() {
-
-
     return (
         <>
-            <div className="text-white bg-dark-blue-main title-hover text-center pb-2 lg:pt-14 mb-2">
-                <Title title="Parents"></Title>
-                <p className="text-xl leading-7 lg:text-2xl pb-1 px-8">
-                    This page is just some general information for parents/carers.
-                </p>
-            </div>
-            <div className="max-w-screen-lg	m-auto pb-1 pt-2 px-8 text-align parent-main pb-3">
-                <hr/>
+            <PageHeader
+                title="Parents"
+                intro="General information for parents and carers of our cadets."
+            />
 
-                <h3 className="pt-4 text-3xl lg:text-4xl font-bold text-center">Subs</h3>
-                <div className="">
-                    <p className="text-xl lg:text-2xl col-span-3 md:pr-5">
-                        We charge £17 per month per cadet. This is to cover costs on the Squadron as well as insurance for the cadets and national camps.
-                        <br/><br/>
-                        Please set up a standing order to pay £17 a month to the account as follows:
-                        <br/><br/>
-                        <p className="text-center subs-container">
-                            Account name: 317 Squadron ATC<br/>
-                            Account Number: 90782807<br/>
-                            Sort Code: 20-55-41<br/>
-                            Reference: SUBS/SURNAME.INITIAL<br/>
-                            Amount: £17 per month<br/>
+            <div className="section bg-surface">
+                <div className="section-container space-y-8">
+
+                    <div className="card p-6 md:p-8">
+                        <h2 className="mb-4 text-2xl font-bold text-navy">Subs</h2>
+                        <p className="mb-4 leading-relaxed text-ink/80">
+                            We charge £17 per month per cadet. This is to cover costs on the Squadron as well as
+                            insurance for the cadets and national camps. Please set up a standing order to pay £17
+                            a month to the account as follows:
                         </p>
-                        For any issues or inquiries, email "treasurer.317@rafac.mod.gov.uk"
-
-
-                    </p>
-
-                </div>
-
-                <hr/>
-                <h3 className="pt-4 text-3xl lg:text-4xl font-bold text-center">TG Forms</h3>
-
-                <div className="grid grid-cols-1 lg:grid-cols-4">
-                    
-                    <p className="text-xl lg:text-2xl col-span-3 md:pr-5">
-
-                        Most out of Squadron activities require a TG 21 form for your child to be able to attend. Check the joining instructions if you are unsure if the event requires a TG 21.
-                        <br/><br/>
-                        If your child has any medical conditions, they also require a TG 23 form per medical condition.
-
-                    </p>
-                    <div className="text-center m-auto text-3xl lg:text-4xl font-semibold grid grid-cols-2 gap-4">
-                        <div className="">
-                            <a href={TG21} target="_blank" rel="noopener noreferrer" className="parents-svg">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-28">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                                </svg>
-                                TG 21
+                        <dl className="mb-4 max-w-md rounded-lg border border-gray-200 bg-surface p-5 [&_dd]:mb-2 [&_dd]:font-semibold [&_dd]:text-navy [&_dt]:text-xs [&_dt]:font-bold [&_dt]:uppercase [&_dt]:tracking-wide [&_dt]:text-ink/60">
+                            <dt>Account name</dt>
+                            <dd>317 Squadron ATC</dd>
+                            <dt>Account number</dt>
+                            <dd>90782807</dd>
+                            <dt>Sort code</dt>
+                            <dd>20-55-41</dd>
+                            <dt>Reference</dt>
+                            <dd>SUBS/SURNAME.INITIAL</dd>
+                            <dt>Amount</dt>
+                            <dd>£17 per month</dd>
+                        </dl>
+                        <p className="text-ink/80">
+                            For any issues or enquiries, email{" "}
+                            <a href="mailto:treasurer.317@rafac.mod.gov.uk" className="font-semibold text-accent-dark hover:text-accent">
+                                treasurer.317@rafac.mod.gov.uk
                             </a>
-                        </div>
-                        <div>
-                            <a href={TG23} target="_blank" rel="noopener noreferrer" className="parents-svg">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-28">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                                </svg>
-                                TG 23
-                            </a>
+                        </p>
+                    </div>
+
+                    <div className="card p-6 md:p-8">
+                        <h2 className="mb-4 text-2xl font-bold text-navy">TG Forms</h2>
+                        <p className="mb-4 leading-relaxed text-ink/80">
+                            Most out of Squadron activities require a TG 21 form for your child to be able to attend.
+                            Check the joining instructions if you are unsure if the event requires a TG 21.
+                        </p>
+                        <p className="mb-6 leading-relaxed text-ink/80">
+                            If your child has any medical conditions, they also require a TG 23 form per medical condition.
+                        </p>
+                        <div className="flex flex-wrap gap-4">
+                            <DownloadButton href={TG21} label="TG 21 Form" />
+                            <DownloadButton href={TG23} label="TG 23 Form" />
                         </div>
                     </div>
-                </div>
-                <hr/>
 
-                <h3 className="pt-4 text-3xl lg:text-4xl font-bold text-center">DofE</h3>
-
-                <div className="grid grid-cols-1 lg:grid-cols-4">
-                    <p className="text-xl lg:text-2xl col-span-3 md:pr-5">
-                        Every year we run lots a DofE expeditions as a Squadron. Due to this DofE expedition dates cannot be changed.<br/><br/>
-
-                        Here is the kit list, your child must have every item on this kit list
-
-                    </p>
-                    <div className="text-center m-auto text-3xl lg:text-4xl font-semibold">
-                        <div>
-                            <a href={KitList} target="_blank" rel="noopener noreferrer" className="parents-svg">
-
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-28">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m.75 12 3 3m0 0 3-3m-3 3v-6m-1.5-9H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
-                                </svg>
-                                Kit List
-                            </a>
-                        </div>
+                    <div className="card p-6 md:p-8">
+                        <h2 className="mb-4 text-2xl font-bold text-navy">DofE</h2>
+                        <p className="mb-6 leading-relaxed text-ink/80">
+                            Every year we run lots of DofE expeditions as a Squadron, so expedition dates cannot be
+                            changed. Here is the kit list — your child must have every item on it.
+                        </p>
+                        <DownloadButton href={KitList} label="DofE Kit List" />
                     </div>
+
+                    <div className="card p-6 md:p-8">
+                        <h2 className="mb-4 text-2xl font-bold text-navy">The Civilian Committee</h2>
+                        <p className="leading-relaxed text-ink/80">
+                            The committee is a group of people who meet once a month to discuss funding proposals and
+                            upcoming events which the committee organise. Anyone can join — email{" "}
+                            <a href="mailto:chair.317@rafac.mod.gov.uk" className="font-semibold text-accent-dark hover:text-accent">
+                                chair.317@rafac.mod.gov.uk
+                            </a>{" "}
+                            for more info.
+                        </p>
+                    </div>
+
                 </div>
-                <hr/>
-
-                <h3 className="pt-4 text-3xl lg:text-4xl font-bold text-center">The Civilian Committee</h3>
-
-                    <p className="text-xl lg:text-2xl col-span-3 md:pr-5">
-                        The committee is a group of people who meet once a month to discuss funding proposals and upcoming events which the committee organise.<br/><br/>
-
-                        Anyone can join, email "chair.317@rafac.mod.gov.uk" for more info.
-
-                    </p>
-                <hr/>
-
             </div>
         </>
     );
