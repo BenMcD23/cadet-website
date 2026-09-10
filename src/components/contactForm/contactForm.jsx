@@ -5,7 +5,7 @@ const inputClasses = "w-full rounded-lg border border-gray-300 bg-white px-3 py-
 const labelClasses = "mb-1.5 block font-semibold text-navy";
 
 function ContactForm() {
-  const [successMessage, setSuccessMessage] = useState("");
+  const [status, setStatus] = useState(null); // { type: "success" | "error", text }
   const [captchaMessage, setCaptchaMessage] = useState("");
   const [recaptchaValue, setRecaptchaValue] = useState(null);
   const [selectedReason, setSelectedReason] = useState(""); // Track selected reason
@@ -34,17 +34,17 @@ function ContactForm() {
     .then(res => res.json())
     .then(data => {
       if (data.result === 'success') {
-        setSuccessMessage("Your message has been sent successfully!");
+        setStatus({ type: "success", text: "Your message has been sent successfully!" });
         formRef.current.reset();
         setRecaptchaValue(null);
         setSelectedReason(""); // Reset selection
       } else {
-        setSuccessMessage("There was an error sending your message. Please try again.");
+        setStatus({ type: "error", text: "There was an error sending your message. Please try again." });
       }
     })
     .catch(err => {
       console.error(err);
-      setSuccessMessage("There was an error sending your message. Please try again.");
+      setStatus({ type: "error", text: "There was an error sending your message. Please try again." });
     })
     .finally(() => {
       setIsSubmitting(false);
@@ -124,7 +124,11 @@ function ContactForm() {
         <button type="submit" className="btn-primary disabled:cursor-not-allowed disabled:opacity-60" disabled={isSubmitting}>
           {isSubmitting ? "Submitting..." : "Submit"}
         </button>
-        {successMessage && <div className="pt-2 text-lg font-semibold text-green-600">{successMessage}</div>}
+        {status && (
+          <div role="status" className={`pt-2 text-lg font-semibold ${status.type === "success" ? "text-green-600" : "text-red-600"}`}>
+            {status.text}
+          </div>
+        )}
         {captchaMessage && <div className="pt-2 text-lg font-bold text-red-600">{captchaMessage}</div>}
       </div>
     </form>

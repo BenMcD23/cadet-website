@@ -2,7 +2,6 @@ import Header from "../components/homeHeader/header"
 import QuickLinkCards from "../components/linkCards/quickLinkCards"
 
 import Cards from "../components/homeSliderCards/cards"
-import Socials from "../components/socials/socials"
 import Join from "../components/joinHome/join"
 
 
