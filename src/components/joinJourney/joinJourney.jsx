@@ -30,7 +30,7 @@ function JoinJourney() {
                         {i + 1}
                     </span>
                     <div>
-                        <h3 className="mb-1 font-bold text-navy">{step.title}</h3>
+                        <h3 className="mb-1 text-xl">{step.title}</h3>
                         <p className="text-sm leading-relaxed text-ink/80">{step.text}</p>
                     </div>
                 </li>
