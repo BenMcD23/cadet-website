@@ -1,87 +1,58 @@
-import Title from "../mainTitle/title";
 import { Link } from "react-router-dom";
+import Title from "../mainTitle/title";
+import { Icon } from "../icons/Icon";
 
-import Programmes from "../../assets/home_images/programmes.webp";
-import Contact from "../../assets/home_images/contact.webp";
-import Store from "../../assets/home_images/store.webp";
-import Parade from "../../assets/parade.webp";
-import Portal from "../../assets/317_logo.webp";
+const links = [
+    { icon: "chat", title: "Contact us", text: "Questions about joining or anything else", to: "/contact" },
+    { icon: "calendar", title: "This month's programme", text: "What's on each parade night", to: "/programme" },
+    { icon: "newspaper", title: "Newsletter", text: "News from the cadet media team", to: "/newsletter" },
+    { icon: "home", title: "Parents and carers", text: "Subs, TG forms and kit lists", to: "/parents" },
+    { icon: "lock", title: "317 Cadet Portal", text: "Log in for squadron resources", href: "https://cadet-portal.317atc.co.uk/" },
+    { icon: "bag", title: "Squadron store", text: "Hoodies, polos and kit", href: "https://317atc.sumupstore.com/" },
+];
 
-function CardContent({ d }) {
+const tileClasses = "group flex items-start gap-4 rounded-md border border-gray-200 bg-white p-5 transition-colors hover:border-accent-dark focus-visible:border-accent-dark";
+
+function TileContent({ l }) {
     return (
         <>
-            <img className="h-52 w-full object-cover transition duration-300 group-hover:scale-105" src={d.img} alt={d.title} loading="lazy" />
-            <div className="absolute inset-0 flex flex-col items-center justify-end bg-gradient-to-t from-navy/90 via-navy/40 to-navy/10 p-5 text-center">
-                <h3 className="text-2xl font-extrabold text-white">{d.title}</h3>
-                <p className="mt-1 text-sm text-white/85">{d.main}</p>
-            </div>
+            <span className="flex size-11 shrink-0 items-center justify-center rounded-md bg-navy text-accent">
+                <Icon name={l.icon} className="size-6" />
+            </span>
+            <span className="min-w-0 flex-1">
+                <span className="flex items-center gap-2 font-display text-xl font-bold uppercase leading-none text-navy">
+                    {l.title}
+                    {l.href && <Icon name="external" className="size-3.5 text-ink/40" strokeWidth={2} />}
+                </span>
+                <span className="mt-1 block text-sm text-ink/70">{l.text}</span>
+            </span>
+            <Icon name="arrowRight" className="mt-1 size-5 shrink-0 text-ink/30 transition-transform group-hover:translate-x-1 group-hover:text-accent-dark" strokeWidth={2} />
         </>
     );
 }
 
-// full-width on mobile, 2-up at sm, 3-up at lg — gap-6 (1.5rem) baked into the widths
-const cardClasses = "card group relative w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]";
-
 function LinkCards() {
     return (
-        <div className="section bg-white">
+        <section className="section bg-surface">
             <div className="section-container">
-                <Title title="Quick Links"></Title>
+                <Title eyebrow="Quick links" title="Find what you need" />
 
-                <div className="mt-8 flex flex-wrap justify-center gap-6">
-                    {data.map((d) => (
-                        d.external ? (
-                            <a key={d.title} href={d.link} target="_blank" rel="noopener noreferrer" className={cardClasses}>
-                                <CardContent d={d} />
+                <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {links.map((l) =>
+                        l.href ? (
+                            <a key={l.title} href={l.href} target="_blank" rel="noopener noreferrer" className={tileClasses}>
+                                <TileContent l={l} />
                             </a>
                         ) : (
-                            <Link key={d.title} to={d.link} className={cardClasses}>
-                                <CardContent d={d} />
+                            <Link key={l.title} to={l.to} className={tileClasses}>
+                                <TileContent l={l} />
                             </Link>
                         )
-                    ))}
+                    )}
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
-
-const data = [
-    {
-        title: `Contact Us`,
-        img: Contact,
-        main: `Contact form for any enquiries`,
-        link: `/contact`,
-        external: false
-    },
-    {
-        title: `Programme`,
-        img: Programmes,
-        main: `See what we're up to this month`,
-        link: `/programme`,
-        external: false
-    },
-    {
-        title: `Cadet Portal`,
-        img: Portal,
-        main: `Log in to the 317 Cadet Portal`,
-        link: `https://cadet-portal.317atc.co.uk/`,
-        external: true
-    },
-    {
-        title: `Store`,
-        img: Store,
-        main: `Cadet SumUp store`,
-        link: `https://317atc.sumupstore.com/`,
-        external: true
-    },
-    {
-        title: `Newsletter`,
-        img: Parade,
-        main: `Read our latest squadron newsletter`,
-        link: `https://newsletter.317atc.co.uk/`,
-        external: true
-    },
-];
 
 export default LinkCards;

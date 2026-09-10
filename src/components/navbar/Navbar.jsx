@@ -170,11 +170,11 @@ function Navbar() {
 	return (
 		<>
 			{/* top bar — full nav on desktop, branding only on mobile */}
-			<header className="fixed inset-x-0 top-0 z-50 bg-navy shadow-lg">
-				<nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
+			<header className="fixed inset-x-0 top-0 z-50 border-b-2 border-accent-dark bg-navy shadow-lg">
+				<nav aria-label="Main" className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
 					<Link to="/" className="flex min-w-0 items-center gap-3">
 						<img src={nav_logo} alt="317 Squadron crest" className="h-11 w-auto shrink-0" />
-						<span className="truncate text-sm font-bold leading-tight text-white sm:text-base">
+						<span className="truncate font-display text-lg font-bold uppercase leading-tight tracking-wide text-white sm:text-xl">
 							317 Failsworth &amp; Newton Heath<span className="hidden md:inline"> Squadron</span>
 						</span>
 					</Link>
@@ -199,7 +199,7 @@ function Navbar() {
 			)}
 
 			{/* mobile bottom nav */}
-			<nav className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-6 border-t border-white/10 bg-navy pb-[env(safe-area-inset-bottom)] lg:hidden">
+			<nav aria-label="Mobile" className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-6 border-t border-white/10 bg-navy pb-[env(safe-area-inset-bottom)] lg:hidden">
 				<BottomLink to="/" label="Home" icon={icons.home} />
 				<BottomDropdown
 					label="About" icon={icons.about} links={aboutLinks}

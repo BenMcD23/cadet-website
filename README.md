@@ -27,6 +27,8 @@ npm run lint      # ESLint
 | Adult staff photos and names | `src/components/staffPics/staffPics.jsx` plus `src/assets/staff_pics/` |
 | Cadet NCO photos and names | `src/components/ncoPics/ncoPics.jsx` plus `src/assets/nco_pics/` |
 | FAQ on the Join page | `src/data/faq.js` |
+| Address, phone, email, parade nights, subs, social links | `src/data/squadron.js` (also mirrored in the JSON-LD block in `index.html`) |
+| Page titles and descriptions for search engines | The `usePageMeta` call at the top of each file in `src/pages/` |
 | Nav links and footer links | `src/components/navbar/Navbar.jsx`, `src/components/footer/footer.jsx` |
 | Colours, fonts, animations | `tailwind.config.js` and the shared classes in `src/App.css` |
 
@@ -43,7 +45,8 @@ src/App.jsx             routes
 src/pages/              one file per route
 src/components/         reusable pieces, one folder each
 src/context/            flight points fetch and session cache
-src/data/               editable content (FAQ, current newsletter)
+src/data/               editable content (FAQ, current newsletter, squadron details)
+src/hooks/              usePageMeta (per-page title, description, canonical, Open Graph)
 src/assets/             images and documents bundled by Vite
 vercel.json             SPA rewrite and cache/security headers
 ```

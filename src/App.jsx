@@ -24,9 +24,11 @@ function App() {
     
     <>
     <Analytics/>
+    <a href="#main" className="skip-link">Skip to main content</a>
     <div className="pt-16 pb-16 lg:pb-0">
       <Navbar/>
       <ScrollToTop>
+        <main id="main">
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/programme" element={<Programme/>}/>
@@ -40,6 +42,7 @@ function App() {
 
           <Route path='*' element={<NotFound />}/>
         </Routes>
+        </main>
       </ScrollToTop>
 
       <Footer/>
