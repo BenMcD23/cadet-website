@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Programmes from "../../assets/home_images/programmes.webp";
 import Contact from "../../assets/home_images/contact.webp";
 import Store from "../../assets/home_images/store.webp";
-import Parade from "../../assets/parade.jpeg";
+import Parade from "../../assets/parade.webp";
 import Portal from "../../assets/317_logo.webp";
 
 function CardContent({ d }) {

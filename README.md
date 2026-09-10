@@ -55,7 +55,7 @@ vercel.json             SPA rewrite and cache/security headers
   the deployed version in Google Apps Script is the source of truth.
 - **Flight points** are fetched from a second Apps Script once per browser session and cached
   in `sessionStorage`.
-- **reCAPTCHA** protects the contact form.
+- **Spam protection** on the contact form is a hidden honeypot field checked by the Apps Script (no captcha).
 - **Vercel Analytics** is loaded from `src/App.jsx`.
 
 ## Deployment
