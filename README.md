@@ -62,3 +62,35 @@ vercel.json             SPA rewrite and cache/security headers
 
 Every push to `master` deploys automatically on Vercel. Dependabot opens weekly grouped
 pull requests for minor and patch dependency updates.
+
+## Known tech debt
+
+### Newsletter booklet (`src/components/newsletter/PdfBooklet.jsx`)
+
+The page-flip viewer works, but it was written quickly and has a few loose ends worth
+fixing next time someone is in there:
+
+- **Animation frame never cancelled.** `flipAnimRef` stores the `requestAnimationFrame`
+  id but nothing calls `cancelAnimationFrame` on unmount, so navigating away mid-flip
+  can call `setState` on an unmounted component.
+- **Render race.** `renderPage` is async and fires on every page change with no
+  cancellation. Flipping quickly can finish an older render after a newer one and draw
+  the wrong page onto the canvas. Fix: track a render token or call `renderTask.cancel()`
+  from pdf.js before starting a new render on the same canvas.
+- **PDF document never released.** The `getDocument` loading task is not destroyed when
+  the component unmounts or `pdfPath` changes, so the worker keeps the document in memory.
+- **Keyboard handler closes over a stale `toggleFullscreen`.** The `keydown` effect lists
+  `goNext`, `goPrev` and `isFullscreen` as dependencies but calls `toggleFullscreen`,
+  which is recreated every render. It works today only because that function reads
+  nothing that changes. The `f` shortcut is also global to the page.
+- **Click-to-flip zones are plain `div`s.** The two edge overlays that flip pages on click
+  are not buttons, so they are invisible to keyboard and screen-reader users. The arrow
+  buttons underneath cover the same actions, so this is a polish item rather than a bug.
+- **Leftover "✅ FIX n" comments** are from a debugging session and should be rewritten
+  as plain explanations or removed.
+- **Legacy pdf.js build.** The component deliberately imports `pdfjs-dist/legacy/build`
+  because the default build only supports the newest Firefox and Chrome. Keep it that way
+  when upgrading pdf.js; check the supported-browser list in the pdf.js FAQ each time.
+- **Bundle size.** The pdf.js worker is about 1.3 MB and the main pdf.js chunk about
+  0.5 MB. They are only loaded on the newsletter page, but there is no loading indicator
+  for the download itself, only for the PDF parse.
