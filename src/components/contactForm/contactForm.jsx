@@ -1,50 +1,50 @@
 import { useState, useRef } from "react";
-import ReCAPTCHA from 'react-google-recaptcha';
+
+// Honeypot: a field real users never see (visually hidden, skipped by tab and
+// screen readers). Bots fill every field, so the Apps Script silently drops any
+// submission where it has a value. Must match HONEYPOT_FIELD in G-appsScript.js.
+const HONEYPOT_FIELD = "Fax_Number";
 
 const inputClasses = "w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-ink placeholder-gray-400 transition-colors focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent/50";
 const labelClasses = "mb-1.5 block font-semibold text-navy";
 
 function ContactForm() {
-  const [successMessage, setSuccessMessage] = useState("");
-  const [captchaMessage, setCaptchaMessage] = useState("");
-  const [recaptchaValue, setRecaptchaValue] = useState(null);
+  const [status, setStatus] = useState(null); // { type: "success" | "error", text }
   const [selectedReason, setSelectedReason] = useState(""); // Track selected reason
   const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef(null);
 
-  const handleRecaptchaChange = (value) => {
-    setRecaptchaValue(value);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!recaptchaValue) {
-      setCaptchaMessage("Complete captcha to submit message");
+    const formData = new FormData(formRef.current);
+
+    // Bot filled the honeypot: pretend it worked and skip the request.
+    if (formData.get(HONEYPOT_FIELD)) {
+      setStatus({ type: "success", text: "Your message has been sent successfully!" });
+      formRef.current.reset();
       return;
     }
 
-    setCaptchaMessage("");
     setIsSubmitting(true);
 
     fetch("https://script.google.com/macros/s/AKfycbwkt-smkBtwgQWpIPjgm10cLFgtqXsg5eNGDFsLQsuF3ds_8mVWjnNuuNRgyLni6DkEZQ/exec", {
       method: 'POST',
-      body: new FormData(formRef.current),
+      body: formData,
     })
     .then(res => res.json())
     .then(data => {
       if (data.result === 'success') {
-        setSuccessMessage("Your message has been sent successfully!");
+        setStatus({ type: "success", text: "Your message has been sent successfully!" });
         formRef.current.reset();
-        setRecaptchaValue(null);
         setSelectedReason(""); // Reset selection
       } else {
-        setSuccessMessage("There was an error sending your message. Please try again.");
+        setStatus({ type: "error", text: "There was an error sending your message. Please try again." });
       }
     })
     .catch(err => {
       console.error(err);
-      setSuccessMessage("There was an error sending your message. Please try again.");
+      setStatus({ type: "error", text: "There was an error sending your message. Please try again." });
     })
     .finally(() => {
       setIsSubmitting(false);
@@ -113,19 +113,21 @@ function ContactForm() {
         <textarea id="formMessage" className={inputClasses} rows={4} name="Message" required />
       </div>
 
-      <div className="flex justify-center">
-        <ReCAPTCHA
-          sitekey="6LcKO2sqAAAAALn3TkQDe81ddIE1l_iez1tOqjGS"
-          onChange={handleRecaptchaChange}
-        />
+      {/* honeypot — see HONEYPOT_FIELD above */}
+      <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+        <label htmlFor="formFax">Fax number (leave this blank)</label>
+        <input id="formFax" type="text" name={HONEYPOT_FIELD} tabIndex={-1} autoComplete="off" />
       </div>
 
       <div className="text-center">
         <button type="submit" className="btn-primary disabled:cursor-not-allowed disabled:opacity-60" disabled={isSubmitting}>
           {isSubmitting ? "Submitting..." : "Submit"}
         </button>
-        {successMessage && <div className="pt-2 text-lg font-semibold text-green-600">{successMessage}</div>}
-        {captchaMessage && <div className="pt-2 text-lg font-bold text-red-600">{captchaMessage}</div>}
+        {status && (
+          <div role="status" className={`pt-2 text-lg font-semibold ${status.type === "success" ? "text-green-600" : "text-red-600"}`}>
+            {status.text}
+          </div>
+        )}
       </div>
     </form>
   );

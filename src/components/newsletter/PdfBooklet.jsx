@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState, useCallback } from "react";
-// Resolve the worker from the installed pdfjs-dist so its version always
-// matches the API — a hand-copied public worker drifts and breaks loading.
-import pdfWorkerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+// Use the *legacy* pdf.js build: the default build only targets the latest
+// Firefox/Chrome (it relies on brand-new APIs such as Map.prototype
+// getOrInsertComputed), whereas the legacy build ships polyfills and supports
+// Chrome 125+, Safari 18+ and Firefox ESR. Resolve the worker from the same
+// package so its version always matches the API.
+import pdfWorkerUrl from "pdfjs-dist/legacy/build/pdf.worker.min.mjs?url";
 
 // Palette vars the booklet relies on (from the newsletter site's globals.css),
 // scoped to this component's root so they don't leak into the site theme.
@@ -44,7 +47,7 @@ export default function PdfBooklet({ newsletter }) {
 
     (async () => {
       try {
-        const pdfjsLib = await import("pdfjs-dist");
+        const pdfjsLib = await import("pdfjs-dist/legacy/build/pdf.mjs");
 
         pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 

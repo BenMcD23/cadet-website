@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
-import nav_logo from "../../assets/317_logo.png";
+import nav_logo from "../../assets/317_logo.webp";
 
 const aboutLinks = [
 	{ to: "/adult-staff", label: "Adult Staff" },
@@ -36,22 +36,25 @@ const linkClasses = ({ isActive }) =>
 		isActive ? "text-accent" : "text-white hover:text-accent"
 	}`;
 
-// ── Desktop dropdown (hover) ──────────────────────────────────────────
+// ── Desktop dropdown ──────────────────────────────────────────────────
+// Opens on hover (mouse) and on focus-within (keyboard: tab to the button,
+// then tab through the links). Pure CSS, no JS state needed.
 function Dropdown({ label, links, active }) {
 	return (
 		<div className="group relative">
 			<button
 				type="button"
+				aria-haspopup="menu"
 				className={`flex items-center gap-1 rounded-md px-3 py-2 text-sm font-semibold transition-colors ${
-					active ? "text-accent" : "text-white group-hover:text-accent"
+					active ? "text-accent" : "text-white group-hover:text-accent group-focus-within:text-accent"
 				}`}
 			>
 				{label}
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="size-3 transition-transform group-hover:rotate-180">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="size-3 transition-transform group-hover:rotate-180 group-focus-within:rotate-180">
 					<path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
 				</svg>
 			</button>
-			<div className="invisible absolute left-1/2 top-full z-50 w-44 -translate-x-1/2 pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
+			<div className="invisible absolute left-1/2 top-full z-50 w-44 -translate-x-1/2 pt-2 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
 				<div className="overflow-hidden rounded-lg bg-navy-light shadow-lg ring-1 ring-white/10">
 					{links.map((l) =>
 						l.external ? (
