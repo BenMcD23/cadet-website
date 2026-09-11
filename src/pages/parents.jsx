@@ -1,4 +1,5 @@
 import PageHeader from "../components/pageHeader/pageHeader";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 import TG21 from "../assets/documents/forms/TG Form 021.docx";
 import TG23 from "../assets/documents/forms/TG Form 023.docx";
@@ -16,10 +17,13 @@ function DownloadButton({ href, label }) {
 }
 
 function Parents() {
+    usePageMeta({ title: "Parents and carers", description: "Information for parents and carers of 317 Squadron cadets: subs and bank details, TG21 and TG23 forms, the DofE kit list and the civilian committee." });
+
     return (
         <>
             <PageHeader
-                title="Parents"
+                eyebrow="Resources"
+                title="Parents and carers"
                 intro="General information for parents and carers of our cadets."
             />
 
@@ -33,7 +37,7 @@ function Parents() {
                             insurance for the cadets and national camps. Please set up a standing order to pay £17
                             a month to the account as follows:
                         </p>
-                        <dl className="mb-4 max-w-md rounded-lg border border-gray-200 bg-surface p-5 [&_dd]:mb-2 [&_dd]:font-semibold [&_dd]:text-navy [&_dt]:text-xs [&_dt]:font-bold [&_dt]:uppercase [&_dt]:tracking-wide [&_dt]:text-ink/60">
+                        <dl className="mb-4 max-w-md rounded-lg border border-gray-200 bg-surface p-5 [&_dd]:mb-2 [&_dd]:font-semibold [&_dd]:text-navy [&_dt]:text-xs [&_dt]:font-bold [&_dt]:uppercase [&_dt]:tracking-wide [&_dt]:text-ink/70">
                             <dt>Account name</dt>
                             <dd>317 Squadron ATC</dd>
                             <dt>Account number</dt>
