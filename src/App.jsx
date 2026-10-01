@@ -2,6 +2,7 @@ import Navbar from './components/navbar/Navbar'
 import Footer from "./components/footer/footer"
 
 import ScrollToTop from "./components/scrollToTop/scrollToTop"
+import PageMeta from "./components/pageMeta/pageMeta"
 
 import Home from './pages/home'
 import Programme from './pages/programme'
@@ -24,6 +25,7 @@ function App() {
     
     <>
     <Analytics/>
+    <PageMeta/>
     <div className="pt-16 pb-16 lg:pb-0">
       <Navbar/>
       <ScrollToTop>
