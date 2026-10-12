@@ -5,6 +5,7 @@ import nav_logo from "../../assets/317_logo.webp";
 const aboutLinks = [
 	{ to: "/adult-staff", label: "Adult Staff" },
 	{ to: "/cadet-ncos", label: "Cadet NCO's" },
+	{ to: "/gallery", label: "Gallery" },
 ];
 
 const resourceLinks = [

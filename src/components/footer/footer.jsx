@@ -19,6 +19,7 @@ const usefulLinks = [
 const internalLinks = [
 	{ to: "/newsletter", label: "Newsletter" },
 	{ to: "/programme", label: "Programme" },
+	{ to: "/gallery", label: "Gallery" },
 ];
 
 const linkClass = "text-white/80 transition-colors hover:text-accent";

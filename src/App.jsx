@@ -12,6 +12,7 @@ import Join from './pages/join'
 import Contact from './pages/contact'
 import Parents from './pages/parents'
 import Newsletter from './pages/newsletter'
+import Gallery from './pages/gallery'
 import NotFound from './pages/404'
 
 import { Route, Routes } from "react-router-dom"
@@ -39,6 +40,7 @@ function App() {
           <Route path="/parents" element={<Parents/>}/>
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/newsletter" element={<Newsletter/>}/>
+          <Route path="/gallery" element={<Gallery/>}/>
 
           <Route path='*' element={<NotFound />}/>
         </Routes>
