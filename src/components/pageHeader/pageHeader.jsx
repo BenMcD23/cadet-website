@@ -1,10 +1,11 @@
-function PageHeader({ title, intro, children }) {
+function PageHeader({ title, eyebrow, intro, children }) {
     return (
-        <div className="bg-navy py-10 text-center md:py-14">
+        <div className="bg-navy py-10 text-white md:py-14">
             <div className="section-container">
-                <h1 className="text-3xl font-extrabold text-white md:text-4xl">{title}</h1>
-                <span className="mx-auto mt-3 block h-1 w-16 rounded-full bg-accent"></span>
-                {intro && <p className="mx-auto mt-4 max-w-2xl text-white/85 md:text-lg">{intro}</p>}
+                {eyebrow && <p className="eyebrow mb-2 text-accent">{eyebrow}</p>}
+                <h1 className="text-4xl leading-none text-white md:text-5xl">{title}</h1>
+                <span className="raf-flash-light mt-4"></span>
+                {intro && <p className="mt-5 max-w-2xl leading-relaxed text-white/85 md:text-lg">{intro}</p>}
                 {children && <div className="mt-6">{children}</div>}
             </div>
         </div>

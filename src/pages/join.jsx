@@ -3,13 +3,20 @@ import Title from "../components/mainTitle/title";
 import JoinJourney from "../components/joinJourney/joinJourney";
 import Faq from "../components/faq/faq";
 import ContactForm from "../components/contactForm/contactForm";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 function Join() {
+    usePageMeta({
+        title: "Join us",
+        description: "How to join 317 Squadron RAF Air Cadets in Failsworth as a cadet aged 12 to 17, an adult volunteer or a civilian committee member. Ages, costs, parade nights and what to expect.",
+    });
+
     return (
         <>
             <PageHeader
-                title="Joining Information"
-                intro="Everything you need to know about joining 317 Squadron — as a cadet, a staff volunteer or a committee member."
+                eyebrow="Join us"
+                title="Joining information"
+                intro="Everything you need to know about joining 317 Squadron as a cadet, a staff volunteer or a committee member."
             />
 
             {/* applications notice */}
@@ -28,11 +35,11 @@ function Join() {
             {/* who can join */}
             <div className="section bg-white">
                 <div className="section-container">
-                    <Title title="Who Can Join"></Title>
+                    <Title eyebrow="Eligibility" title="Who can join" />
                     <div className="mt-8 grid gap-6 md:grid-cols-3">
                         {data.map((d) => (
-                            <div key={d.title} className="card p-6">
-                                <h3 className="mb-3 text-lg font-bold text-navy">{d.title}</h3>
+                            <div key={d.title} className="card border-t-4 border-t-accent-dark p-6">
+                                <h3 className="mb-3 text-2xl">{d.title}</h3>
                                 {d.main.map((line) => (
                                     <p key={line} className="mb-3 text-sm leading-relaxed text-ink/80">{line}</p>
                                 ))}
@@ -42,22 +49,24 @@ function Join() {
                 </div>
             </div>
 
-            {/* contact form */}
+            {/* how joining works */}
             <div className="section bg-surface">
                 <div className="section-container">
-                    <Title title="Get In Touch"></Title>
-                    <div className="card mx-auto mt-8 max-w-2xl p-6 md:p-8">
-                        <ContactForm />
+                    <Title eyebrow="Step by step" title="How joining works" lead="From first message to passing out takes a few months. Here's what happens in between." />
+                    <div className="mt-10">
+                        <JoinJourney />
                     </div>
                 </div>
             </div>
 
-            {/* how joining works */}
+            {/* contact form */}
             <div className="section bg-white">
-                <div className="section-container">
-                    <Title title="How Joining Works"></Title>
-                    <div className="mt-10">
-                        <JoinJourney />
+                <div className="section-container grid items-start gap-8 lg:grid-cols-5">
+                    <div className="lg:col-span-2">
+                        <Title eyebrow="Step one" title="Get in touch" lead="Tell us who's interested and roughly how old they are. We'll come back to you with the next intake date and what to bring." />
+                    </div>
+                    <div className="card p-6 md:p-8 lg:col-span-3">
+                        <ContactForm />
                     </div>
                 </div>
             </div>
@@ -65,7 +74,7 @@ function Join() {
             {/* FAQ */}
             <div className="section bg-surface">
                 <div className="section-container">
-                    <Title title="Frequently Asked Questions"></Title>
+                    <Title eyebrow="Questions" title="Frequently asked questions" />
                     <div className="mt-8">
                         <Faq />
                     </div>
@@ -77,24 +86,24 @@ function Join() {
 
 const data = [
     {
-        title: `Joining as a Cadet`,
+        title: `Cadets`,
         main: [
             `Cadets must be aged 12 and in year 8 or above to join.`,
             `The latest you can join the Air Cadets is the day before your 17th birthday.`,
         ],
     },
     {
-        title: `Joining as a Staff Volunteer`,
+        title: `Staff volunteers`,
         main: [
-            `Adults 20 years old or more can join as adult volunteer staff members.`,
-            `You must have also lived in the UK for a minimum of 3 years and commit to at least 12 hours a month.`,
+            `Adults aged 20 or over can join as adult volunteer staff, in uniform or as a civilian instructor.`,
+            `You must have lived in the UK for at least 3 years and be able to commit around 12 hours a month.`,
         ],
     },
     {
-        title: `Joining as a Committee Member`,
+        title: `Committee members`,
         main: [
-            `Every squadron has a Civilian Committee which has responsibilities to look after the funding of the squadron, deal with welfare issues and help the promotion of the squadron to the public.`,
-            `The committee is made up of volunteers, who on average give a few hours a month.`,
+            `Every squadron has a Civilian Committee that looks after fundraising, welfare and promoting the squadron locally.`,
+            `It's made up of volunteers, often parents, who give a few hours a month.`,
         ],
     },
 ];

@@ -3,11 +3,19 @@
 @tailwind utilities;
 
 @layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         @apply font-sans text-ink antialiased;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3 {
+        @apply font-display font-bold uppercase tracking-tight text-navy;
+    }
+
+    h4, h5, h6 {
         @apply font-bold text-navy;
     }
 
@@ -16,6 +24,9 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
         *, *::before, *::after {
             animation-duration: 0.01ms !important;
             animation-iteration-count: 1 !important;
@@ -26,11 +37,15 @@
 
 @layer components {
     .btn-primary {
-        @apply inline-block rounded-lg bg-accent-dark px-6 py-3 font-semibold text-white transition-colors hover:bg-accent focus-visible:ring-offset-navy;
+        @apply inline-flex items-center justify-center gap-2 rounded-md bg-accent-dark px-6 py-3 font-semibold text-white transition-colors hover:bg-accent focus-visible:ring-offset-navy;
     }
 
     .btn-secondary {
-        @apply inline-block rounded-lg border-2 border-white px-6 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-navy;
+        @apply inline-flex items-center justify-center gap-2 rounded-md border-2 border-white px-6 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-navy;
+    }
+
+    .btn-outline {
+        @apply inline-flex items-center justify-center gap-2 rounded-md border-2 border-navy px-6 py-3 font-semibold text-navy transition-colors hover:bg-navy hover:text-white;
     }
 
     .section {
@@ -42,6 +57,25 @@
     }
 
     .card {
-        @apply overflow-hidden rounded-xl bg-white shadow-md transition duration-300;
+        @apply overflow-hidden rounded-md border border-gray-200 bg-white;
+    }
+
+    /* Three-colour flash in the RAF stable-belt colours: navy, light blue, maroon. */
+    .raf-flash {
+        @apply block h-1 w-14;
+        background: linear-gradient(to right, theme('colors.navy') 0 40%, theme('colors.accent') 40% 80%, theme('colors.maroon') 80%);
+    }
+    .raf-flash-light {
+        @apply block h-1 w-14;
+        background: linear-gradient(to right, theme('colors.accent') 0 40%, #fff 40% 80%, theme('colors.maroon') 80%);
+    }
+
+    /* small uppercase label above headings */
+    .eyebrow {
+        @apply text-xs font-bold uppercase tracking-[0.2em] text-accent-dark;
+    }
+
+    .skip-link {
+        @apply sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:font-semibold focus:text-navy focus:shadow-lg;
     }
 }

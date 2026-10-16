@@ -1,8 +1,10 @@
 import { useContext } from 'react';
 import PointsContext from '../context/flightPointsContext';
 import PageHeader from "../components/pageHeader/pageHeader";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 function FlightP() {
+    usePageMeta({ title: "Flight points", description: "Current inter-flight points tally at 317 Squadron RAF Air Cadets." });
     const { pointsData, loading, error } = useContext(PointsContext);
 
     const flights = [
@@ -19,7 +21,8 @@ function FlightP() {
     return (
         <>
             <PageHeader
-                title="Flight Points"
+                eyebrow="Squadron life"
+                title="Flight points"
                 intro="Throughout the year, the two main flights compete in various sessions to win a trophy at the end.
                     This is the current points tally."
             />
@@ -27,10 +30,10 @@ function FlightP() {
             <div className="section bg-surface">
                 <div className="section-container grid gap-6 md:grid-cols-2">
                     {flights.map((flight) => (
-                        <div key={flight.name} className="card border-t-4 border-accent p-10 text-center">
-                            <h2 className="text-3xl font-extrabold text-navy md:text-4xl">{flight.name}</h2>
+                        <div key={flight.name} className="card border-t-4 border-t-accent-dark p-10 text-center">
+                            <h2 className="text-3xl md:text-4xl">{flight.name}</h2>
                             <p className="mt-4 text-6xl font-extrabold text-accent-dark md:text-7xl" aria-live="polite">{renderPoints(flight.points)}</p>
-                            <p className="mt-2 text-sm font-semibold uppercase tracking-wider text-ink/60">points</p>
+                            <p className="mt-2 text-sm font-semibold uppercase tracking-wider text-ink/70">points</p>
                         </div>
                     ))}
                 </div>

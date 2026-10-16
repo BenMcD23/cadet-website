@@ -2,11 +2,15 @@ import Programme_webp from "../assets/programme/programme.webp";
 import Rooms_webp from "../assets/programme/rooms.webp";
 
 import PageHeader from "../components/pageHeader/pageHeader";
+import { usePageMeta } from "../hooks/usePageMeta";
 
 function Programme() {
+    usePageMeta({ title: "Programme", description: "This month's training programme and room allocations for 317 Squadron RAF Air Cadets parade nights." });
+
     return (
         <>
             <PageHeader
+                eyebrow="This month"
                 title="Programme"
                 intro="See what we're up to this month on the squadron."
             >

@@ -1,11 +1,19 @@
-function Title({ title, light = false }) {
-
+/*
+ * Section heading. Left-aligned with the RAF three-colour flash underneath.
+ *
+ *   <Title eyebrow="Activities" title="What we do" lead="One or two sentences of context." />
+ *
+ * `light` flips the colours for use on a navy background; `center` centres it.
+ */
+function Title({ title, eyebrow, lead, light = false, center = false }) {
     return (
-        <div className="text-center pt-4 lg:pt-5">
-            <h2 className={`text-3xl md:text-4xl font-extrabold leading-tight ${light ? "text-white" : "text-navy"}`}>
+        <div className={center ? "mx-auto max-w-2xl text-center" : "max-w-2xl"}>
+            {eyebrow && <p className={`eyebrow mb-2 ${light ? "text-accent" : ""}`}>{eyebrow}</p>}
+            <h2 className={`text-3xl leading-none md:text-4xl ${light ? "text-white" : "text-navy"}`}>
                 {title}
             </h2>
-            <span className="mt-3 mb-4 mx-auto block h-1 w-16 rounded-full bg-accent"></span>
+            <span className={`${light ? "raf-flash-light" : "raf-flash"} mt-4 ${center ? "mx-auto" : ""}`}></span>
+            {lead && <p className={`mt-4 leading-relaxed ${light ? "text-white/85" : "text-ink/75"}`}>{lead}</p>}
         </div>
     )
 }

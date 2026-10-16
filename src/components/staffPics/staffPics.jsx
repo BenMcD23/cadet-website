@@ -24,7 +24,7 @@ function StaffPics() {
     return (
         <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
             {staff.map((person) => (
-                <div key={person.name} className="card transition hover:-translate-y-1 hover:shadow-xl hover:ring-2 hover:ring-accent">
+                <div key={person.name} className="card transition-colors hover:border-accent-dark">
                     <img
                         src={getImage(person.image)}
                         alt={person.name}
