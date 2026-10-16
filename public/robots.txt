@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+# Joining-form links are private to each recruit's family.
+Disallow: /enrol/
 
 Sitemap: https://www.317atc.co.uk/sitemap.xml

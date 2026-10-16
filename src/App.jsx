@@ -13,6 +13,7 @@ import Contact from './pages/contact'
 import Parents from './pages/parents'
 import Newsletter from './pages/newsletter'
 import Gallery from './pages/gallery'
+import Enrol from './pages/enrol'
 import NotFound from './pages/404'
 
 import { Route, Routes } from "react-router-dom"
@@ -24,7 +25,8 @@ function App() {
   return (
     
     <>
-    <Analytics/>
+    {/* Joining-form links carry a secret token: report them to analytics without it. */}
+    <Analytics beforeSend={(event) => ({ ...event, url: event.url.replace(/\/enrol\/[^/?#]+/, "/enrol/[token]") })}/>
     <a href="#main" className="skip-link">Skip to main content</a>
     <div className="pt-16 pb-16 lg:pb-0">
       <Navbar/>
@@ -41,6 +43,7 @@ function App() {
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/newsletter" element={<Newsletter/>}/>
           <Route path="/gallery" element={<Gallery/>}/>
+          <Route path="/enrol/:token" element={<Enrol/>}/>
 
           <Route path='*' element={<NotFound />}/>
         </Routes>
