@@ -24,12 +24,12 @@ export const faqs = [
     {
         id: "parade-night-activities",
         question: "What happens on a parade night?",
-        answer: "A typical night includes a mix of classification training (aviation subjects, leadership, first aid), drill, sport and squadron activities — and plenty of time with friends. Nights start and finish with a parade where attendance is taken.",
+        answer: "A typical night includes a mix of classification training (aviation subjects, leadership, first aid), drill, sport and squadron activities, and plenty of time with friends.",
     },
     {
         id: "uniform",
         question: "Do cadets have to buy a uniform?",
-        answer: "No — uniform is provided free of charge once a cadet is enrolled. Cadets order uniform through our uniform order form, and we'll help with sizing and how to wear it correctly.",
+        answer: "Blues (the formal blue uniform) are provided free of charge once a cadet is enrolled, but cadets do buy their own MTP (the camouflage uniform). We'll help with sizing and how to wear it all correctly.",
     },
     {
         id: "before-uniform",
@@ -44,6 +44,6 @@ export const faqs = [
     {
         id: "parents-involved",
         question: "Can parents get involved?",
-        answer: "Yes! Every squadron has a Civilian Committee of volunteers who support fundraising, welfare and promotion of the squadron — on average a few hours a month. Adults can also join as uniformed or civilian instructor staff.",
+        answer: "Yes! Every squadron has a Civilian Committee of volunteers who support fundraising, welfare and promotion of the squadron, on average a few hours a month. Adults can also join as uniformed or civilian instructor staff.",
     },
 ];

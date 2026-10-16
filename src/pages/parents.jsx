@@ -76,7 +76,7 @@ function Parents() {
                         <h2 className="mb-4 text-2xl font-bold text-navy">DofE</h2>
                         <p className="mb-6 leading-relaxed text-ink/80">
                             Every year we run lots of DofE expeditions as a Squadron, so expedition dates cannot be
-                            changed. Here is the kit list — your child must have every item on it.
+                            changed. Here is the kit list.
                         </p>
                         <DownloadButton href={KitList} label="DofE Kit List" />
                     </div>

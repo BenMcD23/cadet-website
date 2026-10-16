@@ -8,7 +8,7 @@ const links = [
     { icon: "newspaper", title: "Newsletter", text: "News from the cadet media team", to: "/newsletter" },
     { icon: "home", title: "Parents and carers", text: "Subs, TG forms and kit lists", to: "/parents" },
     { icon: "lock", title: "317 Cadet Portal", text: "Log in for squadron resources", href: "https://cadet-portal.317atc.co.uk/" },
-    { icon: "bag", title: "Squadron store", text: "Hoodies, polos and kit", href: "https://317atc.sumupstore.com/" },
+    { icon: "bag", title: "Squadron store", text: "DofE payments and more", href: "https://317atc.sumupstore.com/" },
 ];
 
 const tileClasses = "group flex items-start gap-4 rounded-md border border-gray-200 bg-white p-5 transition-colors hover:border-accent-dark focus-visible:border-accent-dark";

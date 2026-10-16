@@ -9,11 +9,11 @@ const steps = [
     },
     {
         title: "Your first nights",
-        text: "Wear something comfortable — no uniform needed yet. Within the first few weeks we'll get you a squadron logo embroidered polo. You'll join in with training and activities and learn how the squadron works.",
+        text: "Wear something comfortable. Within the first few weeks we'll get you a squadron logo embroidered polo. You'll join in with training and activities and learn how the squadron works.",
     },
     {
         title: "Enrolment",
-        text: "After around 5 months, you'll pass out and become a full member of the squadron and the Air Cadets — the start of your Air Cadets journey.",
+        text: "After around 5 months, you'll pass out and become a full member of the squadron and the Air Cadets",
     },
 ];
 
