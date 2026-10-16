@@ -215,12 +215,15 @@ function Enrol() {
     const steps = useMemo(() => view?.options?.steps ?? [], [view]);
     const step = steps[stepIndex];
     const outstanding = useMemo(() => steps.filter((s) => missing[s.key]?.length), [steps, missing]);
-    const cadetSigns = useMemo(() => {
-        // A submitted view carries no options; the thank-you screen needs none.
+    // From 16 the cadet signs the health declaration themselves. A submitted
+    // view carries no options; the thank-you screen needs none.
+    const cadetOldEnough = useMemo(() => {
         if (!data || !view?.options) return false;
         const age = ageOn(data.cadet.dob, new Date());
-        return !!data.medical.has && age !== null && age >= view.options.cadetSignsFromAge;
+        return age !== null && age >= view.options.cadetSignsFromAge;
     }, [data, view]);
+    // Only the 3822H has a cadet signature box, so no health declaration, no cadet signature.
+    const cadetSigns = cadetOldEnough && !!data?.medical.has;
 
     async function submit() {
         setSubmitError(null);
@@ -309,7 +312,7 @@ function Enrol() {
             <PageHeader
                 eyebrow="Joining 317 Squadron"
                 title={`Joining form for ${view.cadetFirstName}`}
-                intro={`This replaces the paper consent certificate and health declaration (RAFAC 3822A and 3822H). It takes about 15 minutes, and you don't need to do it in one go: your answers save as you move between steps, and you can come back to this link until ${formatDay(view.expiresAt)}.`}
+                intro={`This is the consent certificate and health declaration (RAFAC 3822A and 3822H). It takes about 15 minutes, and you don't need to do it in one go: your answers save as you move between steps, and you can come back to this link until ${formatDay(view.expiresAt)}.`}
             />
 
             <div className="section bg-surface" ref={topRef}>
@@ -408,6 +411,19 @@ function Enrol() {
                                     <TextField label="Your surname" autoComplete="family-name" value={data.signer.surname} onChange={(v) => set("signer", { surname: v })} />
                                 </div>
                                 <SignaturePad label="Parent or guardian's signature" onChange={setParentSig} />
+                                {cadetOldEnough && !cadetSigns && (
+                                    <p className="rounded-md border border-gray-200 bg-surface px-4 py-3 text-sm text-ink/85">
+                                        {view.cadetFirstName} is {view.options.cadetSignsFromAge} or over, so they sign the health declaration themselves.{" "}
+                                        {data.medical.has === false
+                                            ? "You said they have no medical conditions, allergies or dietary needs, so there's no health declaration to sign and only you need to sign."
+                                            : "Whether there is one depends on if they have any medical conditions, allergies or dietary needs: "}
+                                        {data.medical.has === null && (
+                                            <button type="button" className="font-semibold text-navy underline" onClick={() => goTo(steps.findIndex((x) => x.key === "medical"))}>
+                                                answer that question
+                                            </button>
+                                        )}
+                                    </p>
+                                )}
                                 {cadetSigns && (
                                     <div className="space-y-2">
                                         <p className="text-sm text-ink/85">
