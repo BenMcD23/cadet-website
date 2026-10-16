@@ -208,6 +208,12 @@ function Enrol() {
         // Move on even if the save failed: the answers are still on this
         // device, and the error stays on screen until a save works.
         await save();
+        // The signature pads clear when the sign step is left, so forget the
+        // signatures too: never send one the parent can no longer see.
+        if (i !== stepIndex) {
+            setParentSig(null);
+            setCadetSig(null);
+        }
         setStepIndex(i);
         topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
@@ -399,12 +405,16 @@ function Enrol() {
                                     <h3 className="text-lg">Your agreement</h3>
                                     <p>By signing, I confirm that:</p>
                                     <ul className="list-disc space-y-1 pl-5">
-                                        <li>I have parental responsibility for {view.cadetFirstName}, and give the consents I&apos;ve chosen on this form.</li>
+                                        <li>I have parental responsibility for {view.cadetFirstName}, and give the consents I&apos;ve chosen on this form for them to join the RAF Air Cadets.</li>
+                                        <li>{view.cadetFirstName} is at least 12 years old and not below Year 8 at school (or at least 12 and in secondary education in Scotland).</li>
+                                        <li>I&apos;m responsible for any clothing and equipment loaned to {view.cadetFirstName}, which remains Government property, and will return it in good condition (fair wear and tear excepted) when they leave or when asked by an authorised officer.</li>
                                         <li>I agree to {view.cadetFirstName}&apos;s personal data being processed by the RAF Air Cadets, and to their details (and any health declaration) being added to the Cadet Forces Management Information System to create their central record, including a Cadet Portal account. This is held under the Data Protection Act 2018 and UK GDPR, as set out in the RAF Air Cadets Privacy Notice for cadets.</li>
                                         {data.medical.has && (
                                             <li>I understand events can be strenuous and held in conditions (dust, fumes, extremes of temperature, altitude) that may aggravate {view.cadetFirstName}&apos;s condition(s); I have consulted a healthcare professional where in doubt; and I will tell the officer in charge of any change before an event.</li>
                                         )}
-                                        <li>I can withdraw consent at any time by writing to the Officer Commanding.</li>
+                                        <li>{view.cadetFirstName} will have their own Cadet Portal account, and online training sessions and meetings, which always have two adult volunteers present, may be recorded and kept for safeguarding.</li>
+                                        <li>If {view.cadetFirstName} has been in one of the youth organisations I listed, the RAF Air Cadets may contact that organisation to share information about them.</li>
+                                        <li>I can withdraw consent at any time by writing to the Officer Commanding, and ask to see, correct or object to the processing of {view.cadetFirstName}&apos;s data through the unit commander or the RAF Air Cadets Data Protection Officer.</li>
                                     </ul>
                                 </div>
 

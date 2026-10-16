@@ -168,6 +168,12 @@ export function ParentStep({ data, set }) {
                 value={data.nok.hasParentalResponsibility}
                 onChange={(v) => set("nok", { hasParentalResponsibility: v })}
             />
+            {data.nok.hasParentalResponsibility === false && (
+                <p role="alert" className="rounded-md border border-maroon/30 bg-maroon/5 px-4 py-3 text-sm text-maroon">
+                    Only someone with parental responsibility can give these consents and sign this form. Please ask them to fill it in,
+                    or contact the squadron if you&apos;re not sure.
+                </p>
+            )}
             <PersonFields value={data.nok} onChange={(patch) => set("nok", patch)} cadetAddress={data.contact} />
             <details className="rounded-md border border-gray-200 p-4" open={extraStarted}>
                 <summary className="cursor-pointer font-semibold text-navy">Add another contact (optional)</summary>
@@ -183,7 +189,7 @@ export function ConsentStep({ data, set, options }) {
     const c = data.consent;
     const label = (key) => options.consents.find((o) => o.key === key)?.label ?? key;
     const ask = (key, extra) => (
-        <YesNo legend={`I consent to: ${label(key)}`} value={c[key]} onChange={(v) => set("consent", { [key]: v })} {...extra} />
+        <YesNo legend={label(key)} value={c[key]} onChange={(v) => set("consent", { [key]: v })} {...extra} />
     );
     return (
         <>
@@ -362,7 +368,7 @@ export function MedicalStep({ data, set, options }) {
                                     })}
                                 />
                             ))}
-                            {m.details.length < 10 && (
+                            {m.details.length < 30 && (
                                 <button type="button" className="btn-outline px-4 py-2 text-sm" onClick={() => details([...m.details, { ...EMPTY_CONDITION }])}>
                                     Add a condition that isn&apos;t listed
                                 </button>
