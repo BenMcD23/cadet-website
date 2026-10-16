@@ -1,49 +1,11 @@
-// Photos live in src/assets/gallery/. Add a file, then add a line here (category must match one in gallery.jsx).
-const files = import.meta.glob("../assets/gallery/*.webp", { eager: true, import: "default" });
-const src = (name) => files[`../assets/gallery/${name}.webp`];
+// Photos live in src/assets/gallery/, listed in gallery.json. The SMS site's
+// Gallery tool adds and removes them; sections show in the order they first appear.
+import list from "./gallery.json";
 
-export const photos = [
-    { cat: "Remembrance", img: src("remembrance-00"), w: 1100, h: 568, alt: "The whole squadron gathered before the Remembrance parade" },
-    { cat: "Remembrance", img: src("remembrance-01"), w: 733, h: 1100, alt: "The squadron standard with its colour party at the Remembrance parade" },
-    { cat: "Remembrance", img: src("remembrance-02"), w: 733, h: 1100, alt: "Snare drummers of the squadron band marching through Failsworth" },
-    { cat: "Remembrance", img: src("remembrance-03"), w: 1100, h: 733, alt: "The band halted in the street with the parade lined up behind" },
-    { cat: "Remembrance", img: src("remembrance-04"), w: 733, h: 1100, alt: "A drummer with the band and parade behind him" },
-    { cat: "Remembrance", img: src("remembrance-05"), w: 733, h: 1100, alt: "The squadron crest on the bass drum" },
-    { cat: "Remembrance", img: src("remembrance-06"), w: 733, h: 1100, alt: "A cadet laying a wreath at the war memorial" },
-    { cat: "Remembrance", img: src("remembrance-07"), w: 733, h: 1100, alt: "Cadets standing by the wreaths at the war memorial" },
-    { cat: "Remembrance", img: src("remembrance-08"), w: 733, h: 1100, alt: "The golden eagle on top of the war memorial" },
-    { cat: "Remembrance", img: src("remembrance-09"), w: 733, h: 1100, alt: "Staff and cadets marching to the memorial" },
-    { cat: "Parades", img: src("parades-10"), w: 1100, h: 732, alt: "Squadron group photograph at the passing out parade" },
-    { cat: "Parades", img: src("parades-11"), w: 1100, h: 733, alt: "The colour party marching on parade" },
-    { cat: "Parades", img: src("parades-12"), w: 1100, h: 733, alt: "Cadets marching behind the squadron flag" },
-    { cat: "Parades", img: src("parades-13"), w: 1100, h: 733, alt: "Cadets marching with arms swinging in time" },
-    { cat: "Parades", img: src("parades-14"), w: 1100, h: 733, alt: "A cadet looks right on the march" },
-    { cat: "Parades", img: src("parades-15"), w: 1100, h: 733, alt: "The reviewing officer is saluted on parade" },
-    { cat: "Parades", img: src("parades-16"), w: 1100, h: 733, alt: "Cadets and staff gathered for the squadron photograph" },
-    { cat: "Parades", img: src("parades-17"), w: 732, h: 1100, alt: "Cutting the cake after the parade" },
-    { cat: "Parades", img: src("parades-18"), w: 824, h: 1100, alt: "A cadet on parade beside the squadron flag" },
-    { cat: "Parades", img: src("parades-19"), w: 619, h: 1100, alt: "The band marching into the hangar for a parade" },
-    { cat: "Band", img: src("band-20"), w: 1100, h: 825, alt: "Drummers rehearsing in the squadron car park" },
-    { cat: "Band", img: src("band-21"), w: 1100, h: 732, alt: "Band members carrying drumsticks across their shoulders" },
-    { cat: "Band", img: src("band-22"), w: 1100, h: 759, alt: "Band members playing at the Lord-Lieutenant's Awards" },
-    { cat: "Band", img: src("band-23"), w: 1100, h: 757, alt: "Drummers marching into the Lord-Lieutenant's Awards" },
-    { cat: "Awards", img: src("awards-24"), w: 1100, h: 752, alt: "Award winners lined up on stage at presentation evening" },
-    { cat: "Awards", img: src("awards-25"), w: 1100, h: 733, alt: "Cadets with their trophies at presentation evening" },
-    { cat: "Awards", img: src("awards-26"), w: 1100, h: 825, alt: "Trophies on display at the dining in night" },
-    { cat: "Awards", img: src("awards-27"), w: 1100, h: 733, alt: "The squadron team with their trophies at a wing competition" },
-    { cat: "Adventure", img: src("adventure-28"), w: 1100, h: 825, alt: "Two cadets with Hawk jets at RAF Leeming" },
-    { cat: "Adventure", img: src("adventure-29"), w: 824, h: 1100, alt: "The cockpit of a Hawk jet" },
-    { cat: "Adventure", img: src("adventure-30"), w: 825, h: 1100, alt: "Cadets with weapons on a camp" },
-    { cat: "Adventure", img: src("adventure-31"), w: 825, h: 1100, alt: "Hands on a trig point at the top of a DofE hill" },
-    { cat: "Adventure", img: src("adventure-32"), w: 825, h: 1100, alt: "A reservoir seen from a moorland DofE route" },
-    { cat: "Adventure", img: src("adventure-33"), w: 1100, h: 619, alt: "Tents pitched on a DofE expedition" },
-    { cat: "Adventure", img: src("adventure-34"), w: 1100, h: 825, alt: "Cadets putting up a basha shelter" },
-    { cat: "Adventure", img: src("adventure-35"), w: 1100, h: 825, alt: "Sheltering under a basha in the woods" },
-    { cat: "Adventure", img: src("adventure-36"), w: 1100, h: 825, alt: "Cadets tying off a shelter on a fieldcraft session" },
-    { cat: "Adventure", img: src("adventure-37"), w: 666, h: 832, alt: "A cadet ready for an air experience flight" },
-    { cat: "Adventure", img: src("adventure-38"), w: 1100, h: 825, alt: "Archery practice in the squadron hall" },
-    { cat: "Sport", img: src("sport-39"), w: 1100, h: 825, alt: "The squadron five-a-side team" },
-    { cat: "Sport", img: src("sport-40"), w: 619, h: 1100, alt: "Playing in goal at a five-a-side competition" },
-    { cat: "Training", img: src("training-41"), w: 1100, h: 825, alt: "Cadets in a group on a training weekend" },
-    { cat: "Training", img: src("training-42"), w: 1100, h: 825, alt: "Cadets on a leadership task at a training weekend" },
-];
+const files = import.meta.glob("../assets/gallery/*.webp", { eager: true, import: "default" });
+
+export const photos = list
+    .map((p) => ({ ...p, img: files[`../assets/gallery/${p.file}`] }))
+    .filter((p) => p.img);
+
+export const sections = [...new Set(photos.map((p) => p.cat))];

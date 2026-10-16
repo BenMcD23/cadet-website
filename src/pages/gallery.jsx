@@ -1,10 +1,10 @@
 import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import PageHeader from "../components/pageHeader/pageHeader";
-import { photos } from "../data/gallery";
+import { photos, sections } from "../data/gallery";
 import { usePageMeta } from "../hooks/usePageMeta";
 
-const categories = ["All", "Remembrance", "Parades", "Band", "Awards", "Adventure", "Sport", "Training"];
+const categories = ["All", ...sections];
 
 function Gallery() {
     usePageMeta({

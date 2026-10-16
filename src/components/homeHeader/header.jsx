@@ -6,11 +6,11 @@ function Header() {
         <section className="relative isolate overflow-hidden bg-navy text-white">
             <img
                 src={sqn_photo}
-                alt="317 Squadron cadets and staff on parade outside the squadron building"
-                className="absolute inset-0 h-full w-full object-cover object-[center_35%]"
+                alt="The whole of 317 Squadron, cadets and staff, posed together under the squadron gazebo"
+                className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
             />
-            {/* darken from the left so the text sits on solid navy and the photo stays visible on the right */}
-            <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/40 lg:to-navy/20" aria-hidden="true"></div>
+            {/* light flat tint so the white text stays readable over the photo */}
+            <div className="absolute inset-0 bg-navy/50" aria-hidden="true"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent md:hidden" aria-hidden="true"></div>
 
             <div className="section-container relative py-20 md:py-28 lg:py-36">
