@@ -23,9 +23,26 @@ const SEVERITIES = [
 ];
 
 const EMPTY_CONDITION = {
-    name: "", severity: null, soughtAdvice: null, routine: "", strenuous: "", control: "",
+    condition: null, name: "", severity: null, soughtAdvice: null, routine: "", strenuous: "", control: "",
     medication: "", dosage: "", storage: "",
 };
+
+/** The name a ticked condition's card starts with: its label without the
+ *  examples ("Learning difficulties", not "... (e.g. dyslexia, ADHD...)"). */
+function conditionName(options, key) {
+    return (options.conditions.find((c) => c.key === key)?.label ?? "").split(" (")[0];
+}
+
+/** Ticking a condition adds its details card, named already; unticking removes
+ *  it. Cards added by hand (no condition) are left alone. */
+function syncDetails(details, ticked, options) {
+    const kept = details.filter((d) => !d.condition || ticked.includes(d.condition));
+    const have = new Set(kept.map((d) => d.condition));
+    const added = ticked
+        .filter((key) => !have.has(key))
+        .map((key) => ({ ...EMPTY_CONDITION, condition: key, name: key === "other" ? "" : conditionName(options, key) }));
+    return [...kept, ...added];
+}
 
 function Address({ value, onChange, who }) {
     const field = (key) => ({ value: value[key], onChange: (v) => onChange({ [key]: v }) });
@@ -253,20 +270,33 @@ export function ConsentStep({ data, set, options }) {
     );
 }
 
-function ConditionCard({ index, value, onChange, onRemove }) {
+// The broad categories, where the actual diagnosis is worth more than the heading.
+const BE_SPECIFIC = {
+    learning: "Change it to the specific diagnosis if you can, for example Dyslexia, ADHD or Autism.",
+    mental: "Change it to the specific diagnosis if you can, for example Anxiety.",
+    eyesight: "Say what it is if you can, for example short-sighted, wears glasses.",
+    hearing: "Say what it is if you can, for example wears a hearing aid.",
+};
+
+function ConditionCard({ value, title, onChange, onRemove }) {
     const field = (key) => ({ value: value[key], onChange: (v) => onChange({ [key]: v }) });
+    const specific = value.condition && value.condition !== "other";
     return (
         <div className="space-y-4 rounded-md border border-gray-200 bg-surface p-4">
             <div className="flex items-center justify-between gap-3">
-                <h4 className="font-display text-xl">Condition {index + 1}</h4>
+                <h4 className="font-display text-xl">{title}</h4>
                 <button type="button" onClick={onRemove} className="text-sm font-semibold text-maroon underline underline-offset-2">Remove</button>
             </div>
-            <TextField label="Name of the condition" {...field("name")} />
+            <TextField
+                label={specific ? "Name of the condition" : "What is the condition?"}
+                hint={BE_SPECIFIC[value.condition]}
+                {...field("name")}
+            />
             <Choice legend="How severe is it?" options={SEVERITIES} value={value.severity} onChange={(v) => onChange({ severity: v })} columns={3} />
             <YesNo legend="Have you sought advice from a healthcare professional about it?" value={value.soughtAdvice} onChange={(v) => onChange({ soughtAdvice: v })} />
-            <TextField multiline label="How does it affect your child during normal routine activities?" optional {...field("routine")} />
-            <TextField multiline label="How does it affect them during strenuous activities?" optional {...field("strenuous")} />
-            <TextField multiline label="Can they control it without further intervention?" optional {...field("control")} />
+            <TextField multiline label="How does it affect your child during normal routine activities?" hint="If it doesn't, say so." {...field("routine")} />
+            <TextField multiline label="How does it affect them during strenuous activities?" {...field("strenuous")} />
+            <TextField multiline label="Can they control it without further intervention?" {...field("control")} />
             <div className="grid gap-4 sm:grid-cols-3">
                 <TextField label="Medication" optional {...field("medication")} />
                 <TextField label="Dosage and frequency" optional {...field("dosage")} />
@@ -302,7 +332,7 @@ export function MedicalStep({ data, set, options }) {
                         hint="Tick any that may have a substantial or long-term effect on your child's everyday activities."
                         options={options.conditions}
                         value={m.conditions}
-                        onChange={(v) => medical({ conditions: v, details: v.length && !m.details.length ? [{ ...EMPTY_CONDITION }] : m.details })}
+                        onChange={(v) => medical({ conditions: v, details: syncDetails(m.details, v, options) })}
                         optional
                     />
                     <YesNo legend="Does your child have an Education, Health and Care Plan?" value={m.ehcPlan} onChange={(v) => medical({ ehcPlan: v })} />
@@ -318,19 +348,23 @@ export function MedicalStep({ data, set, options }) {
                     {(m.conditions.length > 0 || m.details.length > 0) && (
                         <section className="space-y-4">
                             <h3 className="text-lg">About each condition</h3>
-                            <p className="text-sm text-ink/80">Tell us how each condition affects your child, so we can look after them properly.</p>
+                            <p className="text-sm text-ink/80">Each condition you ticked has its own section. Tell us how it affects your child, so we can look after them properly. Medication is only needed if they take any.</p>
                             {m.details.map((d, i) => (
                                 <ConditionCard
-                                    key={i}
-                                    index={i}
+                                    key={d.condition ?? `added-${i}`}
                                     value={d}
+                                    title={d.condition ? (d.condition === "other" ? "Other condition" : conditionName(options, d.condition)) : "Another condition"}
                                     onChange={(patch) => details(m.details.map((x, j) => (j === i ? { ...x, ...patch } : x)))}
-                                    onRemove={() => details(m.details.filter((_, j) => j !== i))}
+                                    // Removing a ticked condition's card unticks it too, so the two never disagree.
+                                    onRemove={() => medical({
+                                        details: m.details.filter((_, j) => j !== i),
+                                        conditions: d.condition ? m.conditions.filter((k) => k !== d.condition) : m.conditions,
+                                    })}
                                 />
                             ))}
                             {m.details.length < 10 && (
                                 <button type="button" className="btn-outline px-4 py-2 text-sm" onClick={() => details([...m.details, { ...EMPTY_CONDITION }])}>
-                                    Add {m.details.length ? "another" : "a"} condition
+                                    Add a condition that isn&apos;t listed
                                 </button>
                             )}
                         </section>

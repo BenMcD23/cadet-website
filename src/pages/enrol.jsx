@@ -321,7 +321,9 @@ function Enrol() {
                         <p className="mb-2 text-sm font-semibold text-ink/70 lg:hidden">
                             Step {stepIndex + 1} of {steps.length}
                         </p>
-                        <ol className="flex gap-1 overflow-x-auto pb-1 lg:flex-col lg:overflow-visible">
+                        {/* relative: the screen-reader-only labels inside are absolutely positioned,
+                            and without a positioned scroll container they escape it and widen the page. */}
+                        <ol className="relative flex gap-1 overflow-x-auto pb-1 lg:flex-col lg:overflow-visible">
                             {steps.map((s, i) => {
                                 const done = s.key !== "sign" && !missing[s.key]?.length;
                                 const current = i === stepIndex;
