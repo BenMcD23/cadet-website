@@ -5,7 +5,7 @@
 import { useId } from "react";
 
 const inputClasses =
-    "block w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-base text-ink shadow-sm focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent";
+    "block w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-base text-ink shadow-xs focus:border-accent-dark focus:outline-hidden focus:ring-2 focus:ring-accent";
 
 function Label({ htmlFor, children, optional }) {
     return (
@@ -72,7 +72,7 @@ export function Choice({ legend, hint, options, value, onChange, columns = 1 }) 
                         <input
                             type="radio"
                             name={name}
-                            className="size-4 accent-[#2B6CB0]"
+                            className="size-4 accent-accent-dark"
                             checked={value === o.key}
                             onChange={() => onChange(o.key)}
                         />
@@ -98,7 +98,7 @@ export function YesNo({ legend, hint, value, onChange, className = "" }) {
                         <input
                             type="radio"
                             name={name}
-                            className="size-4 accent-[#2B6CB0]"
+                            className="size-4 accent-accent-dark"
                             checked={value === v}
                             onChange={() => onChange(v)}
                         />
@@ -120,7 +120,7 @@ export function Checks({ legend, hint, options, value, onChange, columns = 2, op
                     <label key={o.key} className={optionClasses(value.includes(o.key))}>
                         <input
                             type="checkbox"
-                            className="size-4 accent-[#2B6CB0]"
+                            className="size-4 accent-accent-dark"
                             checked={value.includes(o.key)}
                             onChange={() => toggle(o.key)}
                         />

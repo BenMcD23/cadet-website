@@ -73,9 +73,9 @@ function Gallery() {
                         <figcaption className="flex items-center justify-between gap-3 p-3 text-sm">
                             <span>{current.alt}</span>
                             <span className="flex shrink-0 gap-2">
-                                <button type="button" onClick={() => step(-1)} aria-label="Previous photo" className="rounded bg-white/10 px-3 py-1 hover:bg-white/20">←</button>
-                                <button type="button" onClick={() => step(1)} aria-label="Next photo" className="rounded bg-white/10 px-3 py-1 hover:bg-white/20">→</button>
-                                <button type="button" onClick={() => dialog.current.close()} className="rounded bg-accent-dark px-3 py-1 font-semibold">Close</button>
+                                <button type="button" onClick={() => step(-1)} aria-label="Previous photo" className="rounded-sm bg-white/10 px-3 py-1 hover:bg-white/20">←</button>
+                                <button type="button" onClick={() => step(1)} aria-label="Next photo" className="rounded-sm bg-white/10 px-3 py-1 hover:bg-white/20">→</button>
+                                <button type="button" onClick={() => dialog.current.close()} className="rounded-sm bg-accent-dark px-3 py-1 font-semibold">Close</button>
                             </span>
                         </figcaption>
                     </figure>
