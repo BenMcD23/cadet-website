@@ -1,0 +1,60 @@
+# Lint and build every push and PR. Vercel builds too, but only this gates the
+# Dependabot auto-merge below, so a broken update is never merged.
+name: CI
+
+on:
+  push:
+    branches: [master, development]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
+
+  # Merges Dependabot's minor/patch updates once `check` has passed. It lives
+  # in this workflow (not a separate one using `gh pr merge --auto`) because
+  # this repo has no required status checks, so `--auto` would merge at once
+  # without waiting for CI. Majors stay manual: that's where the breaking
+  # changes are.
+  dependabot-automerge:
+    needs: check
+    if: github.event_name == 'pull_request' && github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - id: metadata
+        uses: dependabot/fetch-metadata@v3
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Merge
+        if: steps.metadata.outputs.update-type != 'version-update:semver-major'
+        run: gh pr merge --merge "$PR_URL"
+        env:
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
