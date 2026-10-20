@@ -193,7 +193,7 @@ export default function PdfBooklet({ newsletter }) {
         document.exitFullscreen();
         setIsFullscreen(false);
       }
-    } catch (e) {
+    } catch {
       // Fullscreen not supported — fall back to CSS pseudo-fullscreen
       setIsFullscreen((prev) => !prev);
     }
