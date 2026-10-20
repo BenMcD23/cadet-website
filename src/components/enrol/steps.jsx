@@ -102,7 +102,7 @@ export function CadetStep({ data, set, options }) {
                             <div className="grid gap-2 sm:grid-cols-2">
                                 {options.ethnicities.filter((e) => e.group === g).map((e) => (
                                     <label key={e.key} className={`flex min-h-11 cursor-pointer items-center gap-3 rounded-md border px-3 py-2 text-sm ${c.ethnicity === e.key ? "border-accent-dark bg-accent/10 font-semibold text-navy" : "border-gray-300 bg-white hover:border-accent-dark"}`}>
-                                        <input type="radio" name="ethnicity" className="size-4 accent-[#2B6CB0]" checked={c.ethnicity === e.key} onChange={() => cadet({ ethnicity: e.key })} />
+                                        <input type="radio" name="ethnicity" className="size-4 accent-accent-dark" checked={c.ethnicity === e.key} onChange={() => cadet({ ethnicity: e.key })} />
                                         {e.label}
                                     </label>
                                 ))}
@@ -385,7 +385,7 @@ export function MedicalStep({ data, set, options }) {
                                 return (
                                     <div key={a.key} className={`rounded-md border px-3 py-2 ${chosen ? "border-accent-dark bg-accent/10" : "border-gray-300"}`}>
                                         <label className="flex min-h-9 cursor-pointer items-center gap-3 text-sm">
-                                            <input type="checkbox" className="size-4 accent-[#2B6CB0]" checked={!!chosen} onChange={() => toggleAllergy(a.key)} />
+                                            <input type="checkbox" className="size-4 accent-accent-dark" checked={!!chosen} onChange={() => toggleAllergy(a.key)} />
                                             <span className={chosen ? "font-semibold text-navy" : ""}>{a.label}</span>
                                         </label>
                                         {chosen && (
@@ -394,13 +394,13 @@ export function MedicalStep({ data, set, options }) {
                                                     <legend className="sr-only">{a.label}: severity</legend>
                                                     {SEVERITIES.map((s) => (
                                                         <label key={s.key} className="flex min-h-9 items-center gap-1.5">
-                                                            <input type="radio" name={`allergy-${a.key}`} className="size-4 accent-[#2B6CB0]" checked={chosen.severity === s.key} onChange={() => setAllergy(a.key, { severity: s.key })} />
+                                                            <input type="radio" name={`allergy-${a.key}`} className="size-4 accent-accent-dark" checked={chosen.severity === s.key} onChange={() => setAllergy(a.key, { severity: s.key })} />
                                                             {s.label}
                                                         </label>
                                                     ))}
                                                 </fieldset>
                                                 <label className="flex min-h-9 items-center gap-1.5">
-                                                    <input type="checkbox" className="size-4 accent-[#2B6CB0]" checked={chosen.autoInjector} onChange={(e) => setAllergy(a.key, { autoInjector: e.target.checked })} />
+                                                    <input type="checkbox" className="size-4 accent-accent-dark" checked={chosen.autoInjector} onChange={(e) => setAllergy(a.key, { autoInjector: e.target.checked })} />
                                                     Uses an auto-injector
                                                 </label>
                                             </div>

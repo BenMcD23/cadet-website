@@ -29,7 +29,7 @@ function StaffPics() {
                         src={getImage(person.image)}
                         alt={person.name}
                         loading="lazy"
-                        className="aspect-[3/4] w-full object-cover object-top"
+                        className="aspect-3/4 w-full object-cover object-top"
                     />
                     <p className="p-3 text-center text-sm font-bold text-navy md:text-base">
                         {person.name}

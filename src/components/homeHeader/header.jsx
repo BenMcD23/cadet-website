@@ -11,7 +11,7 @@ function Header() {
             />
             {/* light flat tint so the white text stays readable over the photo */}
             <div className="absolute inset-0 bg-navy/50" aria-hidden="true"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent md:hidden" aria-hidden="true"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-navy/70 via-transparent to-transparent md:hidden" aria-hidden="true"></div>
 
             <div className="section-container relative py-20 md:py-28 lg:py-36">
                 <div className="max-w-2xl">

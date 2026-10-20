@@ -193,7 +193,7 @@ export default function PdfBooklet({ newsletter }) {
         document.exitFullscreen();
         setIsFullscreen(false);
       }
-    } catch (e) {
+    } catch {
       // Fullscreen not supported — fall back to CSS pseudo-fullscreen
       setIsFullscreen((prev) => !prev);
     }
@@ -225,20 +225,20 @@ export default function PdfBooklet({ newsletter }) {
   return (
     <section style={paletteVars}>
       {!isFullscreen && (
-        <div className="text-center px-4 pt-10 pb-6 border-b-[3px] border-double border-[var(--rule)] bg-[var(--paper-dark)]">
-          <p className="text-[0.65rem] tracking-[0.3em] uppercase text-[var(--accent)] mb-2">
+        <div className="text-center px-4 pt-10 pb-6 border-b-[3px] border-double border-(--rule) bg-(--paper-dark)">
+          <p className="text-[0.65rem] tracking-[0.3em] uppercase text-(--accent) mb-2">
             Issue #{newsletter.issue} · {newsletter.date}
           </p>
-          <h2 className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold m-0 mb-3 text-[var(--ink)]">
+          <h2 className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold m-0 mb-3 text-(--ink)">
             {newsletter.title}
           </h2>
-          <p className="max-w-[520px] mx-auto mb-5 text-[var(--muted)] text-[0.9rem] leading-relaxed italic">
+          <p className="max-w-[520px] mx-auto mb-5 text-(--muted) text-[0.9rem] leading-relaxed italic">
             {newsletter.description}
           </p>
           <a
             href={newsletter.pdfPath}
             download
-            className="inline-flex items-center gap-1.5 px-6 py-2 bg-[var(--ink)] text-[var(--paper)] no-underline text-[0.7rem] tracking-[0.15em] uppercase"
+            className="inline-flex items-center gap-1.5 px-6 py-2 bg-(--ink) text-(--paper) no-underline text-[0.7rem] tracking-[0.15em] uppercase"
           >
             Download PDF
           </a>
@@ -289,7 +289,7 @@ export default function PdfBooklet({ newsletter }) {
             <a
               href={newsletter.pdfPath}
               download
-              className="px-5 py-2 bg-white/10 text-white text-xs tracking-widest uppercase border border-white/20 rounded"
+              className="px-5 py-2 bg-white/10 text-white text-xs tracking-widest uppercase border border-white/20 rounded-sm"
             >
               Download PDF Instead
             </a>

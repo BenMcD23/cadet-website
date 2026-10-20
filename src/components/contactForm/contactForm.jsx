@@ -5,7 +5,7 @@ import { useState, useRef } from "react";
 // submission where it has a value. Must match HONEYPOT_FIELD in G-appsScript.js.
 const HONEYPOT_FIELD = "Fax_Number";
 
-const inputClasses = "w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-ink placeholder-gray-400 transition-colors focus:border-accent-dark focus:outline-none focus:ring-2 focus:ring-accent/50";
+const inputClasses = "w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-ink placeholder-gray-400 transition-colors focus:border-accent-dark focus:outline-hidden focus:ring-2 focus:ring-accent/50";
 const labelClasses = "mb-1.5 block font-semibold text-navy";
 
 function ContactForm() {
@@ -114,7 +114,7 @@ function ContactForm() {
       </div>
 
       {/* honeypot — see HONEYPOT_FIELD above */}
-      <div className="absolute -left-[9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
+      <div className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
         <label htmlFor="formFax">Fax number (leave this blank)</label>
         <input id="formFax" type="text" name={HONEYPOT_FIELD} tabIndex={-1} autoComplete="off" />
       </div>
