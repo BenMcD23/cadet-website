@@ -35,10 +35,9 @@ jobs:
         run: npm run build
 
   # Merges Dependabot's minor/patch updates once `check` has passed. It lives
-  # in this workflow (not a separate one using `gh pr merge --auto`) because
-  # this repo has no required status checks, so `--auto` would merge at once
-  # without waiting for CI. Majors stay manual: that's where the breaking
-  # changes are.
+  # in this workflow, after `check`, so it never depends on the ruleset's
+  # required checks being set up. Majors stay manual: that's where the
+  # breaking changes are.
   dependabot-automerge:
     needs: check
     if: github.event_name == 'pull_request' && github.actor == 'dependabot[bot]'

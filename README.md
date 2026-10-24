@@ -15,8 +15,12 @@ npm install
 npm run dev       # dev server with hot reload
 npm run build     # production build into dist/
 npm run preview   # serve the production build locally
-npm run lint      # ESLint
+npm run lint      # ESLint, zero warnings allowed
 ```
+
+There is no test suite. CI (`.github/workflows/ci.yml`) runs lint and the build
+on every push and pull request, and merges Dependabot's minor and patch updates
+once they pass.
 
 ## Common updates
 
@@ -65,6 +69,18 @@ vercel.json             SPA rewrite and cache/security headers
 
 Every push to `master` deploys automatically on Vercel. Dependabot opens weekly grouped
 pull requests for minor and patch dependency updates.
+
+## Contributing
+
+- Branch off `master` and open a pull request back into it. Only admins, and
+  the SMS's publishing token, can push to `master` directly. Force-pushes and
+  deletion are blocked for everyone.
+- The CI `check` job must pass before merging.
+- Changes under `.github/` need a review from @BenMcD23
+  (`.github/CODEOWNERS`). Everything else merges on green CI.
+- The SMS commits programme, newsletter and gallery updates straight to
+  `master`, so pull before you branch. [`CLAUDE.md`](CLAUDE.md) has the
+  conventions.
 
 ## Known tech debt
 
