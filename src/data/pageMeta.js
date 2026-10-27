@@ -39,6 +39,10 @@ const pageMeta = {
         title: `Contact Us | ${SITE}`,
         description: "Get in touch with 317 Failsworth & Newton Heath Squadron and find out where we parade.",
     },
+    "/gallery": {
+        title: `Photo Gallery | ${SITE}`,
+        description: "Photos of 317 Squadron cadets on parade, in the band, on camps, DofE expeditions and more.",
+    },
     "/newsletter": {
         title: `Newsletter | ${SITE}`,
         description: "Read the latest 317 Squadron newsletter, produced by our cadet media team.",
