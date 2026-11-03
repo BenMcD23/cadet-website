@@ -9,7 +9,7 @@
     { "rank": "CI", "name": "Ben McDonald", "image": "CI_McDonald.webp" },
     { "rank": "CI", "name": "Graham Boxall", "image": "Placeholder.webp" },
     { "rank": "CI", "name": "Jacob Gill", "image": "CI_Gill.webp" },
-    { "rank": "CI", "name": "Roy Catterall (Wg Cdr Ret'd)", "image": "CI_Catterall.webp" },
+    { "rank": "CI", "sortAs": "Wg Cdr (Ret'd)", "name": "Roy Catterall (Wg Cdr Ret'd)", "image": "CI_Catterall.webp" },
     { "rank": "CI", "name": "Sophie Stone", "image": "CI_Stone.webp" }
   ],
   "ncos": [

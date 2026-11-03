@@ -28,7 +28,7 @@ once they pass.
 |---|---|
 | Monthly programme | Replace `public/programme/<MM>_<YY>_programme.pdf`, update the link in `src/pages/programme.jsx`, and replace `src/assets/programme/programme.webp` and `rooms.webp` |
 | Newsletter | Drop the PDF in `public/newsletters/` and update `src/data/currentNewsletter.json` |
-| Staff and NCO photos, names and ranks | `src/data/people.json` plus `src/assets/staff_pics/` or `src/assets/nco_pics/`. The pages sort by rank and then name (rank order in `src/data/people.js`), so the order in the file doesn't matter |
+| Staff and NCO photos, names and ranks | `src/data/people.json` plus `src/assets/staff_pics/` or `src/assets/nco_pics/`. The pages sort by rank and then name (rank order in `src/data/people.js`), so the order in the file doesn't matter. Add `"sortAs"` to place someone by a different rank than the one shown |
 | FAQ on the Join page | `src/data/faq.js` |
 | Address, phone, email, parade nights, subs, social links | `src/data/squadron.js` (also mirrored in the JSON-LD block in `index.html`) |
 | Page titles and descriptions for search engines | The `usePageMeta` call at the top of each file in `src/pages/` |
