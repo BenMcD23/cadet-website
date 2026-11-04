@@ -2,6 +2,8 @@
 // runtime and by the vite build to generate a static HTML file per route, so
 // search engines see a unique description for each page.
 
+import newsletters from "./newsletters.json";
+
 const SITE = "317 Failsworth Squadron Air Cadets";
 
 export const defaultMeta = {
@@ -47,6 +49,11 @@ const pageMeta = {
         title: `Newsletter | ${SITE}`,
         description: "Read the latest 317 Squadron newsletter, produced by our cadet media team.",
     },
+    // One page per back issue, so each is indexed under its own title.
+    ...Object.fromEntries(newsletters.map((n) => [
+        `/newsletter/${n.id}`,
+        { title: `Newsletter issue ${n.issue}: ${n.title} | ${SITE}`, description: n.description },
+    ])),
 };
 
 export default pageMeta;

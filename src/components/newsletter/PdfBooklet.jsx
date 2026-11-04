@@ -42,6 +42,9 @@ export default function PdfBooklet({ newsletter }) {
 
   useEffect(() => {
     let cancelled = false;
+    // Kept so cleanup can destroy it: moving between issues would otherwise
+    // leave every PDF opened so far held in the pdf.js worker.
+    let loadingTask = null;
     setLoading(true);
     setError(null);
 
@@ -51,12 +54,13 @@ export default function PdfBooklet({ newsletter }) {
 
         pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
-        const doc = await pdfjsLib.getDocument({
+        loadingTask = pdfjsLib.getDocument({
           url: newsletter.pdfPath,
           // ✅ FIX 2: Disable range requests — iOS Safari struggles with them
           disableRange: true,
           disableStream: true,
-        }).promise;
+        });
+        const doc = await loadingTask.promise;
 
         if (cancelled) return;
         setPdfDoc(doc);
@@ -73,6 +77,7 @@ export default function PdfBooklet({ newsletter }) {
 
     return () => {
       cancelled = true;
+      loadingTask?.destroy();
     };
   }, [newsletter.pdfPath]);
 

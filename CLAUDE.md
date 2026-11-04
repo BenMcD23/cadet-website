@@ -11,7 +11,7 @@ follows; match them rather than introducing new patterns.
 - Squadron details (address, parade nights, subs, social links) live in
   `src/data/squadron.js` and are mirrored in the JSON-LD block in `index.html`.
   Change both together.
-- FAQ, the current newsletter and the like are in `src/data/`. Pages read them;
+- FAQ, the newsletter list and the like are in `src/data/`. Pages read them;
   don't hardcode the same fact in a component.
 - Every page sets its title and description with `usePageMeta` at the top of
   its file in `src/pages/`.
@@ -22,7 +22,7 @@ follows; match them rather than introducing new patterns.
 
 The SMS API commits the monthly programme (`public/programme/`,
 `src/pages/programme.jsx`), newsletters (`public/newsletters/`,
-`src/data/currentNewsletter.json`) and the gallery JSON straight to `master`.
+`src/data/newsletters.json`) and the gallery JSON straight to `master`.
 Pull before you branch, and don't change those paths or file formats without
 changing `app/routers/programme.py`, `newsletters.py` and `gallery.py` in the
 API to match.

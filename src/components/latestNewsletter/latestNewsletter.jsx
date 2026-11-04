@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import Title from "../mainTitle/title";
 import { Icon } from "../icons/Icon";
-import current from "../../data/currentNewsletter.json";
+import { currentNewsletter as current } from "../../data/newsletters";
 
 function LatestNewsletter() {
+    if (!current) return null;
+
     return (
         <section className="section bg-white">
             <div className="section-container grid items-start gap-8 lg:grid-cols-5">
