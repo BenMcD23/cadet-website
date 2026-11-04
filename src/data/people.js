@@ -3,6 +3,8 @@ import people from "./people.json";
 // Highest rank first. A rank not listed here sorts to the bottom. Someone
 // whose place isn't their current rank sets `sortAs` to one of these: a
 // retired officer serving as a CI sits under the OC rather than with the CIs.
+// The SMS API pins both lists (app/routers/website_people.py), so its Staff &
+// NCO Photos page only offers ranks shown here: change both together.
 export const STAFF_RANKS = [
   "Sqn Ldr",
   "Flt Lt",

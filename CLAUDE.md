@@ -22,10 +22,12 @@ follows; match them rather than introducing new patterns.
 
 The SMS API commits the monthly programme (`public/programme/`,
 `src/pages/programme.jsx`), newsletters (`public/newsletters/`,
-`src/data/currentNewsletter.json`) and the gallery JSON straight to `master`.
-Pull before you branch, and don't change those paths or file formats without
-changing `app/routers/programme.py`, `newsletters.py` and `gallery.py` in the
-API to match.
+`src/data/currentNewsletter.json`), the gallery JSON, and the staff and NCO
+photos (`src/data/people.json`, `src/assets/staff_pics/`, `src/assets/nco_pics/`)
+straight to `master`. Pull before you branch, and don't change those paths or
+file formats without changing `app/routers/programme.py`, `newsletters.py`,
+`gallery.py` and `website_people.py` in the API to match. The rank lists in
+`src/data/people.js` are pinned in `website_people.py` too: change both.
 
 The contact form's field names are fixed by the deployed Google Apps Script
 (`src/components/contactForm/G-appsScript.js` is a reference copy only).
