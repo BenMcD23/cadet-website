@@ -14,7 +14,6 @@ export const STAFF_RANKS = [
   "WO",
   "FS",
   "Sgt",
-  "Cpl",
   "CI",
 ];
 
