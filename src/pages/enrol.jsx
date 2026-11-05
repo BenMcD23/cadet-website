@@ -82,6 +82,19 @@ function Message({ title, children }) {
     );
 }
 
+// Who parents contact about a submitted form. The API's confirmation email
+// names the same person (RECRUIT_CONTACT_EMAIL in app/core/config.py); change both.
+const formContact = { name: "FS Gill", email: "joseph.gill100@rafac.mod.gov.uk" };
+
+function FormContact() {
+    return (
+        <p>
+            Any problems or questions about the form? Email {formContact.name} at{" "}
+            <a className="break-words font-semibold text-navy underline" href={`mailto:${formContact.email}`}>{formContact.email}</a>.
+        </p>
+    );
+}
+
 function Contact() {
     return (
         <p>
@@ -296,8 +309,12 @@ function Enrol() {
                         {view.submittedAt ? ` on ${formatDay(view.submittedAt)}` : ""}. Staff will add them to the Cadet Forces
                         system and set up {view.cadetFirstName}&apos;s Cadet Portal account.
                     </p>
+                    <p>
+                        We&apos;ve emailed you a copy of the signed forms for your records. If it hasn&apos;t
+                        arrived, check your junk folder.
+                    </p>
                     <p>If anything changes, especially anything medical, let the squadron know.</p>
-                    <Contact />
+                    <FormContact />
                 </Message>
             </>
         );
