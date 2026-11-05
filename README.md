@@ -27,7 +27,7 @@ once they pass.
 | What | Where |
 |---|---|
 | Monthly programme | Replace `public/programme/<MM>_<YY>_programme.pdf`, update the link in `src/pages/programme.jsx`, and replace `src/assets/programme/programme.webp` and `rooms.webp` |
-| Newsletter | Drop the PDF in `public/newsletters/` and update `src/data/currentNewsletter.json` |
+| Newsletter | Upload it in the SMS (Tools → Newsletter Management), which commits the PDF to `public/newsletters/` and its entry to `src/data/newsletters.json`. The highest issue number is the current one |
 | Staff and NCO photos, names and ranks | `src/data/people.json` plus `src/assets/staff_pics/` or `src/assets/nco_pics/`. The pages sort by rank and then name (rank order in `src/data/people.js`), so the order in the file doesn't matter. Add `"sortAs"` to place someone by a different rank than the one shown. Usually edited from the SMS (Comms → Staff & NCO Photos) |
 | FAQ on the Join page | `src/data/faq.js` |
 | Address, phone, email, parade nights, subs, social links | `src/data/squadron.js` (also mirrored in the JSON-LD block in `index.html`) |
@@ -48,7 +48,7 @@ src/App.jsx             routes
 src/pages/              one file per route
 src/components/         reusable pieces, one folder each
 src/context/            flight points fetch and session cache
-src/data/               editable content (FAQ, current newsletter, squadron details)
+src/data/               editable content (FAQ, newsletters, squadron details)
 src/hooks/              usePageMeta (per-page title, description, canonical, Open Graph)
 src/assets/             images and documents bundled by Vite
 vercel.json             SPA rewrite and cache/security headers
@@ -95,8 +95,6 @@ fixing next time someone is in there:
   cancellation. Flipping quickly can finish an older render after a newer one and draw
   the wrong page onto the canvas. Fix: track a render token or call `renderTask.cancel()`
   from pdf.js before starting a new render on the same canvas.
-- **PDF document never released.** The `getDocument` loading task is not destroyed when
-  the component unmounts or `pdfPath` changes, so the worker keeps the document in memory.
 - **Keyboard handler closes over a stale `toggleFullscreen`.** The `keydown` effect lists
   `goNext`, `goPrev` and `isFullscreen` as dependencies but calls `toggleFullscreen`,
   which is recreated every render. It works today only because that function reads
