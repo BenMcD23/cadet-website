@@ -8,7 +8,7 @@
 // "Save progress", rather than on every keystroke.
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import PageHeader from "../components/pageHeader/pageHeader";
 import { Icon } from "../components/icons/Icon";
@@ -16,6 +16,7 @@ import SignaturePad from "../components/enrol/SignaturePad";
 import { TextField } from "../components/enrol/fields";
 import { loadForm, saveForm, submitForm } from "../components/enrol/api";
 import { AboutStep, CadetStep, ConsentStep, ContactStep, HistoryStep, MedicalStep, ParentStep } from "../components/enrol/steps";
+import { Contact, Message } from "../components/enrol/messages";
 import { squadron } from "../data/squadron";
 
 const STEP_COMPONENTS = {
@@ -68,20 +69,6 @@ function formatTime(iso) {
     return new Date(iso).toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit" });
 }
 
-function Message({ title, children }) {
-    return (
-        <div className="section bg-surface">
-            <div className="section-container">
-                <div className="card mx-auto max-w-2xl space-y-3 p-6 md:p-8">
-                    <h2 className="text-2xl">{title}</h2>
-                    <span className="raf-flash"></span>
-                    <div className="space-y-3 text-ink/85">{children}</div>
-                </div>
-            </div>
-        </div>
-    );
-}
-
 // Who parents contact about a submitted form. The API's confirmation email
 // names the same person (RECRUIT_CONTACT_EMAIL in app/core/config.py); change both.
 const formContact = { name: "FS Gill", email: "joseph.gill100@rafac.mod.gov.uk" };
@@ -91,15 +78,6 @@ function FormContact() {
         <p>
             Any problems or questions about the form? Email {formContact.name} at{" "}
             <a className="break-words font-semibold text-navy underline" href={`mailto:${formContact.email}`}>{formContact.email}</a>.
-        </p>
-    );
-}
-
-function Contact() {
-    return (
-        <p>
-            Questions? Email <a className="font-semibold text-navy underline" href={`mailto:${squadron.email}`}>{squadron.email}</a> or{" "}
-            <Link className="font-semibold text-navy underline" to="/contact">contact the squadron</Link>.
         </p>
     );
 }

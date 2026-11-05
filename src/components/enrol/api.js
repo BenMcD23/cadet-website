@@ -1,5 +1,6 @@
-// Calls to the squadron API for the joining form. The token in the link is the
-// only credential, so there's no sign-in: every call just carries it in the path.
+// Calls to the squadron API for the joining form and the recruitment-evening
+// sign-up page. Neither has a sign-in: the joining form's token in the link is
+// its only credential, and the sign-up page only works while staff have it open.
 
 const API_BASE = (import.meta.env.VITE_API_BASE || "https://smsapi.317atc.co.uk").replace(/\/$/, "");
 
@@ -18,10 +19,10 @@ function message(detail, fallback) {
     return fallback;
 }
 
-async function call(method, path, body) {
+async function call(method, path, body, base = "recruit-form/") {
     let res;
     try {
-        res = await fetch(`${API_BASE}/recruit-form/${path}`, {
+        res = await fetch(`${API_BASE}/${base}${path}`, {
             method,
             headers: body ? { "Content-Type": "application/json" } : undefined,
             body: body ? JSON.stringify(body) : undefined,
@@ -46,3 +47,6 @@ export const loadForm = (token) => call("GET", enc(token));
 export const saveForm = (token, data) => call("PUT", enc(token), { data });
 export const submitForm = (token, data, parentSignature, cadetSignature) =>
     call("POST", `${enc(token)}/submit`, { data, parentSignature, cadetSignature });
+
+export const loadSignup = () => call("GET", "", undefined, "recruit-signup");
+export const signUp = (details) => call("POST", "", details, "recruit-signup");
