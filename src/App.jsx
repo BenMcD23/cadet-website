@@ -14,6 +14,7 @@ import Parents from './pages/parents'
 import Newsletter from './pages/newsletter'
 import Gallery from './pages/gallery'
 import Enrol from './pages/enrol'
+import EnrolSignup from './pages/enrol-signup'
 import NotFound from './pages/404'
 
 import { Route, Routes } from "react-router-dom"
@@ -44,6 +45,7 @@ function App() {
           <Route path="/newsletter" element={<Newsletter/>}/>
           <Route path="/newsletter/:id" element={<Newsletter/>}/>
           <Route path="/gallery" element={<Gallery/>}/>
+          <Route path="/enrol" element={<EnrolSignup/>}/>
           <Route path="/enrol/:token" element={<Enrol/>}/>
 
           <Route path='*' element={<NotFound />}/>
