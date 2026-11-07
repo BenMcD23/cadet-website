@@ -22,6 +22,8 @@ export const squadron = {
     phone: "0161 688 6705",
     phoneHref: "tel:+441616886705",
     email: "adj.317@rafac.mod.gov.uk",
+    // Where questions about joining (the /enrol pages) go; not in the JSON-LD.
+    enrolEmail: "joseph.gill100@rafac.mod.gov.uk",
 
     paradeNights: [
         { day: "Wednesday", time: "19:00 – 21:30" },

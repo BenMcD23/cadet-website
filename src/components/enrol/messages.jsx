@@ -23,7 +23,7 @@ export function Message({ title, children }) {
 export function Contact() {
     return (
         <p>
-            Questions? Email <a className="font-semibold text-navy underline" href={`mailto:${squadron.email}`}>{squadron.email}</a> or{" "}
+            Questions? Email <a className="font-semibold text-navy underline" href={`mailto:${squadron.enrolEmail}`}>{squadron.enrolEmail}</a> or{" "}
             <Link className="font-semibold text-navy underline" to="/contact">contact the squadron</Link>.
         </p>
     );
