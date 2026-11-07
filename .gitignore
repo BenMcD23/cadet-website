@@ -27,3 +27,5 @@ venv
 convert_images.py
 # raw photo dumps (GBs) — resized copies live in src/assets
 images
+.vercel
+.env*
