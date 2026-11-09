@@ -62,13 +62,14 @@ const optionClasses = (checked) =>
     }`;
 
 /** One choice from a list, as radio buttons. */
-export function Choice({ legend, hint, options, value, onChange, columns = 1 }) {
+export function Choice({ legend, hint, options, value, onChange, columns = 1, compact }) {
     const name = useId();
     return (
         <Fieldset legend={legend} hint={hint}>
-            <div className={`grid gap-2 ${columns === 2 ? "sm:grid-cols-2" : columns === 3 ? "sm:grid-cols-3" : ""}`}>
+            {/* compact: short labels (sizes) stay in one row, even on a phone. */}
+            <div className={`grid gap-2 ${compact ? "grid-cols-5" : columns === 2 ? "sm:grid-cols-2" : columns === 3 ? "sm:grid-cols-3" : ""}`}>
                 {options.map((o) => (
-                    <label key={o.key} className={optionClasses(value === o.key)}>
+                    <label key={o.key} className={`${optionClasses(value === o.key)}${compact ? " justify-center" : ""}`}>
                         <input
                             type="radio"
                             name={name}

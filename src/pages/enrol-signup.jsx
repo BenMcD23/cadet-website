@@ -10,12 +10,15 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 
 import PageHeader from "../components/pageHeader/pageHeader";
-import { TextField } from "../components/enrol/fields";
+import { Choice, TextField } from "../components/enrol/fields";
 import { Contact, Message } from "../components/enrol/messages";
 import { loadSignup, signUp } from "../components/enrol/api";
 import { usePageMeta } from "../hooks/usePageMeta";
 
-const CHILD = { cadetFirstName: "", cadetLastName: "", cadetDob: "" };
+// Keys are what the API stores (and accepts), so don't reword them.
+const POLO_SIZES = ["XS", "S", "M", "L", "XL"].map((key) => ({ key, label: key }));
+
+const CHILD = { cadetFirstName: "", cadetLastName: "", cadetDob: "", poloSize: "" };
 const PARENT = { parentName: "", parentEmail: "", parentMobile: "" };
 
 const today = () => {
@@ -68,6 +71,11 @@ function EnrolSignup() {
     async function submit(e) {
         e.preventDefault();
         setError(null);
+        // Radios can't be marked required, so say it here rather than let the API refuse.
+        if (!form.poloSize) {
+            setError("Choose a polo size for your child.");
+            return;
+        }
         setSending(true);
         try {
             const r = await signUp({ ...form, website });
@@ -169,6 +177,14 @@ function EnrolSignup() {
                                 <TextField label="Last name" autoComplete="off" required {...field("cadetLastName")} />
                             </div>
                             <TextField label="Date of birth" type="date" required max={today()} {...field("cadetDob")} />
+                            <Choice
+                                legend="Polo shirt size"
+                                hint="Your child gets a squadron polo in their first few weeks. Choose the size they would wear now."
+                                options={POLO_SIZES}
+                                compact
+                                value={form.poloSize}
+                                onChange={(poloSize) => setForm((f) => ({ ...f, poloSize }))}
+                            />
                         </fieldset>
 
                         <fieldset className="space-y-4">
