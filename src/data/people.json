@@ -54,6 +54,11 @@
   ],
   "ncos": [
     {
+      "rank": "CWO",
+      "name": "T Wimbury",
+      "image": "cwo-t-wimbury.webp"
+    },
+    {
       "rank": "FS",
       "name": "M Beverley",
       "image": "fs-m-beverley.webp"
@@ -62,11 +67,6 @@
       "rank": "FS",
       "name": "N Mullery-McCourt",
       "image": "fs-n-mullery-mccourt.webp"
-    },
-    {
-      "rank": "FS",
-      "name": "T Wimbury",
-      "image": "FS Wimbury.webp"
     },
     {
       "rank": "Sgt",
