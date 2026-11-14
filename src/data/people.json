@@ -1,9 +1,10 @@
 {
   "staff": [
     {
-      "rank": "Flt Lt",
-      "name": "Simon Doherty",
-      "image": "Flt_Lt_Doherty.webp"
+      "rank": "CI",
+      "sortAs": "Wg Cdr (Ret'd)",
+      "name": "Roy Catterall (Wg Cdr Ret'd)",
+      "image": "CI_Catterall.webp"
     },
     {
       "rank": "Fg Off",
@@ -44,12 +45,6 @@
       "rank": "CI",
       "name": "Jacob Gill",
       "image": "CI_Gill.webp"
-    },
-    {
-      "rank": "CI",
-      "sortAs": "Wg Cdr (Ret'd)",
-      "name": "Roy Catterall (Wg Cdr Ret'd)",
-      "image": "CI_Catterall.webp"
     },
     {
       "rank": "CI",
