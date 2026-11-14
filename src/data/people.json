@@ -60,6 +60,11 @@
     },
     {
       "rank": "FS",
+      "name": "C Mack",
+      "image": "fs-c-mack.webp"
+    },
+    {
+      "rank": "FS",
       "name": "M Beverley",
       "image": "fs-m-beverley.webp"
     },
@@ -67,11 +72,6 @@
       "rank": "FS",
       "name": "N Mullery-McCourt",
       "image": "fs-n-mullery-mccourt.webp"
-    },
-    {
-      "rank": "Sgt",
-      "name": "C Mack",
-      "image": "Sgt Mack.webp"
     },
     {
       "rank": "Sgt",
