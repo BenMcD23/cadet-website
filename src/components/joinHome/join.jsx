@@ -1,10 +1,12 @@
 import Plane from "../../assets/home_images/plane_join.webp"
+// 1920px original, plus smaller copies so phones skip most of it (vite-imagetools).
+import PlaneSrcset from "../../assets/home_images/plane_join.webp?w=640;1280;1920&format=webp&as=srcset"
 import { Link } from "react-router-dom";
 
 function Join() {
     return (
         <section className="relative overflow-hidden">
-            <img src={Plane} alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover"/>
+            <img src={Plane} srcSet={PlaneSrcset} sizes="100vw" alt="" loading="lazy" className="absolute inset-0 h-full w-full object-cover"/>
             <div className="absolute inset-0 bg-navy/80" aria-hidden="true"></div>
 
             <div className="section-container relative py-20 md:py-28">

@@ -5,8 +5,17 @@ const images = import.meta.glob(
   { eager: true }
 );
 
+// A 300px copy as well as the 600px upload (vite-imagetools): two photos side
+// by side on a phone don't need the full size.
+const srcsets = import.meta.glob(
+  "../../assets/nco_pics/*.webp",
+  { eager: true, import: "default", query: { w: "300;600", format: "webp", as: "srcset" } }
+);
+
 const getImage = (fileName) =>
   images[`../../assets/nco_pics/${fileName}`]?.default;
+
+const getSrcset = (fileName) => srcsets[`../../assets/nco_pics/${fileName}`];
 
 function NCOPics() {
     return (
@@ -23,6 +32,8 @@ function NCOPics() {
                                 <div key={`${person.rank} ${person.name}`} className="card transition-colors hover:border-accent-dark">
                                     <img
                                         src={getImage(person.image)}
+                                        srcSet={getSrcset(person.image)}
+                                        sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw"
                                         alt={`${person.rank} ${person.name}`}
                                         loading="lazy"
                                         className="aspect-3/4 w-full object-cover object-top"

@@ -50,7 +50,7 @@ function Gallery() {
                     <div className="mt-8 columns-2 gap-3 md:columns-3 lg:columns-4">
                         {shown.map((p, i) => (
                             <button key={p.img} type="button" onClick={() => show(i)} className="mb-3 block w-full overflow-hidden rounded-lg focus-visible:outline-2 focus-visible:outline-accent">
-                                <img src={p.img} alt={p.alt} width={p.w} height={p.h} loading="lazy" className="h-auto w-full transition-transform duration-300 hover:scale-105" />
+                                <img src={p.img} srcSet={p.thumb} sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" alt={p.alt} width={p.w} height={p.h} loading="lazy" className="h-auto w-full transition-transform duration-300 hover:scale-105" />
                             </button>
                         ))}
                     </div>

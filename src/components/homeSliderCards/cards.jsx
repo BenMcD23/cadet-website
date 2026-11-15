@@ -1,11 +1,14 @@
 import Title from "../mainTitle/title";
 
-import Plane from "../../assets/home_images/plane.webp";
-import Kyacking from "../../assets/home_images/kyacking.webp";
-import Shooting from "../../assets/home_images/shooting.webp";
-import arms_drill from "../../assets/home_images/arms_drill.webp";
-import camp from "../../assets/home_images/camp.webp";
-import dofe from "../../assets/home_images/dofe.webp";
+// Each photo comes as 400px and 800px copies (vite-imagetools): a card is
+// at most about 400px wide, and the 900px originals were twice that on a phone.
+
+import Plane from "../../assets/home_images/plane.webp?w=400;800&format=webp&as=picture";
+import Kyacking from "../../assets/home_images/kyacking.webp?w=400;800&format=webp&as=picture";
+import Shooting from "../../assets/home_images/shooting.webp?w=400;800&format=webp&as=picture";
+import arms_drill from "../../assets/home_images/arms_drill.webp?w=400;800&format=webp&as=picture";
+import camp from "../../assets/home_images/camp.webp?w=400;800&format=webp&as=picture";
+import dofe from "../../assets/home_images/dofe.webp?w=400;800&format=webp&as=picture";
 
 function Card() {
     return (
@@ -20,7 +23,7 @@ function Card() {
                 <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                     {data.map((d) => (
                         <article key={d.title} className="card">
-                            <img src={d.img} alt={d.alt} loading="lazy" className="h-48 w-full object-cover"/>
+                            <img src={d.img.img.src} srcSet={d.img.sources.webp} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" alt={d.alt} loading="lazy" className="h-48 w-full object-cover"/>
                             <div className="p-5">
                                 <h3 className="text-2xl">{d.title}</h3>
                                 <p className="mt-2 text-sm leading-relaxed text-ink/80">{d.main}</p>
