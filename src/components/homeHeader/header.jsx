@@ -1,14 +1,27 @@
 import { Link } from 'react-router-dom';
 import sqn_photo from "../../assets/sqn_photo.webp";
+// Copies made at build time (vite-imagetools) so nobody downloads the 2400px
+// original unless their screen needs it. On a phone the header is taller than
+// it is wide and only the middle of the photo shows, so phones get a 2:3 crop of
+// that middle at full sharpness instead of the whole wide photo.
+import sqn_photo_srcset from "../../assets/sqn_photo.webp?w=800;1200;1600;2400&format=webp&as=srcset";
+import sqn_photo_phone from "../../assets/sqn_photo.webp?w=540;800;1060&aspect=2:3&fit=cover&position=center&format=webp&as=srcset";
 
 function Header() {
     return (
         <section className="relative isolate overflow-hidden bg-navy text-white">
-            <img
-                src={sqn_photo}
-                alt="The whole of 317 Squadron, cadets and staff, posed together under the squadron gazebo"
-                className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
-            />
+            <picture>
+                <source media="(max-width: 767px)" srcSet={sqn_photo_phone} sizes="100vw" />
+                <img
+                    src={sqn_photo}
+                    srcSet={sqn_photo_srcset}
+                    sizes="100vw"
+                    // The first thing anyone sees: fetch it ahead of everything else.
+                    fetchPriority="high"
+                    alt="The whole of 317 Squadron, cadets and staff, posed together under the squadron gazebo"
+                    className="absolute inset-0 h-full w-full object-cover object-[center_45%]"
+                />
+            </picture>
             {/* light flat tint so the white text stays readable over the photo */}
             <div className="absolute inset-0 bg-navy/50" aria-hidden="true"></div>
             <div className="absolute inset-0 bg-linear-to-t from-navy/70 via-transparent to-transparent md:hidden" aria-hidden="true"></div>
