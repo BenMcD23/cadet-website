@@ -31,6 +31,9 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Site data and CSP in step
+        run: npm run check:data
+
       - name: Build
         run: npm run build
 

@@ -15,6 +15,8 @@ follows; match them rather than introducing new patterns.
   don't hardcode the same fact in a component.
 - Every page sets its title and description with `usePageMeta` at the top of
   its file in `src/pages/`.
+- A new external host (fetch, iframe, embed, script) goes in the
+  `Content-Security-Policy` in `vercel.json`, or the browser blocks it.
 - Resize photos to roughly their display size before adding them to
   `src/assets/`. Large originals slow the site badly on mobile.
 
@@ -43,8 +45,9 @@ Renaming a field silently breaks the form.
 
 ## Checks
 
-There is no test suite. `npm run lint` (zero warnings allowed) and
-`npm run build` are the checks, and CI runs both. Look at what you changed in
+There is no test suite. `npm run lint` (zero warnings allowed),
+`npm run check:data` (JSON-LD matches `squadron.js`, fetched hosts are in the
+CSP) and `npm run build` are the checks, and CI runs all three. Look at what you changed in
 `npm run dev` at phone width (390px) and desktop: most visitors are parents on
 phones.
 
@@ -57,4 +60,4 @@ phones.
   `.github/` also need @BenMcD23's review (`.github/CODEOWNERS`).
 - Fill in the pull request template: what changed, why, and how you checked it,
   with phone and desktop screenshots for anything visible.
-- Before pushing: `npm run lint && npm run build`.
+- Before pushing: `npm run lint && npm run check:data && npm run build`.

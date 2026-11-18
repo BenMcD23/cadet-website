@@ -51,7 +51,8 @@ src/context/            flight points fetch and session cache
 src/data/               editable content (FAQ, newsletters, squadron details)
 src/hooks/              usePageMeta (per-page title, description, canonical, Open Graph)
 src/assets/             images and documents bundled by Vite
-vercel.json             SPA rewrite and cache/security headers
+vercel.json             SPA rewrite, cache and security headers (including the CSP)
+scripts/check-site-data.mjs   CI check: JSON-LD matches squadron.js, fetched hosts are in the CSP
 ```
 
 ## External services
@@ -63,6 +64,12 @@ vercel.json             SPA rewrite and cache/security headers
   in `sessionStorage`.
 - **Spam protection** on the contact form is a hidden honeypot field checked by the Apps Script (no captcha).
 - **Vercel Analytics** is loaded from `src/App.jsx`.
+
+Every host above is allowed by name in the `Content-Security-Policy` in `vercel.json`.
+A new external service (a fetch, an iframe, a script) needs its host added there, or the
+browser blocks it. `npm run check:data` catches fetches and iframes; check anything else in
+the browser console on a Vercel preview. `https://vercel.live` is there for the preview
+toolbar only.
 
 ## Deployment
 
