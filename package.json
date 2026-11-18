@@ -10,6 +10,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
+    "check:data": "node scripts/check-site-data.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -40,6 +41,7 @@
   "overrides": {
     "eslint-plugin-react": {
       "eslint": "$eslint"
-    }
+    },
+    "brace-expansion@1": "1.1.22"
   }
 }
